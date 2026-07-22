@@ -35,29 +35,29 @@ IRH:
   - deuzi says: Welcome to IRH!
   - deuzi says: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
   - choice:
-      - "You both make eye contact and immediately do your secret handshake in front of everyone!"
-        - var latinhonors_score: "{latinhonors_score} + 2"
-        - var innovator_score: "{innovator_score} + 3"
-        - var socialeagle_score: "{socialeagle_score} + 0"
-        - var thinker_score: "{thinker_score} + 1"
-      - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…"
-        - var latinhonors_score: "{latinhonors_score} + 1"
-        - var innovator_score: "{innovator_score} + 2"
-        - var socialeagle_score: "{socialeagle_score} + 3"
-        - var thinker_score: "{thinker_score} + 0"
-      - "You are surprised to find out that they are an athlete."
-        - var latinhonors_score: "{latinhonors_score} + 0"
-        - var innovator_score: "{innovator_score} + 1"
-        - var socialeagle_score: "{socialeagle_score} + 2"
-        - var thinker_score: "{thinker_score} + 3"
-      - "Wave at them and remind them of the group project’s deadline this week."
-        - var latinhonors_score: "{latinhonors_score} + 3"
-        - var innovator_score: "{innovator_score} + 0"
-        - var socialeagle_score: "{socialeagle_score} + 1"
-        - var thinker_score: "{thinker_score} + 2"
+      - "You both make eye contact and immediately do your secret handshake in front of everyone!":
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 1"
+      - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You are surprised to find out that they are an athlete.":
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+      - "Wave at them and remind them of the group project’s deadline this week.":
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
   - scene: endGame
 endGame:
-  - deuzi says normal: Quickstart over!
+  - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
   - hide ALL:
   - effect ROLLINGCREDITS:
     endGame: true
