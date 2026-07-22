@@ -2,6 +2,7 @@ start:
   - show room: WITH FADE CONTINUE
   - show deuzi: happy AT CENTER WITH FADE
   - deuzi says: What path are you following?
+  - var score: 0
   - choice:
       - "SEC-A":
           - var route: 1
