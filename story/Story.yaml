@@ -1,19 +1,35 @@
 start:
-  - play morningBGM:
   - show room: WITH FADE CONTINUE
   - show deuzi: happy AT CENTER WITH FADE
-  - deuzi says: Hello, welcome to (bold)the Quickstart!(end)
-  - wait: 300
-  - deuzi says normal: Are you ready to create great visual novels?
+  - deuzi says: What path are you following?
   - choice:
-    - "Yes!":
-      - deuzi says happy: That's great! Go ahead!
-    - "Not yet!":
-      - deuzi says: Well, I'll be here when you're ready!
-  - deuzi says normal: If you're new, don't forget to play (bold)the Tutorial(end) game, where me and my friends will show you around the basic features of RenJS.
-  - deuzi says happy: And if you already have some experience, you can go ahead and start writing!
+      - "SEC-A":
+          - var route: 1
+      - "Berchmans":
+          - var route: 2
+      - "IRH":
+          - var route: 3
+  - deuzi says normal: Your future is at stake. Are you ready to take on this journey?
+  - choice:
+      - "Yes!":
+          - if ({route} == 1):
+              - scene: SecA
+          - if ({route}  == 2):
+              - scene: Berchmans
+          - if ({route} == 3):
+              - scene: IRH
+SecA:
+  - show room_night: WITH FADE CONTINUE
+  - deuzi says: Welcome to SEC-A!
   - scene: endGame
-
+Berchmans:
+  - show room_night: WITH FADE CONTINUE
+  - deuzi says: Welcome to Berchmans!
+  - scene: endGame
+IRH:
+  - show room_night: WITH FADE CONTINUE
+  - deuzi says: Welcome to IRH!
+  - scene: endGame
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
