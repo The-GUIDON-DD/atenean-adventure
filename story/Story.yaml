@@ -36,20 +36,29 @@ Berchmans:
     - "Let's go to UPTC for a little adventure!":
       - show MainCharacter: normal AT OUTLEFT WITH MOVE
       - show Blockmate: normal AT OUTLEFT WITH MOVE
-      # latin honors +1; creative innovator +2; social eagle +3; independent thinker +0;
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
 
     - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
       - show MainCharacter: normal AT OUTRIGHT WITH MOVE
-      # latin honors +3; creative innovator +1; social eagle +0; independent thinker +2;
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
 
     - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
       - show MainCharacter: normal AT OUTLEFT WITH MOVE
       - show Blockmate: normal AT OUTLEFT WITH MOVE
-      # latin honors +1; creative innovator +3; social eagle +2; independent thinker +0;
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
 
     - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
       - show MainCharacter: normal AT OUTRIGHT WITH MOVE
-      # latin honors +2; creative innovator +1; social eagle +0; independent thinker +3;
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 3"
+
 
   - hide ALL:
   - scene: endGame
