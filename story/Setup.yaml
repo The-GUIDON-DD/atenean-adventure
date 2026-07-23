@@ -3,7 +3,7 @@ backgrounds:
   room: assets/backgrounds/room_day.jpg
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
-
+  Berchmans: assets/backgrounds/Berchmans.jpg
 characters:
   deuzi:
     displayName: Deuzilene
@@ -12,6 +12,14 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  MainCharacter:
+    displayName: MainCharacter
+    looks:
+      normal: assets/characters/Character.png
+  Blockmate:
+    displayName: Blockmate
+    looks:
+      normal: assets/characters/Blockmate.png
 
 cgs:
   phone1: assets/objects/phone1.png
