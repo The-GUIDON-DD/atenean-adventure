@@ -1,9 +1,9 @@
-
 backgrounds:
   room: assets/backgrounds/room_day.jpg
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
-
+  Berchmans: assets/backgrounds/Berchmans.jpg
+  SecA: assets/backgrounds/seca_placeholder.jpg
 characters:
   deuzi:
     displayName: Deuzilene
@@ -12,10 +12,24 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  MainCharacter:
+    displayName: MainCharacter
+    looks:
+      normal: assets/characters/Character.png
+  Blockmate:
+    displayName: Blockmate
+    looks:
+      normal: assets/characters/Blockmate.png
+  Students:
+    displayName: Students
+    looks:
+      normal: assets/characters/students_placeholder.png
 
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
+  music: assets/objects/route1/phone_with_music.png
+  todo: assets/objects/route1/phone_with_todo.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
