@@ -31,9 +31,10 @@ Berchmans:
   - deuzi says: Welcome to Berchmans!
   - scene: endGame
 IRH:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to IRH!
-  - deuzi says: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
+  - show irh: WITH FADE CONTINUE
+  - hide deuzi:
+  - text: Welcome to IRH!
+  - text: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
   - choice:
       - "You both make eye contact and immediately do your secret handshake in front of everyone!":
           - var latinhonors_score: "{latinhonors_score} + 2"
