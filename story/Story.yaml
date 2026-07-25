@@ -27,8 +27,41 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to Berchmans!
+  - hide deuzi:
+
+  - show ZenGarden:
+  - show MainCharacter: normal AT LEFT WITH FADE
+  - text: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do? 
+  - choice:
+    - "Buy one bigger-sized snack because you need the energy for class later.":
+      - show FoodOne:
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var socialeagle_score: "{socialeagle_score} + 0"
+      - var thinker_score: "{thinker_score} + 2"
+
+    - "Buy snacks from different stalls because you want to support local businesses.":
+      - show FoodTwo:
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+      - var thinker_score: "{thinker_score} + 0"
+
+    - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
+      - show FoodThree:
+      - var latinhonors_score: "{latinhonors_score} + 0"
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
+      - var thinker_score: "{thinker_score} + 1"
+
+    - "Buy a simple, small snack that cooks fast so you don’t end up late.":
+      - show FoodFour:
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var socialeagle_score: "{socialeagle_score} + 0"
+      - var thinker_score: "{thinker_score} + 3"
+
+  - hide ALL:
   - scene: endGame
 IRH:
   - show room_night: WITH FADE CONTINUE
