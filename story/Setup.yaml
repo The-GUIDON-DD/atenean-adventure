@@ -4,6 +4,13 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
+  ZenGarden: assets/backgrounds/ZenGarden.jpg
+
+  FoodOne: assets/backgrounds/FoodOne.jpg
+  FoodTwo: assets/backgrounds/FoodTwo.jpg
+  FoodThree: assets/backgrounds/FoodThree.jpg
+  FoodFour: assets/backgrounds/FoodFourjpg
+  
 characters:
   deuzi:
     displayName: Deuzilene
@@ -12,7 +19,10 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
-
+  MainCharacter: 
+      displayName: MainCharacter
+      looks:
+        normal: assets/characters/Character.png
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
