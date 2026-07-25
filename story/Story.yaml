@@ -27,9 +27,56 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to Berchmans!
-  - scene: endGame
+  - hide deuzi:
+
+  - show Arete: WITH FADE CONTINUE
+  - text: You finally make it to Arete, and you must scan your ID, but it won’t work. What do you do?
+  - choice:
+    - "Keep trying to scan it as quickly as possible until it works.":
+      - show ID: AT 100,300
+      - animate ID:
+        position: {x: 650, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 100, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 650, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 100, y: 300}
+        time: 1000
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 3"
+    - "Slowly take it off and scan again, chit-chatting with the person behind you about the machine not working.":
+      - show ID: AT 100,300
+      - animate ID:
+        position: {x: 650, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 100, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 650, y: 300}
+        time: 1000
+      - animate ID:
+        position: {x: 100, y: 300}
+        time: 1000
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+    - "Find a different way and ask the guard to just write down your name on the logsheet.":
+      - show MainCharacter: normal AT RIGHT
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 3"
+      - var thinker_score: "{thinker_score} + 2"
+    - "Just stay outside and sit on the bench until it is fixed, so you can study beforehand.":
+      - show MainCharacter: normal AT LEFT
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
+  - hide ALL:
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
