@@ -37,7 +37,6 @@ Berchmans:
       - show FoodOne:
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
-      - var socialeagle_score: "{socialeagle_score} + 0"
       - var thinker_score: "{thinker_score} + 2"
 
     - "Buy snacks from different stalls because you want to support local businesses.":
@@ -45,11 +44,9 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
-      - var thinker_score: "{thinker_score} + 0"
 
     - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
       - show FoodThree:
-      - var latinhonors_score: "{latinhonors_score} + 0"
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
       - var thinker_score: "{thinker_score} + 1"
@@ -58,11 +55,9 @@ Berchmans:
       - show FoodFour:
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
-      - var socialeagle_score: "{socialeagle_score} + 0"
       - var thinker_score: "{thinker_score} + 3"
 
   - hide ALL:
-  - scene: endGame
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
