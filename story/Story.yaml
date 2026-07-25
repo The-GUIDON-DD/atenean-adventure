@@ -26,11 +26,12 @@ SecA:
   - hide deuzi:
   - show SecA: WITH FADE CONTINUE
   - show MainCharacter: normal AT RIGHT WITH FADE
+  - show Blockmate: normal AT LEFT WITH FADE
   - text: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
   - choice:
       - "Join and talk to them! You have plenty of time.":
-          - show MainCharacter: normal AT RIGHT WITH MOVE
-          - show Students: normal AT LEFT WITH MOVE
+          - show MainCharacter: normal AT CENTER WITH MOVE
+          - show Blockmate: normal AT LEFT 
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
@@ -42,8 +43,8 @@ SecA:
           - var thinker_score: "{thinker_score} + 2"
 
       - "Greet them but keep walking because you want to make it to class early.":
-          - show MainCharacter: normal AT OUTRIGHT WITH MOVE
-          - show Students: normal AT LEFT WITH FADE
+          - show MainCharacter: normal AT OUTLEFT WITH MOVE
+          - show Blockmate: normal AT LEFT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
