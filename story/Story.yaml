@@ -29,7 +29,7 @@ SecA:
 Berchmans:
   - hide deuzi:
 
-  - show ZenGarden:
+  - show ZenGarden: WITH FADE CONTINUE
   - show MainCharacter: normal AT LEFT WITH FADE
   - text: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do? 
   - choice:
