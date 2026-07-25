@@ -4,6 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
+  XaiverHall: assets/backgrounds/XavierHall.jpg
+
 characters:
   deuzi:
     displayName: Deuzilene
@@ -12,6 +14,10 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  MainCharacter:
+    displayName: MainCharacter
+    looks:
+      normal: assets/characters/Character.png
 
 cgs:
   phone1: assets/objects/phone1.png
