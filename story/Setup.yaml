@@ -4,6 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
+  Arete: assets/backgrounds/Arete.jpg
+
 characters:
   deuzi:
     displayName: Deuzilene
@@ -12,10 +14,15 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  MainCharacter:
+    displayName: MainCharacter
+    looks:
+      normal: assets/characters/Character.png
 
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
+  ID: assets/objects/ID.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
