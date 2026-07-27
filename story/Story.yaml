@@ -56,6 +56,8 @@ IRH:
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
+  - show character: normal AT LEFT WITH CUT
+  - show blockmate: normal AT RIGHT WITH CUT
   - scene: endGame
 endGame:
   - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
