@@ -3,7 +3,8 @@ backgrounds:
   room: assets/backgrounds/room_day.jpg
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
-  irh: assets/backgrounds/irh.jpg
+  IRHBG: assets/backgrounds/IRH.jpg
+  IRHBGAwkward: assets/backgrounds/IRHAwkward.jpg
 
 characters:
   deuzi:
@@ -21,6 +22,10 @@ characters:
     displayName: Blockmate
     looks:
       normal: assets/characters/blockmate.png
+  athlete:
+    displayName: Athlete
+    looks:
+      normal: assets/characters/athlete.png
 
 cgs:
   phone1: assets/objects/phone1.png

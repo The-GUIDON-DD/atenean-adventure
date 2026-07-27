@@ -31,33 +31,43 @@ Berchmans:
   - deuzi says: Welcome to Berchmans!
   - scene: endGame
 IRH:
-  - show irh: WITH FADE CONTINUE
+  - show IRHBG: WITH FADE CONTINUE
   - hide deuzi:
   - text: Welcome to IRH!
   - text: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
+  - show character: normal AT LEFT WITH CUT CONTINUE
+  - show athlete: normal AT 700,600  WITH CUT CONTINUE
+  - show blockmate: normal AT 600,600 WITH CUT
   - choice:
       - "You both make eye contact and immediately do your secret handshake in front of everyone!":
+          - show character: normal AT 300,600 WITH MOVE CONTINUE
+          - show blockmate: normal AT 500,600 WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 0"
           - var thinker_score: "{thinker_score} + 1"
       - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
+          - show character: normal AT 300,600 WITH MOVE CONTINUE
+          - show athlete: normal AT 600,600 WITH MOVE CONTINUE
+          - show blockmate: normal AT 500,600 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - var thinker_score: "{thinker_score} + 0"
       - "You are surprised to find out that they are an athlete.":
+          - show character: normal AT 300,600 WITH MOVE CONTINUE
+          - show athlete: normal AT 600,600 WITH MOVE CONTINUE
+          - show blockmate: normal AT 500,600 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
       - "Wave at them and remind them of the group project’s deadline this week.":
+          - show IRHBGAwkward: WITH FUSION
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
-  - show character: normal AT LEFT WITH CUT
-  - show blockmate: normal AT RIGHT WITH CUT
   - scene: endGame
 endGame:
   - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
