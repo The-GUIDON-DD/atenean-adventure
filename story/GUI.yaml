@@ -19,11 +19,13 @@ config:
         'y': 0
         style:
           font: fontsaudimat-mono
-          fontSize: 32px
+          fontSize: 18px
           fill: '#FFFFFF'
-          align: left
+          align: center
           boundsAlignH: center
           boundsAlignV: middle
+          wordWrap: true
+          wordWrapWidth: 600
     - id: default
       type: messageBox
       asset: asset19
