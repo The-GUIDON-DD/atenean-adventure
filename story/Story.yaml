@@ -35,7 +35,7 @@ IRH:
   - deuzi says: Welcome to IRH!
   - scene: Gesu
 Gesu:
-  - show gesu: WITH FADE CONTINUE
+  - show GesuBG: WITH FADE CONTINUE
   - text: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
   - choice:
       - "You fix your hair and clothes, then you approach them to start a conversation.":
@@ -58,6 +58,7 @@ Gesu:
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 1"
+  - scene: endGame
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
