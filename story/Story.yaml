@@ -33,7 +33,31 @@ Berchmans:
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
-  - scene: endGame
+  - scene: Gesu
+Gesu:
+  - show gesu: WITH FADE CONTINUE
+  - text: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
+  - choice:
+      - "You fix your hair and clothes, then you approach them to start a conversation.":
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You fix your posture to hopefully grab their attention as you pass by them.":
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You look at them and realize that the spark isn’t there anymore.":
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
