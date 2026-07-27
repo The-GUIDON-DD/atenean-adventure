@@ -34,6 +34,30 @@ IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
   - scene: endGame
+BellarmineHall:
+  - show BellarmineHallCG: WITH FADE CONTINUE
+  - text: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms. 
+  - choice:
+      - "You go back and take a detour to avoid them.":
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You endure their intimidating gaze and quickly walk past them.":
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+      - "You greet the professor respectfully to maintain a good work relationship.":
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
