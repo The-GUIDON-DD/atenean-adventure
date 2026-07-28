@@ -31,12 +31,13 @@ SecA:
   - choice:
       - "Join and talk to them! You have plenty of time.":
           - show MainCharacter: normal AT CENTER WITH MOVE
-          - show Blockmate: normal AT LEFT 
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
 
       - "Sit down to rest a bit and check up on your to-do list.":
+          - hide MainCharacter:
+          - hide Blockmate:
           - show todo: normal AT CENTER WITH FADE
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
@@ -50,11 +51,12 @@ SecA:
           - var thinker_score: "{thinker_score} + 3"
 
       - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
+          - hide MainCharacter:
+          - hide Blockmate:
           - show music: normal AT CENTER WITH FADE
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 1"
-
   - hide ALL:
   - scene: endGame
 Berchmans:
