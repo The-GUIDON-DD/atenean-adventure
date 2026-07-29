@@ -2,6 +2,9 @@ positions:
   OUTLEFT: #Outside of the screen, left side
     x: -133
     y: 600 #The y should be at the bottom of the screen
+  OUTLEFTUP: #Outside of the screen, left side
+    x: -133
+    y: 500 #The y should be at the bottom of the screen
   LEFT: 
     x: 133
     y: 600
@@ -14,6 +17,9 @@ positions:
   RIGHT: 
     x: 666
     y: 600
+  RIGHTUP: 
+    x: 666
+    y: 500
   OUTRIGHT: #Outside of the screen, right side
     x: 933
     y: 600

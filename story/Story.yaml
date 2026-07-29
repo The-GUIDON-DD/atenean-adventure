@@ -35,20 +35,27 @@ IRH:
   - deuzi says: Welcome to IRH!
   - scene: BellarmineHall
 BellarmineHall:
-  - show BellarmineHallBG: WITH FADE CONTINUE
+  - show BellarmineHallBG: WITH CUT CONTINUE
+  - show prof: normal WITH CUT AT RIGHTUP CONTINUE
+  - show character: normal WITH CUT AT LEFT 
   - text: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms. 
   - choice:
       - "You go back and take a detour to avoid them.":
+          - show character: normal AT OUTLEFT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 0"
           - var thinker_score: "{thinker_score} + 3"
       - "You endure their intimidating gaze and quickly walk past them.":
+          - show prof: normal AT OUTLEFTUP WITH MOVE CONTINUE
+          - show character: normal AT OUTRIGHT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
       - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
+          - show prof: normal AT OUTLEFTUP WITH MOVE CONTINUE
+          - show character: normal AT OUTRIGHT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 2"
