@@ -13,6 +13,14 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  crush:
+    displayName: Crush
+    looks:
+      normal: assets/characters/crush.png
+  character:
+    displayName: Character
+    looks:
+      normal: assets/characters/character.png
 
 cgs:
   phone1: assets/objects/phone1.png
