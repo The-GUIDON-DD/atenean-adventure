@@ -21,11 +21,13 @@ characters:
   blockmate:
     displayName: Blockmate
     looks:
-      normal: assets/characters/blockmate.png
+      normal: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
   athlete:
     displayName: Athlete
     looks:
-      normal: assets/characters/athlete.png
+      normal: assets/characters/Athlete_neutral.png
+      talking: assets/characters/Athlete_talking.png
 
 cgs:
   phone1: assets/objects/phone1.png
