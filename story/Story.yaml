@@ -86,7 +86,7 @@ SecA_2:
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - hide ALL:
-          - scene: endGame
+          - scene: SecA_3
 
       - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
           - show todo: AT 500, 5000
@@ -98,7 +98,7 @@ SecA_2:
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: endGame
+          - scene: SecA_3
 
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - show MainCharacter: normal AT OUTLEFT WITH MOVE
@@ -107,7 +107,7 @@ SecA_2:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
-          - scene: endGame
+          - scene: SecA_3
 
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - show music: normal AT CENTER WITH FADE
@@ -115,7 +115,48 @@ SecA_2:
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
+          - scene: SecA_3
+SecA_3:
+  - show RBR: WITH FADE CONTINUE
+  - text: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
+  - choice:
+      - "“Let’s go to UPTC for a little adventure!":
+          - show MainCharacter: normal AT CENTER WITH MOVE
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
           - scene: endGame
+
+      - "Can’t talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
+          - hide MainCharacter:
+          - hide Blockmate:
+          - show todo: normal AT CENTER WITH FADE
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: endGame
+
+      - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I’ll be satisfied.":
+          - show MainCharacter: normal AT OUTLEFT WITH MOVE
+          - show Blockmate: normal AT LEFT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - hide ALL:
+          - scene: endGame
+
+      - "I’m not really feeling it because I’m so busy with studies. Let’s go out some other time.":
+          - hide MainCharacter:
+          - hide Blockmate:
+          - show music: normal AT CENTER WITH FADE
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - hide ALL:
+          - scene: endGame
+
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
