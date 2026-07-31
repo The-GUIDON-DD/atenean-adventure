@@ -16,7 +16,7 @@ characters:
   crush:
     displayName: Crush
     looks:
-      normal: assets/characters/crush.png
+      normal: assets/characters/Crush.png
   character:
     displayName: Character
     looks:
