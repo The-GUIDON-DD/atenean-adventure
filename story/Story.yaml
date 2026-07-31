@@ -29,32 +29,34 @@ SecA:
 Berchmans:
   - hide deuzi:
   - show Berchmans: WITH FADE CONTINUE
-  - show MainCharacter: normal AT LEFT WITH FADE
-  - show Blockmate: normal AT RIGHT WITH FADE
+  - show MainCharacter: smile AT LEFT WITH FADE
+  - show Blockmate: neutral AT RIGHT WITH FADE
   - text: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
   - choice:
     - "Let's go to UPTC for a little adventure!":
-      - show MainCharacter: normal AT OUTLEFT WITH MOVE
-      - show Blockmate: normal AT OUTLEFT WITH MOVE
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
 
     - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
-      - show MainCharacter: normal AT OUTRIGHT WITH MOVE
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral 
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
 
     - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
-      - show MainCharacter: normal AT OUTLEFT WITH MOVE
-      - show Blockmate: normal AT OUTLEFT WITH MOVE
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
 
     - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
-      - show MainCharacter: normal AT OUTRIGHT WITH MOVE
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"

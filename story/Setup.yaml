@@ -16,10 +16,14 @@ characters:
     displayName: MainCharacter
     looks:
       normal: assets/characters/Character.png
+      smile: assets/characters/C1_smile.png
+      talking: assets/characters/C1_talking.png
   Blockmate:
     displayName: Blockmate
     looks:
       normal: assets/characters/Blockmate.png
+      neutral: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
 
 cgs:
   phone1: assets/objects/phone1.png
