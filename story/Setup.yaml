@@ -4,6 +4,7 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   Berchmans: assets/backgrounds/Berchmans.jpg
   SecA: assets/backgrounds/seca_placeholder.jpg
+  RBR: assets/backgrounds/rbr_booths.png
 characters:
   deuzi:
     displayName: Deuzilene
@@ -30,6 +31,8 @@ cgs:
   phone2: assets/objects/phone2.png
   music: assets/objects/route1/phone_with_music.png
   todo: assets/objects/route1/phone_with_todo.png
+  org_booth: assets/objects/route1/org_booths.png
+  qr: assets/objects/route1/phone_with_qr.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
