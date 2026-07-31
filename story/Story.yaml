@@ -58,7 +58,8 @@ SecA:
           - var thinker_score: "{thinker_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 1"
   - hide ALL:
-  - scene: endGame
+  - scene: secA_2
+  
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
