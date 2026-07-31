@@ -33,11 +33,12 @@ Berchmans:
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
+  - hide deuzi: WITH CUT
   - scene: BellarmineHall
 BellarmineHall:
   - show BellarmineHallBG: WITH CUT CONTINUE
   - show prof: normal WITH CUT AT RIGHTUP CONTINUE
-  - show character: normal WITH CUT AT LEFT 
+  - show character: nervous WITH CUT AT LEFT 
   - text: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms. 
   - choice:
       - "You go back and take a detour to avoid them.":

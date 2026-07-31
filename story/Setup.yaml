@@ -21,6 +21,7 @@ characters:
     displayName: Character
     looks:
       normal: assets/characters/C1_Neutral.png
+      nervous: assets/characters/C1_Nervous.png
 
 cgs:
   phone1: assets/objects/phone1.png
