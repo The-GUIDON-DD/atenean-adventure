@@ -16,11 +16,11 @@ characters:
   prof:
     displayName: Prof
     looks:
-      normal: assets/characters/prof.png
+      normal: assets/characters/Prof_neutral.png
   character:
     displayName: Character
     looks:
-      normal: assets/characters/character.png
+      normal: assets/characters/C1_Neutral.png
 
 cgs:
   phone1: assets/objects/phone1.png
