@@ -120,7 +120,7 @@ SecA_3:
   - show RBR: WITH FADE CONTINUE
   - text: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
   - choice:
-      - "“Let’s go to UPTC for a little adventure!":
+      - "Let’s go to UPTC for a little adventure!":
           - show MainCharacter: normal AT CENTER WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
