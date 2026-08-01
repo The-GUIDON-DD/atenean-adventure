@@ -18,139 +18,79 @@ start:
       - "Yes!":
           - if ({route} == 1):
               - scene: SecA
-          - if ({route}  == 2):
+          - if ({route} == 2):
               - scene: Berchmans
           - if ({route} == 3):
               - scene: IRH
+
+
 SecA:
   - hide deuzi:
-  - show SecA: WITH FADE CONTINUE
-  - show MainCharacter: normal AT RIGHT WITH FADE
-  - show Blockmate: normal AT LEFT WITH FADE
-  - text: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
-  - choice:
-      - "Join and talk to them! You have plenty of time.":
-          - show MainCharacter: normal AT CENTER WITH MOVE
-          - var latinhonors_score: "{latinhonors_score} + 1"
-          - var innovator_score: "{innovator_score} + 2"
-          - var socialeagle_score: "{socialeagle_score} + 3"
-          - hide ALL:
-          - scene: SecA_2
-
-      - "Sit down to rest a bit and check up on your to-do list.":
-          - hide MainCharacter:
-          - hide Blockmate:
-          - show todo: normal AT CENTER WITH FADE
-          - var latinhonors_score: "{latinhonors_score} + 3"
-          - var innovator_score: "{innovator_score} + 1"
-          - var thinker_score: "{thinker_score} + 2"
-          - hide ALL:
-          - scene: SecA_2
-
-      - "Greet them but keep walking because you want to make it to class early.":
-          - show MainCharacter: normal AT OUTLEFT WITH MOVE
-          - show Blockmate: normal AT LEFT
-          - var latinhonors_score: "{latinhonors_score} + 2"
-          - var innovator_score: "{innovator_score} + 1"
-          - var thinker_score: "{thinker_score} + 3"
-          - hide ALL:
-          - scene: SecA_2
-
-      - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
-          - hide MainCharacter:
-          - hide Blockmate:
-          - show music: normal AT CENTER WITH FADE
-          - var innovator_score: "{innovator_score} + 3"
-          - var thinker_score: "{thinker_score} + 2"
-          - var socialeagle_score: "{socialeagle_score} + 1"
-          - hide ALL:
-          - scene: SecA_2
-
-SecA_2:
-  - show RBR: WITH FADE CONTINUE
-  - text: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
-  - show MainCharacter: normal AT LEFT WITH FADE
-  - show org_booth: normal AT RIGHT WITH FADE BEHIND
-  - choice:
-      - "Signing up for at least one org that suits my course won't hurt. I need it for academic and professional experience!":
-          - hide MainCharacter:
-          - show org_booth: AT 650,300
-          - show qr: AT 0,600
-          - animate qr:
-            position: {x: 0, y: 600}
-            time: 1000
-          - animate qr:
-            position: {x: 0, y: 300}
-            time: 1000
-          - var latinhonors_score: "{latinhonors_score} + 3"
-          - var innovator_score: "{innovator_score} + 1"
-          - var socialeagle_score: "{socialeagle_score} + 2"
-          - hide ALL:
-          - scene: SecA_3
-
-      - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
-          - show todo: AT 500, 5000
-          - animate todo:
-            position: {x:500, y:500}
-            time: 1000
-          - show todo: normal AT CENTER WITH MOVE
-          - var latinhonors_score: "{latinhonors_score} + 2"
-          - var innovator_score: "{innovator_score} + 1"
-          - var socialeagle_score: "{socialeagle_score} + 3"
-          - hide ALL:
-          - scene: SecA_3
-
-      - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
-          - show MainCharacter: normal AT OUTLEFT WITH MOVE
-          - show Blockmate: normal AT LEFT
-          - var latinhonors_score: "{latinhonors_score} + 2"
-          - var innovator_score: "{innovator_score} + 1"
-          - var thinker_score: "{thinker_score} + 3"
-          - hide ALL:
-          - scene: SecA_3
-
-      - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
-          - show music: normal AT CENTER WITH FADE
-          - var latinhonors_score: "{latinhonors_score} + 1"
-          - var innovator_score: "{innovator_score} + 3"
-          - var thinker_score: "{thinker_score} + 2"
-          - hide ALL:
-          - scene: SecA_3
-SecA_3:
-  - show RBR: WITH FADE CONTINUE
+  - show LeongHall: WITH FADE CONTINUE
+  - show MainCharacter: normal AT LEFT WITH FADE 
+  - show Blockmate: normal AT RIGHT WITH FADE
   - text: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
   - choice:
-      - "Let’s go to UPTC for a little adventure!":
-          - show MainCharacter: normal AT CENTER WITH MOVE
+      - "Let's go to UPTC for a little adventure!":
+          - hide MainCharacter: WITH CUT
+          - hide Blockmate: WITH CUT
+          - show MainCharacterWalk: normal AT 133,350 WITH CUT
+          - show BlockmateWalk: normal AT 666,350 WITH CUT
+          - animate MainCharacterWalk: CONTINUE
+            position: {x: -133, y: 350}
+            time: 1800
+          - animate BlockmateWalk:
+            position: {x: -133, y: 350}
+            time: 1800
+          - hide MainCharacterWalk: WITH CUT
+          - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
           - scene: endGame
 
-      - "Can’t talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
-          - hide MainCharacter:
-          - hide Blockmate:
-          - show todo: normal AT CENTER WITH FADE
+      - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 133,350 WITH CUT
+          - animate MainCharacterWalk:
+            position: {x: 933, y: 350}
+            time: 2000
+          - hide MainCharacterWalk: WITH CUT
+          - show Blockmate: normal AT RIGHT
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
           - scene: endGame
 
-      - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I’ll be satisfied.":
-          - show MainCharacter: normal AT OUTLEFT WITH MOVE
-          - show Blockmate: normal AT LEFT
+      - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
+          - hide MainCharacter: WITH CUT
+          - hide Blockmate: WITH CUT
+          - show MainCharacterWalk: normal AT 133,350 WITH CUT
+          - show BlockmateWalk: normal AT 666,350 WITH CUT
+          - animate MainCharacterWalk: CONTINUE
+            position: {x: -133, y: 350}
+            time: 1800
+          - animate BlockmateWalk:
+            position: {x: -133, y: 350}
+            time: 1800
+          - hide MainCharacterWalk: WITH CUT
+          - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - hide ALL:
           - scene: endGame
 
-      - "I’m not really feeling it because I’m so busy with studies. Let’s go out some other time.":
-          - hide MainCharacter:
-          - hide Blockmate:
-          - show music: normal AT CENTER WITH FADE
+      - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 133,350 WITH CUT
+          - animate MainCharacterWalk:
+            position: {x: 933, y: 350}
+            time: 2000
+          - hide MainCharacterWalk: WITH CUT
+          - show Blockmate: normal AT RIGHT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
@@ -161,10 +101,12 @@ Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
   - scene: endGame
+
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
   - scene: endGame
+
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
