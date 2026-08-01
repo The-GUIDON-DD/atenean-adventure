@@ -53,7 +53,9 @@ class MoveWithBounceManual extends RenJS.Plugin {
         console.log("Settings", settings);
         this.game.resolveAction();
     }
+
     onInit(){
+        this.defaultSettings = game.storyConfig.moveWithBounceSettings;
         this.game.screenEffects.transition['MoveWithBounceManual'] = (from, to, position, scaleX) => {
             return new Promise(resolve => {
                 const settings = this.game.storyConfig.moveWithBounceSettings;
@@ -75,6 +77,10 @@ class MoveWithBounceManual extends RenJS.Plugin {
                 });
             });
         }
+    }
+
+    onTeardown(){
+        this.game.storyConfig.moveWithBounceSettings = this.defaultSettings;
     }
 }
 RenJSGame.addPlugin('moveWithBounce', MoveWithBounce)
