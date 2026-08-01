@@ -26,67 +26,76 @@ start:
 
 SecA:
   - hide deuzi:
-  - show RBR: WITH FADE CONTINUE
-  - text: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
-  - show MainCharacter: normal AT LEFT WITH FADE
+  - show SecA: WITH FADE CONTINUE
+  - show MainCharacter: normal AT RIGHT WITH FADE
+  - show Students: normal AT LEFT WITH FADE
+  - text: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
   - choice:
-      - "Signing up for at least one org that suits my course won't hurt. I need it for academic and professional experience!":
+      - "Join and talk to them! You have plenty of time.":
           - hide MainCharacter: WITH CUT
-          - show RBRAnimated: WITH CUT
-          - animate RBRAnimated:
-            zoom: 1.25
-            time: 1500
-          - show qr: AT 133,600 WITH CUT
-          - animate qr:
-            position: {x: 133, y: 350}
+          - show MainCharacterWalk: normal AT 666,350 WITH CUT
+          - animate MainCharacterWalk:
+            position: {x: 400, y: 350}
             time: 1200
-          - var latinhonors_score: "{latinhonors_score} + 3"
-          - var innovator_score: "{innovator_score} + 1"
-          - var socialeagle_score: "{socialeagle_score} + 2"
-          - hide ALL:
-          - scene: SecA_3
-
-      - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
-          - hide MainCharacter: WITH CUT
-          - show RBRAnimated: WITH CUT
-          - animate RBRAnimated:
-            zoom: 1.25
-            time: 1500
-          - show qr: AT 133,600 WITH CUT
-          - animate qr:
-            position: {x: 133, y: 350}
-            time: 1200
-          - var latinhonors_score: "{latinhonors_score} + 2"
-          - var innovator_score: "{innovator_score} + 1"
+          - hide MainCharacterWalk: WITH CUT
+          - show MainCharacter: sparkles AT 400,600 WITH CUT
+          - show Students: normal AT LEFT WITH FADE
+          - hide Students: WITH FADE CONTINUE
+          - hide MainCharacter: WITH FADE CONTINUE
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: SecA_3
+          - scene: SecA_2
 
-      - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
+      - "Sit down to rest a bit and check up on your to-do list.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 133,350 WITH CUT
+          - hide Students: WITH CUT
+          - show todo: AT 400,750 WITH CUT
+          - animate todo:
+            position: {x: 400, y: 350}
+            time: 1000
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: SecA_2
+
+      - "Greet them but keep walking because you want to make it to class early.":
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 666,350 WITH CUT
           - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
+            position: {x: 400, y: 350}
+            time: 1000
           - hide MainCharacterWalk: WITH CUT
+          - show MainCharacter: sparkles AT 400,600 WITH CUT
+          - wait: 600
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 250,350 WITH CUT
+          - animate MainCharacterWalk:
+            position: {x: -133, y: 350}
+            time: 1400
+          - hide MainCharacterWalk: WITH CUT
+          - show Students: normal AT LEFT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
-          - scene: SecA_3
+          - scene: SecA_2
 
-      - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
+      - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
-          - hide MainCharacterWalk: WITH CUT
-          - var latinhonors_score: "{latinhonors_score} + 1"
+          - hide Students: WITH CUT
+          - show music: AT 400,750 WITH CUT
+          - animate music:
+            position: {x: 400, y: 350}
+            time: 1000
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
           - hide ALL:
-          - scene: SecA_3
+          - scene: SecA_2
+
 
 
 Berchmans:

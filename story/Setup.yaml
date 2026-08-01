@@ -3,7 +3,7 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
   Berchmans: assets/backgrounds/Berchmans.jpg
-  SecA: assets/backgrounds/seca_placeholder.jpg
+  SecA: assets/backgrounds/seca_placeholder.png
   RBR: assets/backgrounds/rbr_booths.png
   LeongHall: assets/backgrounds/leongHall_placeholder.png
 characters:
@@ -18,6 +18,7 @@ characters:
     displayName: MainCharacter
     looks:
       normal: assets/characters/C1_Smile.png
+      sparkles: assets/characters/C1_Sparkles.png
   Blockmate:
     displayName: Blockmate
     looks:
@@ -26,13 +27,13 @@ characters:
   Students:
     displayName: Students
     looks:
-      normal: assets/characters/students_placeholder.png
+      normal: assets/characters/SecA_students_neutral.png
 
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
-  music: assets/objects/route1/phone_with_music.png
-  todo: assets/objects/route1/phone_with_todo.png
+  music: assets/objects/route1/music.png
+  todo: assets/objects/route1/todo.png
   org_booth: assets/objects/route1/org_booths.png
   qr: assets/objects/route1/phone_with_qr.png
   MainCharacterWalk: assets/characters/C1_Smile.png
