@@ -62,7 +62,7 @@ class MoveWithBounceManual extends RenJS.Plugin {
                 console.log("Called", settings);
                 const duration = settings.movetime;
                 const bounceHeight = settings.bounceHeight;
-                const bounces = settings.bounceCount;
+                const bounces = settings.bounceCount || 1;
                 
                 // Code taken from https://stackoverflow.com/a/25349431
                 const move = this.game.add.tween(from);
