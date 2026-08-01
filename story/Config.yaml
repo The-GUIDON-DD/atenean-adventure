@@ -51,7 +51,7 @@ punctuationWait: 5
 moveWithBounceSettings:
   movetime: 550
   bounceCount: 4
-  bounceHeight: 50
+  bounceHeight: 25
 
 
 precomputeBreakLines: true
