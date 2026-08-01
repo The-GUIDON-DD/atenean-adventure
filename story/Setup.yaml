@@ -17,7 +17,8 @@ characters:
   character:
     displayName: Character
     looks:
-      normal: assets/characters/character.png
+      normal: assets/characters/C1_Neutral.png
+      sparkle: assets/characters/C1_Sparkles.png
   blockmate:
     displayName: Blockmate
     looks:
