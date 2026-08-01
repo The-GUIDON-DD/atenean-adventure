@@ -37,6 +37,7 @@ cgs:
   qr: assets/objects/route1/phone_with_qr.png
   MainCharacterWalk: assets/characters/C1_Smile.png
   BlockmateWalk: assets/characters/Blockmate_neutral.png
+  RBRAnimated: assets/backgrounds/rbr_booths.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
