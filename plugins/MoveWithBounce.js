@@ -6,7 +6,7 @@ function bounceEasing (v) {
 };
 
 /**
- * Runes the bounce animation
+ * Runs the bounce animation
  * Taken from https://stackoverflow.com/a/25349431
  */
 function bounceTween (game, position, from, to, duration, bounceHeight, bounces) {
@@ -42,7 +42,7 @@ class MoveWithBounce extends RenJS.Plugin {
             const duration = Math.abs(from.x - position.x) * DURATION_MULTIPLIER;
             const bounceHeight = settings.bounceHeight;
 
-            // Calculates the numebr of bounces based on the x-distance between the origin and destination.
+            // Calculates the number of bounces based on the x-distance between the origin and destination.
             // Ciel is used to make bounces semi-consistent. Could use round instead if needed.
             const bounces = Math.ceil(Math.abs(from.x - position.x) / PIXELS_PER_BOUNCE) || 1;
 
