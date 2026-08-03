@@ -52,7 +52,7 @@ class MoveWithBounceManual extends RenJS.Plugin {
     }
 
     onInit(){
-        this.defaultSettings = game.storyConfig.moveWithBounceSettings;
+        this.defaultSettings = { ...this.game.storyConfig.moveWithBounceSettings };
         this.game.screenEffects.transition['MoveWithBounceManual'] = (from, to, position, scaleX) => {
             return new Promise(resolve => {
                 const settings = this.game.storyConfig.moveWithBounceSettings;
