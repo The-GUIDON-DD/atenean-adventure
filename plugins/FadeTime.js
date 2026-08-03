@@ -1,3 +1,13 @@
+
+/**
+ * Fadetime plugin for RenJS
+ * 
+ * This plugin allows you to set a fade time for transitions at specific points.
+ * You can change the fade time dynamically by calling 'fadetime' in your story.
+ * @example
+ * - call fadetime 500              // set fade time to 500ms
+ * - call fadetime reset            // restore default fade time
+ */
 class Fadetime extends RenJS.Plugin {
 
     onInit() {
