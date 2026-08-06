@@ -34,9 +34,7 @@ SecA:
       - "Join and talk to them! You have plenty of time.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 666,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 400, y: 350}
-            time: 1200
+          - show MainCharacterWalk: AT 400,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - show MainCharacter: sparkles AT 400,600 WITH CUT
           - show Students: normal AT LEFT WITH FADE
@@ -46,55 +44,59 @@ SecA:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: SecA_2
+          - scene: endGame
 
       - "Sit down to rest a bit and check up on your to-do list.":
           - hide MainCharacter: WITH CUT
           - hide Students: WITH CUT
-          - show todo: AT 400,750 WITH CUT
+          - call fadetime: 650
+          - show todo: AT 400,750 WITH FADE CONTINUE
           - animate todo:
             position: {x: 400, y: 350}
-            time: 1000
+            zoom: 1.15
+            angle: 15
+            time: 450
+          - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
-          - scene: SecA_2
+          - scene: endGame
 
       - "Greet them but keep walking because you want to make it to class early.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 666,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 400, y: 350}
-            time: 1000
+          - show MainCharacterWalk: AT 400,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - show MainCharacter: sparkles AT 400,600 WITH CUT
           - wait: 600
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 250,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: -133, y: 350}
-            time: 1400
+          - show MainCharacterWalk: normal AT 400,350 WITH CUT
+          - show MainCharacterWalk: AT -133,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - show Students: normal AT LEFT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
-          - scene: SecA_2
+          - scene: endGame
 
       - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
           - hide MainCharacter: WITH CUT
           - hide Students: WITH CUT
-          - show music: AT 400,750 WITH CUT
+          - call fadetime: 650
+          - show music: AT 400,750 WITH FADE CONTINUE
           - animate music:
             position: {x: 400, y: 350}
-            time: 1000
+            zoom: 1.15
+            angle: 15
+            time: 450
+          - call fadetime: reset
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - hide ALL:
-          - scene: SecA_2
+          - scene: endGame
 
 
 
