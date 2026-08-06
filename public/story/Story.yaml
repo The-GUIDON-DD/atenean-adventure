@@ -35,11 +35,14 @@ SecA:
           - show RBRAnimated: WITH CUT
           - animate RBRAnimated:
             zoom: 1.25
-            time: 1500
-          - show qr: AT 133,600 WITH CUT
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 133,600 WITH FADE CONTINUE
           - animate qr:
             position: {x: 133, y: 350}
-            time: 1200
+            angle: 15
+            time: 450
+          - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
@@ -51,11 +54,14 @@ SecA:
           - show RBRAnimated: WITH CUT
           - animate RBRAnimated:
             zoom: 1.25
-            time: 1500
-          - show qr: AT 133,600 WITH CUT
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 133,600 WITH FADE CONTINUE
           - animate qr:
             position: {x: 133, y: 350}
-            time: 1200
+            angle: 15
+            time: 450
+          - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"
@@ -65,9 +71,7 @@ SecA:
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
+          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
@@ -78,9 +82,7 @@ SecA:
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
+          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
