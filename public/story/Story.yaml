@@ -36,12 +36,8 @@ SecA:
           - hide Blockmate: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
           - show BlockmateWalk: normal AT 666,350 WITH CUT
-          - animate MainCharacterWalk: CONTINUE
-            position: {x: -133, y: 350}
-            time: 1800
-          - animate BlockmateWalk:
-            position: {x: -133, y: 350}
-            time: 1800
+          - show MainCharacterWalk: AT -133,350 WITH MoveWithBounce CONTINUE
+          - show BlockmateWalk: AT -133,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
@@ -53,9 +49,7 @@ SecA:
       - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
+          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - show Blockmate: normal AT RIGHT
           - var latinhonors_score: "{latinhonors_score} + 3"
@@ -69,12 +63,8 @@ SecA:
           - hide Blockmate: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
           - show BlockmateWalk: normal AT 666,350 WITH CUT
-          - animate MainCharacterWalk: CONTINUE
-            position: {x: -133, y: 350}
-            time: 1800
-          - animate BlockmateWalk:
-            position: {x: -133, y: 350}
-            time: 1800
+          - show MainCharacterWalk: AT -133,350 WITH MoveWithBounce CONTINUE
+          - show BlockmateWalk: AT -133,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
@@ -86,9 +76,7 @@ SecA:
       - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - animate MainCharacterWalk:
-            position: {x: 933, y: 350}
-            time: 2000
+          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - show Blockmate: normal AT RIGHT
           - var latinhonors_score: "{latinhonors_score} + 2"
