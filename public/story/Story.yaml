@@ -33,35 +33,47 @@ Berchmans:
   - text: You finally make it to Arete, and you must scan your ID, but it won’t work. What do you do?
   - choice:
     - "Keep trying to scan it as quickly as possible until it works.":
-      - show ID: AT 100,300
+      - show ID: AT 100,350
       - animate ID:
-        position: {x: 650, y: 300}
+        position: {x: 650, y: 350}
+        time: 400
+      - animate ID:
+        position: {x: 100, y: 350}
         time: 1000
       - animate ID:
-        position: {x: 100, y: 300}
+        position: {x: 650, y: 350}
+        time: 400
+      - animate ID:
+        position: {x: 100, y: 350}
         time: 1000
       - animate ID:
-        position: {x: 650, y: 300}
-        time: 1000
+        position: {x: 650, y: 350}
+        time: 400
       - animate ID:
-        position: {x: 100, y: 300}
+        position: {x: 100, y: 350}
         time: 1000
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
     - "Slowly take it off and scan again, chit-chatting with the person behind you about the machine not working.":
-      - show ID: AT 100,300
+      - show ID: AT 100,350
       - animate ID:
-        position: {x: 650, y: 300}
+        position: {x: 650, y: 350}
+        time: 400
+      - animate ID:
+        position: {x: 100, y: 350}
         time: 1000
       - animate ID:
-        position: {x: 100, y: 300}
+        position: {x: 650, y: 350}
+        time: 400
+      - animate ID:
+        position: {x: 100, y: 350}
         time: 1000
       - animate ID:
-        position: {x: 650, y: 300}
-        time: 1000
+        position: {x: 650, y: 350}
+        time: 400
       - animate ID:
-        position: {x: 100, y: 300}
+        position: {x: 100, y: 350}
         time: 1000
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
