@@ -34,22 +34,22 @@ Berchmans:
   - text: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
   - choice:
     - "Let's go to UPTC for a little adventure!":
-      - show MainCharacter: talking AT OUTLEFT WITH MOVE
-      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - show MainCharacter: talking AT OUTLEFT WITH MoveWithBounce
+      - show Blockmate: neutral AT OUTLEFT WITH MoveWithBounce
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
 
     - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
-      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE MoveWithBounce
       - show Blockmate: neutral 
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
 
     - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
-      - show MainCharacter: talking AT OUTLEFT WITH MOVE
-      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - show MainCharacter: talking AT OUTLEFT WITH MoveWithBounce
+      - show Blockmate: neutral AT OUTLEFT WITH MoveWithBounce
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
