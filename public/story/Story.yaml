@@ -41,7 +41,7 @@ Berchmans:
       - var socialeagle_score: "{socialeagle_score} + 3"
 
     - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
-      - show MainCharacter: smile AT OUTRIGHT WITH MOVE MoveWithBounce
+      - show MainCharacter: smile AT OUTRIGHT WITH MoveWithBounce
       - show Blockmate: neutral 
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
@@ -55,7 +55,7 @@ Berchmans:
       - var socialeagle_score: "{socialeagle_score} + 2"
 
     - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
-      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show MainCharacter: smile AT OUTRIGHT WITH MoveWithBounce
       - show Blockmate: neutral
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
