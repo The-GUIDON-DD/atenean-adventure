@@ -27,6 +27,27 @@ config:
           boundsAlignV: middle
           wordWrap: true
           wordWrapWidth: 600
+    - id: grid
+      type: choices
+      asset: figma_asset31
+      x: 720
+      'y': 940
+      alignment: topDown
+      separationH: 31
+      separationV: 12
+      sfx: none
+      chosenColor: '#535050'
+      text:
+        x: 70
+        'y': 30
+        style:
+          font: ysabeau-infant
+          fontWeight: normal
+          fontSize: 18px
+          fill: '#21201E'
+          align: left
+          wordWrap: true
+          wordWrapWidth: 600
     - id: default
       type: messageBox
       asset: asset19
@@ -47,6 +68,22 @@ config:
         x: 570
         'y': 91
         asset: asset21
+    - id: choice
+      type: messageBox
+      asset: asset19
+      x: 111
+      'y': 620
+      sfx: none
+      text:
+        x: 86
+        'y': 64
+        style:
+          font: ysabeau-infant
+          fontSize: 28px
+          fill: '#FFFFFF'
+          align: left
+          wordWrap: true
+          wordWrapWidth: '1010'
     - id: default
       type: nameBox
       asset: asset20
@@ -369,6 +406,11 @@ assets:
       fileName: hudasset31.png
       w: 716
       h: 65
+    figma_asset31:
+      name: figma_asset31
+      fileName: figma_hudasset31.png
+      w: 552
+      h: 82
     asset32:
       name: asset32
       fileName: hudasset32.png
