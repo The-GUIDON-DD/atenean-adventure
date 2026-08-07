@@ -1,7 +1,7 @@
 name: Quickstart
 resolution:
-  - 1080
-  - 1440
+  - 800
+  - 600
 assetCounter: 44
 config:
   hud:
