@@ -4,12 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
-  ZenGarden: assets/backgrounds/ZenGarden.jpg
+  ZenGarden: assets/backgrounds/ZenGarden.png
 
-  FoodOne: assets/backgrounds/FoodOne.jpg
-  FoodTwo: assets/backgrounds/FoodTwo.jpg
-  FoodThree: assets/backgrounds/FoodThree.jpg
-  FoodFour: assets/backgrounds/FoodFourjpg
   
 characters:
   deuzi:
@@ -26,6 +22,9 @@ characters:
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
+  snack_large: assets/objects/snack_large.png
+  snack_unique: assets/objects/snack_unique.png
+  snack_simple: assets/objects/snack_simple.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
