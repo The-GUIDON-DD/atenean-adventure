@@ -33,7 +33,7 @@ Berchmans:
   - text: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
   - choice:
     - "Line up for the E-Jeep because you want to see campus nature even if it takes longer.":
-      - show MainCharacter: normal AT RIGHT WITH MOVE
+      - show MainCharacter: normal AT RIGHT WITH MoveWithBounce
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
       - var thinker_score: "{thinker_score} + 1"
@@ -45,14 +45,13 @@ Berchmans:
       - var thinker_score: "{thinker_score} + 3"
 
     - "Pass the time lining up for the E-Jeep by talking to people there.":
-      - show MainCharacter: normal AT RIGHT WITH MOVE
+      - show MainCharacter: normal AT RIGHT WITH MoveWithBounce
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
 
     - "Turn around and go a different route.":
-      - show MainCharacter: normal AT OUTRIGHT WITH MOVE
-      - var latinhonors_score: "{latinhonors_score} + 3"
+      - show MainCharacter: normal AT OUTRIGHT WITH MoveWithBounce
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
 
