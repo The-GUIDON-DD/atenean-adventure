@@ -22,7 +22,7 @@ characters:
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
-  ID: assets/objects/ID.png
+  ID: assets/objects/holding_id.png
 
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3

@@ -47,6 +47,12 @@ punctuationMarks: [".",",","!","?",":","-"]
 # when a punctuation mark is shown, X extra puntuation wait times will be spent after adding the next character
 # the total amount of wait will be this value multiplied the text speed
 punctuationWait: 5
+# MoveWithBounceManual transition settings
+moveWithBounceSettings:
+  movetime: 550
+  bounceCount: 4
+  bounceHeight: 25
+
 
 precomputeBreakLines: true
 
