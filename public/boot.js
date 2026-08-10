@@ -1,7 +1,7 @@
 const RenJSConfig =  {
   'name': 'Quickstart',
-  'w': 800,
-  'h': 600,
+  'w': 1440,
+  'h': 1080,
   'renderer': Phaser.AUTO, // become renderer
   'scaleMode': Phaser.ScaleManager.SHOW_ALL,
   'loadingScreen': {
