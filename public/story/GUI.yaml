@@ -430,9 +430,6 @@ assets:
     fontsaudimat-mono:
       fileName: fontsfontsaudimat-mono.ttf
       name: fontsaudimat-mono
-    ysabeau-infant:
-      fileName: YsabeauInfant-VariableFont_wght.ttf
-      name: ysabeau-infant
   audio:
     Evan_Schaeffer_-_01_-_Aqueduct:
       fileName: audioEvan_Schaeffer_-_01_-_Aqueduct.mp3
