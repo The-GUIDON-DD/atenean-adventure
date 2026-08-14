@@ -37,31 +37,39 @@ IRH:
   - scene: Gesu
 Gesu:
   - show GesuBG: WITH FADE CONTINUE
-  - show crush: WITH FADE AT RIGHT CONTINUE
-  - show character: WITH FADE AT LEFT
+  - show crush: WITH FADE AT RIGHT FLIP CONTINUE
+  - show character: nervous WITH FADE AT LEFT
   - text: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
   - choice:
       - "You fix your hair and clothes, then you approach them to start a conversation.":
-          - show character: normal AT 300,600 WITH MOVE CONTINUE
-          - show crush: normal AT 500,600 WITH MOVE
+          - show character: sparkle WITH CUT CONTINUE
+          - show crush: normal WITH CUT FLIP CONTINUE
+          - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - show crush: normal AT 900,1080 WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - var thinker_score: "{thinker_score} + 0"
       - "You fix your posture to hopefully grab their attention as you pass by them.":
-          - show character: normal AT OUTRIGHT WITH MOVE
+          - show character: happy WITH CUT CONTINUE
+          - show character: happy AT OUTRIGHT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 0"
           - var thinker_score: "{thinker_score} + 2"
       - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
-          - show character: normal AT OUTLEFT WITH MOVE
+          - show character: nervous WITH CUT CONTINUE
+          - show character: nervous AT OUTLEFT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
       - "You look at them and realize that the spark isn’t there anymore.":
-          - show character: normal AT OUTLEFT WITH MOVE
+          - wait: 500
+          - show character: happy WITH CUT
+          - wait: 1000
+          - show character: happy WITH CUT FLIP CONTINUE
+          - show character: happy AT OUTLEFT WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 2"

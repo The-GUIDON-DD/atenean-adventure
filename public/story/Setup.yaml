@@ -3,7 +3,7 @@ backgrounds:
   room: assets/backgrounds/room_day.jpg
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
-  GesuBG: assets/backgrounds/Gesu.jpg
+  GesuBG: assets/backgrounds/Gesu.png
 
 characters:
   deuzi:
@@ -20,7 +20,10 @@ characters:
   character:
     displayName: Character
     looks:
-      normal: assets/characters/character.png
+      normal: assets/characters/C1_Neutral.png
+      happy: assets/characters/C1_Smile.png
+      sparkle: assets/characters/C1_Sparkles.png
+      nervous: assets/characters/C1_Nervous.png
 
 cgs:
   phone1: assets/objects/phone1.png
