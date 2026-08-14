@@ -37,17 +37,18 @@ config:
       separationV: 12
       sfx: none
       chosenColor: '#535050'
-      text:
-        x: 70
-        'y': 30
+      label:
+        x: 68
+        'y': 0
         style:
           font: ysabeau-infant
           fontWeight: normal
           fontSize: 18px
           fill: '#21201E'
           align: left
+          boundsAlignV: middle
           wordWrap: true
-          wordWrapWidth: 600
+          wordWrapWidth: 482
     - id: default
       type: messageBox
       asset: asset19
@@ -76,12 +77,13 @@ config:
       sfx: none
       text:
         x: 86
-        'y': 64
+        'y': 0
         style:
           font: ysabeau-infant
           fontSize: 28px
           fill: '#FFFFFF'
           align: left
+          boundsAlignV: middle
           wordWrap: true
           wordWrapWidth: '1010'
     - id: default
