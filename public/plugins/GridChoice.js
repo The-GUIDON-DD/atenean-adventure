@@ -57,28 +57,11 @@ function patchChoicesToGrid(game, config, id) {
     };
 }
 
-/**
- * Adds bounds to the message box text so that it is able to be vertically aligned when the text is multiline. 
- * This is a workaround for a bug in RenJS where the text is not vertically aligned when it is multiline.
- * @param {*} game - The RenJS game instance
- * @param {*} config - The configuration object for RenJS
- * @param {*} id - The ID of the message box to patch
- */
-function patchMessageBoxBounds(game, config, id) {
-    const mBox = game.gui.hud.mBoxes[id];
-    if (!mBox) {
-        console.error(`messageBox element with id: ${id} does not exist.`);
-        return; 
-    }
-    const {width, height} = mBox._frame;
-    mBox.text.setTextBounds(0, 0, width, height);
-}
+
 
 class GridChoice extends RenJS.Plugin {
     onInit() {
         patchChoicesToGrid(this.game, this.config, 'grid');
-        patchMessageBoxBounds(this.game, this.config, 'choice');
-        patchMessageBoxBounds(this.game, this.config, 'default');
     }
 }
 
