@@ -1,6 +1,20 @@
-const choiceButton = {width: 552, height: 82}
-const messageBoxDims = {width: 600, height: 200}
-
+/**
+ * Makes the choices appear in a grid instead of a vertical list. This ignores the alignment property.
+ * Only works for a maximum of 4 choices. It populates the grid from top to bottom, left to right. 
+ * @param {*} game - The RenJS game instance
+ * @param {*} config - The configuration object for RenJS
+ * @param {*} id - The ID of the choices element to patch
+ * @example
+ *   - choice IN grid:
+ *      - "First Option":
+ *          - var route: 1
+ *       - "Second Option":
+ *          - var route: 2
+ *       - "Third Option":
+ *          - var route: 3
+ *       - "Fourth Option":
+ *          - var route: 4
+ */
 function patchChoicesToGrid(game, config, id) {
     const handler = game.gui.hud.cHandlers[id];
     
@@ -36,13 +50,21 @@ function patchChoicesToGrid(game, config, id) {
         chBox.y = startY + (row * (chBox.height + gapV));
 
         // Adds context to the label for vertical alignment
-        chBox.label.setTextBounds(0, 0, choiceButton.width, choiceButton.height);
+        const {width, height} = chBox._frame;
+        chBox.label.setTextBounds(0, 0, width, height);
 
         return chBox;
     };
 }
 
-function patchMessageBoxChoice(game, config, id) {
+/**
+ * Adds bounds to the message box text so that it is able to be vertically aligned when the text is multiline. 
+ * This is a workaround for a bug in RenJS where the text is not vertically aligned when it is multiline.
+ * @param {*} game - The RenJS game instance
+ * @param {*} config - The configuration object for RenJS
+ * @param {*} id - The ID of the message box to patch
+ */
+function patchMessageBoxBounds(game, config, id) {
     const mBox = game.gui.hud.mBoxes[id];
     if (!mBox) {
         console.error(`messageBox element with id: ${id} does not exist.`);
@@ -55,8 +77,8 @@ function patchMessageBoxChoice(game, config, id) {
 class GridChoice extends RenJS.Plugin {
     onInit() {
         patchChoicesToGrid(this.game, this.config, 'grid');
-        patchMessageBoxChoice(this.game, this.config, 'choice');
-        patchMessageBoxChoice(this.game, this.config, 'default');
+        patchMessageBoxBounds(this.game, this.config, 'choice');
+        patchMessageBoxBounds(this.game, this.config, 'default');
     }
 }
 
