@@ -1,11 +1,11 @@
 const choiceButton = {width: 552, height: 82}
 const messageBoxDims = {width: 600, height: 200}
 
-function patchChoicesGrid(game, config) {
-    const handler = game.gui.hud.cHandlers.grid;
+function patchChoicesToGrid(game, config, id) {
+    const handler = game.gui.hud.cHandlers[id];
     
     if (!handler) {
-        console.error("choices element with id: grid does not exist.");
+        console.error(`choices element with id: ${id} does not exist.`);
         return; 
     }
 
@@ -36,18 +36,16 @@ function patchChoicesGrid(game, config) {
         chBox.y = startY + (row * (chBox.height + gapV));
 
         // Adds context to the label for vertical alignment
-        console.log(chBox.label)
         chBox.label.setTextBounds(0, 0, choiceButton.width, choiceButton.height);
 
         return chBox;
     };
 }
 
-function patchMessageBoxChoice(game, config) {
-    const mBox = game.gui.hud.mBoxes.choice;
-
+function patchMessageBoxChoice(game, config, id) {
+    const mBox = game.gui.hud.mBoxes[id];
     if (!mBox) {
-        console.error("messageBox element with id: choice does not exist.");
+        console.error(`messageBox element with id: ${id} does not exist.`);
         return; 
     }
     const {width, height} = mBox._frame;
@@ -56,8 +54,9 @@ function patchMessageBoxChoice(game, config) {
 
 class GridChoice extends RenJS.Plugin {
     onInit() {
-        patchChoicesGrid(this.game, this.config);
-        patchMessageBoxChoice(this.game, this.config);
+        patchChoicesToGrid(this.game, this.config, 'grid');
+        patchMessageBoxChoice(this.game, this.config, 'choice');
+        patchMessageBoxChoice(this.game, this.config, 'default');
     }
 }
 
