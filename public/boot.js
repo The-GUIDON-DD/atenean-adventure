@@ -25,7 +25,7 @@ const RenJSConfig =  {
   'storyText': [
     'story/Story.yaml'
   ],
-  'logChoices': true,
+  'logChoices': false,
 }
 
 const RenJSGame = new RenJS.game(RenJSConfig)
