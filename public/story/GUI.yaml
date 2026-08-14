@@ -39,7 +39,7 @@ config:
       chosenColor: '#535050'
       label:
         x: 68
-        'y': 0
+        'y': 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
         style:
           font: ysabeau-infant
           fontWeight: normal
@@ -57,12 +57,13 @@ config:
       sfx: none
       text:
         x: 86
-        'y': 41
+        'y': 0
         style:
           font: ysabeau-infant
           fontSize: 28px
           fill: '#FFFFFF'
           align: left
+          boundsAlignV: middle
           wordWrap: true
           wordWrapWidth: '1010'
       ctc:
