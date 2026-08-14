@@ -36,28 +36,28 @@ IRH:
   - text: Welcome to IRH!
   - text: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
   - show character: normal AT LEFT WITH CUT CONTINUE
-  - show athlete: normal AT 700,600  WITH CUT CONTINUE
-  - show blockmate: normal AT 550,600 WITH CUT
+  - show athlete: normal AT 1260,1080  WITH CUT CONTINUE
+  - show blockmate: normal AT 990,1080 WITH CUT FLIP
   - choice:
       - "You both make eye contact and immediately do your secret handshake in front of everyone!":
-          - show character: normal AT 300,600 WITH MOVE CONTINUE
-          - show blockmate: normal AT 500,600 WITH MOVE
+          - show character: normal AT 540,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 0"
           - var thinker_score: "{thinker_score} + 1"
       - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
-          - show character: normal AT 300,600 WITH MOVE CONTINUE
-          - show athlete: normal AT 650,600 WITH MOVE CONTINUE
-          - show blockmate: normal AT 500,600 WITH MOVE 
+          - show character: normal AT 540,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - var thinker_score: "{thinker_score} + 0"
       - "You are surprised to find out that they are an athlete.":
-          - show character: normal AT 300,600 WITH MOVE CONTINUE
-          - show athlete: normal AT 650,600 WITH MOVE CONTINUE
-          - show blockmate: normal AT 500,600 WITH MOVE 
+          - show character: normal AT 540,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
