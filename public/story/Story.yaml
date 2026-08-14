@@ -62,6 +62,7 @@ BellarmineHall:
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 1"
       - "You greet the professor respectfully to maintain a good work relationship.":
+          - show character: happy WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"

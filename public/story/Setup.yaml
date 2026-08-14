@@ -21,6 +21,7 @@ characters:
     displayName: Character
     looks:
       normal: assets/characters/C1_Neutral.png
+      happy: assets/characters/C1_Smile.png
       nervous: assets/characters/C1_Nervous.png
 
 cgs:
