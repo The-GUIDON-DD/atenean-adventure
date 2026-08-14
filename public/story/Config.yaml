@@ -16,7 +16,7 @@ positions:
     y: 1080
   OUTRIGHT: #Outside of the screen, right side
     x: 1679
-    y: 600
+    y: 1080
 
 transitions:
   defaults: # Default transition when showing/hiding
