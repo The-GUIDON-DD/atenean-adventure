@@ -2,9 +2,6 @@ positions:
   OUTLEFT: #Outside of the screen, left side
     x: -239
     y: 1080 #The y should be at the bottom of the screen
-  OUTLEFTUP: #Outside of the screen, left side
-    x: -239
-    y: 900
   LEFT: 
     x: 239
     y: 1080
@@ -17,12 +14,9 @@ positions:
   RIGHT: 
     x: 1199
     y: 1080
-  RIGHTUP: 
-    x: 1199
-    y: 900
   OUTRIGHT: #Outside of the screen, right side
     x: 1679
-    y: 600
+    y: 1080
 
 transitions:
   defaults: # Default transition when showing/hiding
