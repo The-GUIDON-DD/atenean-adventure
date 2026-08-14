@@ -54,7 +54,7 @@ moveWithBounceSettings:
   bounceHeight: 25
 
 
-precomputeBreakLines: false
+precomputeBreakLines: false # This adds an extra \n to multiline which vertically misaligns message text
 
 userPreferences:
   textSpeed: 60
