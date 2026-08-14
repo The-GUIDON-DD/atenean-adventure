@@ -54,7 +54,7 @@ moveWithBounceSettings:
   bounceHeight: 25
 
 
-precomputeBreakLines: true
+precomputeBreakLines: false
 
 userPreferences:
   textSpeed: 60
