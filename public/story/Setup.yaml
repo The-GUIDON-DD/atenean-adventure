@@ -17,7 +17,7 @@ characters:
   MainCharacter:
     displayName: MainCharacter
     looks:
-      normal: assets/characters/Character.png
+      normal: assets/characters/C1_Smile.png
 
 cgs:
   phone1: assets/objects/phone1.png
