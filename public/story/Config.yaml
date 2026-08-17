@@ -1,21 +1,21 @@
 positions:
   OUTLEFT: #Outside of the screen, left side
-    x: -133
-    y: 600 #The y should be at the bottom of the screen
+    x: -239
+    y: 1080 #The y should be at the bottom of the screen
   LEFT: 
-    x: 133
-    y: 600
+    x: 239
+    y: 1080
   DEFAULT:
-    x: 400
-    y: 600
+    x: 720
+    y: 1080
   CENTER: 
-    x: 400
-    y: 600
+    x: 720
+    y: 1080
   RIGHT: 
-    x: 666
-    y: 600
+    x: 1199
+    y: 1080
   OUTRIGHT: #Outside of the screen, right side
-    x: 933
+    x: 1679
     y: 600
 
 transitions:
