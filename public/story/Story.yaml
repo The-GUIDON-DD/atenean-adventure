@@ -28,7 +28,7 @@ SecA:
   - scene: endGame
 Berchmans:
   - hide deuzi:
-  - show XaiverHall: WITH FADE CONTINUE
+  - show XavierHall: WITH FADE CONTINUE
   - show MainCharacter: normal AT LEFT WITH FADE
   - text: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
   - choice:
