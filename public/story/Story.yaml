@@ -27,7 +27,6 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-<<<<<<< HEAD
   - hide deuzi:
 
   - show ZenGarden: WITH FADE CONTINUE
@@ -36,39 +35,33 @@ Berchmans:
   - choice:
     - "Buy one bigger-sized snack because you need the energy for class later.":
       - hide MainCharacter:
-      - show snack_large: AT 400,300
+      - show snack_large: AT 720,540
       - wait: 3000
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
     - "Buy snacks from different stalls because you want to support local businesses.":
       - hide MainCharacter:
-      - show snack_large: AT 150,250
-      - show snack_simple: AT 400,250
-      - show snack_unique: AT 650,250
+      - show snack_large: AT 270,450
+      - show snack_simple: AT 720,450
+      - show snack_unique: AT 1140,450
       - wait: 3000
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
     - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
-      - show snack_unique: AT 400,250
+      - show snack_unique: AT 1296,450
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
       - var thinker_score: "{thinker_score} + 1"
 
     - "Buy a simple, small snack that cooks fast so you don’t end up late.":
-      - show snack_simple: AT 400,250
+      - show snack_simple: AT 1296,450
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
 
   - hide ALL:
-||||||| ca89397
-=======
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to Berchmans!
-  - scene: endGame
->>>>>>> origin/route-2
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
