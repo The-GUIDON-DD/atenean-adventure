@@ -27,6 +27,7 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
+<<<<<<< HEAD
   - hide deuzi:
 
   - show ZenGarden: WITH FADE CONTINUE
@@ -62,6 +63,12 @@ Berchmans:
       - var thinker_score: "{thinker_score} + 3"
 
   - hide ALL:
+||||||| ca89397
+=======
+  - show room_night: WITH FADE CONTINUE
+  - deuzi says: Welcome to Berchmans!
+  - scene: endGame
+>>>>>>> origin/route-2
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
