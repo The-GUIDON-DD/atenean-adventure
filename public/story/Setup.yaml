@@ -5,7 +5,7 @@ backgrounds:
   Berchmans: assets/backgrounds/Berchmans.jpg
   SecA: assets/backgrounds/seca_placeholder.jpg
   RBR: assets/backgrounds/rbr_booths.png
-  LeongHall: assets/backgrounds/leongHall_placeholder.png
+  LeongHall: assets/backgrounds/LeongHall.png
 characters:
   deuzi:
     displayName: Deuzilene
@@ -18,15 +18,18 @@ characters:
     displayName: MainCharacter
     looks:
       normal: assets/characters/C1_Smile.png
+      sparkles: assets/characters/C1_Sparkles.png
+      neutral: assets/characters/C1_Neutral.png
+      talking: assets/characters/C1_Talking.png
   Blockmate:
     displayName: Blockmate
     looks:
       normal: assets/characters/Blockmate_neutral.png
-      talking: assets/character/Blockmate_talking.png
+      talking: assets/characters/Blockmate_talking.png
   Students:
     displayName: Students
     looks:
-      normal: assets/characters/students_placeholder.png
+      normal: assets/characters/SecA_students_neutral.png
 
 cgs:
   phone1: assets/objects/phone1.png
@@ -36,6 +39,7 @@ cgs:
   org_booth: assets/objects/route1/org_booths.png
   qr: assets/objects/route1/phone_with_qr.png
   MainCharacterWalk: assets/characters/C1_Smile.png
+  MainCharacterTalking: assets/characters/C1_Talking.png
   BlockmateWalk: assets/characters/Blockmate_neutral.png
 
 music:
