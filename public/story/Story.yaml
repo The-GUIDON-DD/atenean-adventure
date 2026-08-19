@@ -28,7 +28,7 @@ SecA:
   - hide deuzi:
   - show RBR: WITH FADE CONTINUE
   - text: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
-  - show MainCharacter: normal AT LEFT WITH FADE
+  - show MainCharacter: AT 200,1080 WITH FADE
   - choice:
       - "Signing up for at least one org that suits my course won't hurt. I need it for academic and professional experience!":
           - hide MainCharacter: WITH CUT
@@ -37,9 +37,9 @@ SecA:
             zoom: 1.25
             time: 500
           - call fadetime: 650
-          - show qr: AT 133,600 WITH FADE CONTINUE
+          - show qr: AT 239,1080 WITH FADE CONTINUE
           - animate qr:
-            position: {x: 133, y: 350}
+            position: {x: 239, y: 630}
             angle: 15
             time: 450
           - call fadetime: reset
@@ -56,9 +56,9 @@ SecA:
             zoom: 1.25
             time: 500
           - call fadetime: 650
-          - show qr: AT 133,600 WITH FADE CONTINUE
+          - show qr: AT 239,1080 WITH FADE CONTINUE
           - animate qr:
-            position: {x: 133, y: 350}
+            position: {x: 239, y: 630}
             angle: 15
             time: 450
           - call fadetime: reset
@@ -70,8 +70,8 @@ SecA:
 
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 200,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
@@ -81,8 +81,8 @@ SecA:
 
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 133,350 WITH CUT
-          - show MainCharacterWalk: AT 933,350 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 200,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
