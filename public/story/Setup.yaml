@@ -3,9 +3,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
   Berchmans: assets/backgrounds/Berchmans.jpg
-  SecA: assets/backgrounds/seca_placeholder.png
-  RBR: assets/backgrounds/rbr_booths.png
-  LeongHall: assets/backgrounds/leongHall_placeholder.png
+  SecA: assets/backgrounds/SecA.png
+  SecA_Blurred: assets/backgrounds/SecA_blurred.png
 characters:
   deuzi:
     displayName: Deuzilene
@@ -19,6 +18,7 @@ characters:
     looks:
       normal: assets/characters/C1_Smile.png
       sparkles: assets/characters/C1_Sparkles.png
+      neutral: assets/characters/C1_Neutral.png
   Blockmate:
     displayName: Blockmate
     looks:
@@ -32,8 +32,8 @@ characters:
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
-  music: assets/objects/route1/music.png
-  todo: assets/objects/route1/todo.png
+  music: assets/objects/route1/phone_with_music.png
+  todo: assets/objects/route1/phone_with_todo.png
   org_booth: assets/objects/route1/org_booths.png
   qr: assets/objects/route1/phone_with_qr.png
   MainCharacterWalk: assets/characters/C1_Smile.png

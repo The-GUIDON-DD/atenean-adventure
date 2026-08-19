@@ -1,6 +1,6 @@
 start:
   - show room: WITH FADE CONTINUE
-  - show deuzi: happy AT CENTER WITH FADE
+  - show deuzi: happy AT 720,1080 WITH FADE
   - deuzi says: What path are you following?
   - var latinhonors_score: 0
   - var innovator_score: 0
@@ -27,17 +27,17 @@ start:
 SecA:
   - hide deuzi:
   - show SecA: WITH FADE CONTINUE
-  - show MainCharacter: normal AT RIGHT WITH FADE
-  - show Students: normal AT LEFT WITH FADE
+  - show MainCharacter: neutral AT 1199,1080 WITH FADE CONTINUE
+  - show Students: AT 300,1140 WITH FADE
   - text: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
   - choice:
       - "Join and talk to them! You have plenty of time.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 666,350 WITH CUT
-          - show MainCharacterWalk: AT 400,350 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
+          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
-          - show MainCharacter: sparkles AT 400,600 WITH CUT
-          - show Students: normal AT LEFT WITH FADE
+          - show MainCharacter: sparkles AT 825,1080 WITH CUT
+          - show Students: normal AT 239,1080 WITH FADE
           - hide Students: WITH FADE CONTINUE
           - hide MainCharacter: WITH FADE CONTINUE
           - var latinhonors_score: "{latinhonors_score} + 1"
@@ -47,12 +47,14 @@ SecA:
           - scene: endGame
 
       - "Sit down to rest a bit and check up on your to-do list.":
+          - hide SecA: WITH CUT
           - hide MainCharacter: WITH CUT
           - hide Students: WITH CUT
+          - show SecA_Blurred: WITH CUT
           - call fadetime: 650
-          - show todo: AT 400,750 WITH FADE CONTINUE
+          - show todo: AT 720,1350 WITH FADE CONTINUE
           - animate todo:
-            position: {x: 400, y: 350}
+            position: {x: 720, y: 630}
             zoom: 1.15
             angle: 15
             time: 450
@@ -65,16 +67,16 @@ SecA:
 
       - "Greet them but keep walking because you want to make it to class early.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 666,350 WITH CUT
-          - show MainCharacterWalk: AT 400,350 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
+          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
-          - show MainCharacter: sparkles AT 400,600 WITH CUT
+          - show MainCharacter: sparkles AT 825,1080 WITH CUT
           - wait: 600
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 400,350 WITH CUT
-          - show MainCharacterWalk: AT -133,350 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 825,630 WITH CUT
+          - show MainCharacterWalk: AT -239,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
-          - show Students: normal AT LEFT
+          - show Students: normal AT 239,1080
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
@@ -82,12 +84,14 @@ SecA:
           - scene: endGame
 
       - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
+          - hide SecA: WITH CUT
           - hide MainCharacter: WITH CUT
           - hide Students: WITH CUT
+          - show SecA_Blurred: WITH CUT
           - call fadetime: 650
-          - show music: AT 400,750 WITH FADE CONTINUE
+          - show music: AT 720,1350 WITH FADE CONTINUE
           - animate music:
-            position: {x: 400, y: 350}
+            position: {x: 720, y: 630}
             zoom: 1.15
             angle: 15
             time: 450
