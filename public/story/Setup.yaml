@@ -4,7 +4,7 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   Berchmans: assets/backgrounds/Berchmans.jpg
   SecA: assets/backgrounds/seca_placeholder.jpg
-  RBR: assets/backgrounds/rbr_booths.png
+  RBR: assets/backgrounds/RBR_booths.png
   LeongHall: assets/backgrounds/leongHall_placeholder.png
 characters:
   deuzi:
