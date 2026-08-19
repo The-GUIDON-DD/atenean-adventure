@@ -18,7 +18,8 @@ config:
         x: 0
         'y': 0
         style:
-          font: fontsaudimat-mono
+          font: ysabeau-infant
+          fontWeight: normal
           fontSize: 18px
           fill: '#FFFFFF'
           align: center
@@ -26,38 +27,81 @@ config:
           boundsAlignV: middle
           wordWrap: true
           wordWrapWidth: 600
+    - id: grid
+      type: choices
+      asset: figma_asset31
+      x: 720
+      'y': 940
+      alignment: topDown
+      separationH: 31
+      separationV: 12
+      sfx: none
+      chosenColor: '#535050'
+      label:
+        x: 68
+        'y': 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
+        style:
+          font: ysabeau-infant
+          fontWeight: normal
+          fontSize: 18px
+          fill: '#21201E'
+          align: left
+          boundsAlignV: middle
+          wordWrap: true
+          wordWrapWidth: 482
     - id: default
       type: messageBox
       asset: asset19
-      x: 40
-      'y': 449
+      x: 111
+      'y': 800
       sfx: none
       text:
-        x: 24
-        'y': 24
+        x: 86
+        'y': 0
         style:
-          font: fontsaudimat-mono
-          fontSize: 20px
-          fill: '#89BAA8'
+          font: ysabeau-infant
+          fontSize: 28px
+          fill: '#FFFFFF'
           align: left
+          boundsAlignV: middle
           wordWrap: true
-          wordWrapWidth: '550'
+          wordWrapWidth: '1010'
       ctc:
         x: 570
         'y': 91
         asset: asset21
+    - id: choice
+      type: messageBox
+      asset: asset19
+      x: 111
+      'y': 800
+      sfx: none
+      transition: "MoveUp"
+      transitionTime: 500
+      text:
+        x: 86
+        'y': 0
+        style:
+          font: ysabeau-infant
+          fontSize: 28px
+          fill: '#FFFFFF'
+          align: left
+          boundsAlignV: middle
+          wordWrap: true
+          wordWrapWidth: '1010'
     - id: default
       type: nameBox
       asset: asset20
-      x: 84
-      'y': 400
+      x: 186
+      'y': 770
       text:
         x: 0
-        'y': 0
-        style:
-          font: fontsaudimat-mono
-          fontSize: 26px
-          fill: '#FFFFFF'
+        'y': 1.5
+        style: 
+          font: ysabeau-infant
+          fontWeight: bold
+          fontSize: 24px
+          fill: '#353535'
           align: left
           boundsAlignH: center
           boundsAlignV: middle
@@ -367,6 +411,11 @@ assets:
       fileName: hudasset31.png
       w: 716
       h: 65
+    figma_asset31:
+      name: figma_asset31
+      fileName: figma_hudasset31.png
+      w: 552
+      h: 82
     asset32:
       name: asset32
       fileName: hudasset32.png
