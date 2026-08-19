@@ -3,10 +3,10 @@
  * TextSpeed plugin for RenJS derived from the Fadetime plugin.
  * 
  * This plugin allows you to set a text speed for transitions at specific points.
- * You can change the text speed dynamically by calling 'textspeed' in your story.
+ * You can change the text speed dynamically by calling 'textSpeed' in your story.
  * @example
- * - call textspeed 0            // set text speed to 0%, or instant
- * - call textspeed reset            // restore default text speed
+ * - call textSpeed: 0            // set text speed to 0%, or instant
+ * - call textSpeed: reset            // restore default text speed
  */
 class TextSpeed extends RenJS.Plugin {
 
@@ -16,10 +16,14 @@ class TextSpeed extends RenJS.Plugin {
 
     onCall(params) {
         const preferences = this.game.userPreferences.preferences;
+        const {min, max} = preferences.textSpeed
         const value = params.body;
+
         const textSpeed = (value === 'reset' || value == null) ? this.defaultSpeed : parseInt(value, 10);
-        const clampedValue = clamp(value, preferences.textSpeed.min, preferences.textSpeed.max)
-        this.game.userPreferences.set('textSpeed', textSpeed);
+        const clampedValue = clamp(textSpeed, min, max);
+        const normalizedValue = (clampedValue - min) / (min - max);
+
+        this.game.userPreferences.set('textSpeed', normalizedValue);
         this.game.resolveAction();
     }
 
@@ -28,6 +32,13 @@ class TextSpeed extends RenJS.Plugin {
     }
 }
 
+/**
+ * A helper function to ensure that the inputted value stays within bounds.
+ * @param {*} value 
+ * @param {*} min 
+ * @param {*} max 
+ * @returns 
+ */
 function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
 }
