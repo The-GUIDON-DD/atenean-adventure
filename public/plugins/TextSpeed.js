@@ -4,8 +4,9 @@
  * 
  * This plugin allows you to set a text speed for transitions at specific points.
  * You can change the text speed dynamically by calling 'textSpeed' in your story.
+ * Note: Text speed is inverted, which means the higher the value, the faster, and vice versa.
  * @example
- * - call textSpeed: 0            // set text speed to 0%, or instant
+ * - call textSpeed: 100            // set text speed to fastest, which skips the animation text
  * - call textSpeed: reset            // restore default text speed
  */
 class TextSpeed extends RenJS.Plugin {
