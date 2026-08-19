@@ -74,8 +74,10 @@ config:
       type: messageBox
       asset: asset19
       x: 111
-      'y': 620
+      'y': 800
       sfx: none
+      transition: "MoveUp"
+      transitionTime: 500
       text:
         x: 86
         'y': 0
