@@ -21,7 +21,7 @@ class TextSpeed extends RenJS.Plugin {
 
         const textSpeed = (value === 'reset' || value == null) ? this.defaultSpeed : parseInt(value, 10);
         const clampedValue = clamp(textSpeed, min, max);
-        const normalizedValue = (clampedValue - min) / (min - max);
+        const normalizedValue = (clampedValue - min) / (max - min);
 
         this.game.userPreferences.set('textSpeed', normalizedValue);
         this.game.resolveAction();
