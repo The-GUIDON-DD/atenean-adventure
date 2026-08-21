@@ -88,7 +88,7 @@ SecA:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: endGame
+          - scene: RBR_Scene
       - "Sit down to rest a bit and check up on your to-do list.":
           - hide SecA: WITH CUT
           - hide MainCharacter: WITH CUT
@@ -97,51 +97,68 @@ SecA:
           - call fadetime: 650
           - show todo: AT 720,1350 WITH FADE CONTINUE
           - animate todo:
-            position: {x: 720, y: 630}
-            zoom: 1.15
+              position: {x: 720, y: 630}
+              zoom: 1.15
+          - hide ALL:
+          - scene: RBR_Scene
+RBR_Scene:
+  - show RBR: WITH FADE CONTINUE
+  - text: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
+  - show MainCharacter: AT 200,1080 WITH FADE
+  - choice:
+      - "Signing up for at least one org that suits my course won't hurt. I need it for academic and professional experience!":
+          - hide MainCharacter: WITH CUT
+          - show RBRAnimated: WITH CUT
+          - animate RBRAnimated:
+            zoom: 1.25
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 239,1080 WITH FADE CONTINUE
+          - animate qr:
+            position: {x: 239, y: 630}
             angle: 15
             time: 450
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
-          - var thinker_score: "{thinker_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 2"
           - hide ALL:
-          - scene: endGame
-      - "Greet them but keep walking because you want to make it to class early.":
+          - scene: SecA_3
+      - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
-          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
-          - hide MainCharacterWalk: WITH CUT
-          - show MainCharacter: sparkles AT 825,1080 WITH CUT
-          - wait: 600
+          - show RBRAnimated: WITH CUT
+          - animate RBRAnimated:
+            zoom: 1.25
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 239,1080 WITH FADE CONTINUE
+          - animate qr:
+            position: {x: 239, y: 630}
+            angle: 15
+            time: 450
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+      - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 825,630 WITH CUT
-          - show MainCharacterWalk: AT -239,630 WITH MoveWithBounce
+          - show MainCharacterWalk: normal AT 200,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
           - hide MainCharacterWalk: WITH CUT
-          - show Students: normal AT 239,1080
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
-          - scene: endGame
-      - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
-          - hide SecA: WITH CUT
+      - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - hide MainCharacter: WITH CUT
-          - hide Students: WITH CUT
-          - show SecA_Blurred: WITH CUT
-          - call fadetime: 650
-          - show music: AT 720,1350 WITH FADE CONTINUE
-          - animate music:
-            position: {x: 720, y: 630}
-            zoom: 1.15
-            angle: 15
-            time: 450
-          - call fadetime: reset
+          - show MainCharacterWalk: normal AT 200,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
-          - var socialeagle_score: "{socialeagle_score} + 1"
           - hide ALL:
-          - scene: endGame
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
@@ -177,4 +194,3 @@ endGame:
       - null
       - music by
       - Evan Schaeffer
-
