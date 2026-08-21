@@ -36,36 +36,29 @@ letterOpenScene:
   - show letterLayerBack: AT CENTERXY WITH FUSION CONTINUE
   - show letterLayerMiddle: AT 720,650 WITH FUSION CONTINUE
   - show letterLayerFront: AT CENTERXY WITH FUSION CONTINUE
-  - animate letterLayerBack:
-    time: 250
-    async: true
-    position:
-      y: 580
-  - animate letterLayerFront:
-    time: 250
-    async: true
-    position:
-      y: 580
-  - animate letterLayerMiddle:
-    time: 250
-    async: true
-    position:
-      y: 600
+  - show letterLayerBack: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerFront: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerMiddle: AT 720,500 WITH MOVE
+  - wait: 500
+  - show letterLayerMiddleOpened: AT 720,500 WITH FUSION
+  - hide letterLayerBack: WITH FADE CONTINUE
+  - hide letterLayerMiddle: WITH FADE CONTINUE
+  - hide letterLayerFront: WITH FADE CONTINUE
+  - hide letterLayerMiddleOpened: WITH FADE CONTINUE
+  - scene: intro
 intro:
-  - show room: WITH FADE CONTINUE
-  - show deuzi: happy AT CENTER WITH FADE
-  - deuzi says: What path are you following?
   - var latinhonors_score: 0
   - var innovator_score: 0
   - var socialeagle_score: 0
   - var thinker_score: 0
-  - choice:
-      - "SEC-A":
+  - visualchoice:
+      - routeChoice1 AT 240,540:
           - var route: 1
-      - "Berchmans":
+      - routeChoice2 AT 732,540:
           - var route: 2
-      - "IRH":
+      - routeChoice3 AT 1200,540:
           - var route: 3
+  - show deuzi: happy
   - deuzi says normal: Your future is at stake. Are you ready to take on this journey?
   - choice:
       - "Yes!":

@@ -18,7 +18,7 @@ class MultiAnimate extends RenJS.Plugin {
             y: anim.y ?? sprite.y,
             alpha: anim.alpha ?? 1,
             angle: anim.angle ?? sprite.angle,
-            zoom: anim.zoom ?? sprite.zoom,
+            zoom: anim.zoom ?? sprite.scale,
           },
           duration,
           Phaser.Easing.Quadratic.Out,
@@ -28,7 +28,7 @@ class MultiAnimate extends RenJS.Plugin {
     });
 
     // Resolving immediately keeps execution non-blocking
-    this.resolveAction();
+    this.game.resolveAction();
   }
 }
 

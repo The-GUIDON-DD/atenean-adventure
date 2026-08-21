@@ -302,6 +302,11 @@ config:
         "y": 506
         asset: asset17
         binding: return
+      - type: button
+        x: 616
+        "y": 506
+        asset: acceptBtn
+        binding: intro
 assets:
   images:
     title:
@@ -329,11 +334,14 @@ assets:
       name: asset22
       fileName: hudasset22.png
     muteBtn:
-      name: mutBtn
+      name: muteBtn
       fileName: music.svg
     confirmBtn:
       name: confirmBtn
       fileName: nextBtn.svg
+    acceptBtn:
+      name: acceptBtn
+      fileName: acceptBtn.png
     returnLogo:
       name: returnLogo
       fileName: logo.svg
