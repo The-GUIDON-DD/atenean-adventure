@@ -12,6 +12,8 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  player:
+    color: "#FFFFFF"
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
