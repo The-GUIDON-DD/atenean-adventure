@@ -3,6 +3,7 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
   title: assets/backgrounds/intro.png
+  sky: assets/backgrounds/skybg.png
 characters:
   deuzi:
     displayName: Deuzilene

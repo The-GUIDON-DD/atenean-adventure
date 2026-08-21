@@ -105,32 +105,16 @@ config:
           align: left
           boundsAlignH: center
           boundsAlignV: middle
-    - type: image
-      x: 640
-      "y": 468
-      asset: asset22
     - type: button
-      x: 646
-      "y": 474
-      asset: asset24
-      binding: openMenu
-      menu: settings
+      x: 1340
+      "y": 25
+      asset: muteBtn
+      binding: mute
     - type: button
-      x: 688
-      "y": 474
-      asset: asset23
-      binding: openMenu
-      menu: saveload
-    - type: button
-      x: 646
-      "y": 514
-      asset: asset26
-      binding: auto
-    - type: button
-      x: 688
-      "y": 514
-      asset: asset25
-      binding: skip
+      x: 50
+      "y": 25
+      asset: returnLogo
+      binding: return
   menus:
     main:
       - type: image
@@ -344,6 +328,12 @@ assets:
     asset22:
       name: asset22
       fileName: hudasset22.png
+    muteBtn:
+      name: mutBtn
+      fileName: music.svg
+    returnLogo:
+      name: returnLogo
+      fileName: logo.svg
   spritesheets:
     loading-bar:
       name: loading-bar
