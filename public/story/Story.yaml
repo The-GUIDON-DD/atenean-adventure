@@ -32,7 +32,7 @@ Berchmans:
   - scene: endGame
 IRH:
   - show IRHBG: WITH FADE CONTINUE
-  - hide deuzi:
+  - hide deuzi: WITH CUT
   - text: Welcome to IRH!
   - show character: happy AT OUTLEFT WITH CUT CONTINUE
   - show athlete: normal AT 1738,1080 WITH CUT CONTINUE
@@ -93,7 +93,8 @@ IRH:
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
-  - hide deuzi: WITH CUT
+  - wait: 1000
+  - hide CHARS:
   - scene: Gesu
 Gesu:
   - show GesuBG: WITH FADE CONTINUE
