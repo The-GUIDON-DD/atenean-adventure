@@ -82,7 +82,7 @@ class TextInput extends RenJS.Plugin {
       // create confirm button ass well
       const btn = this.game.add.button(
         this.game.world.centerX,
-        this.game.world.centerY + 100,
+        this.game.world.centerY + 200,
         "confirmBtn",
         confirmChange,
         this,
@@ -115,7 +115,7 @@ class TextInput extends RenJS.Plugin {
 
     // the input element needs to be scaled along he game
     const scale = this.game.scale.width / this.game.width;
-    const width = 600;
+    const width = 450;
     const height = 50;
     const inputProps = {
       x: (1440 - width) / 2,
@@ -137,6 +137,8 @@ class TextInput extends RenJS.Plugin {
     input.style.width = inputProps.width * scale + "px";
     input.style.height = inputProps.height * scale + "px";
     input.style.textAlign = "center";
+    input.style.background = "transparent";
+    input.style.border = "none";
     input.style["font-size"] = inputProps.fontSize * scale + "px";
     return input;
   }

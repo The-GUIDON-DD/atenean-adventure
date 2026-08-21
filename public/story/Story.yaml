@@ -1,9 +1,56 @@
 start:
   - show sky: WITH FADE CONTINUE
   - player says: Who... am I?
+  - show textBoxBg: WITH FADE AT 730,548
   - call TextInput:
     propertyType: name
     propertyName: player
+  - hide textBoxBg: WITH FADE
+  - scene: prologue
+prologue:
+  - show coveredcourts: WITH FADE CONTINUE
+  - text: You just got out of your PE class and have 30 minutes to spare until your next one in Areté.
+  - text: As you rummage through your bag, you come across a letter directing you to choose a different, longer path to class to determine your fate at Ateneo...
+  - show introLetter: AT 720,1200
+    zoom: 0
+  - show bag: AT 720,1200
+  - animate bag:
+    time: 750
+    position:
+      x: 720
+      y: 900
+  - animate introLetter:
+    time: 750
+    zoom: 1
+    angle: -5
+    position:
+      x: 720
+      y: 500
+  - animate introLetter:
+    time: 750
+    zoom: 1.75
+  - hide bag: WITH FADEOUT
+  - hide introLetter:
+  - scene: letterOpenScene
+letterOpenScene:
+  - show letterLayerBack: AT CENTERXY WITH FUSION CONTINUE
+  - show letterLayerMiddle: AT 720,650 WITH FUSION CONTINUE
+  - show letterLayerFront: AT CENTERXY WITH FUSION CONTINUE
+  - animate letterLayerBack:
+    time: 250
+    async: true
+    position:
+      y: 580
+  - animate letterLayerFront:
+    time: 250
+    async: true
+    position:
+      y: 580
+  - animate letterLayerMiddle:
+    time: 250
+    async: true
+    position:
+      y: 600
 intro:
   - show room: WITH FADE CONTINUE
   - show deuzi: happy AT CENTER WITH FADE

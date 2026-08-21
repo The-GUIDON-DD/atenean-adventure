@@ -331,6 +331,9 @@ assets:
     muteBtn:
       name: mutBtn
       fileName: music.svg
+    confirmBtn:
+      name: confirmBtn
+      fileName: nextBtn.svg
     returnLogo:
       name: returnLogo
       fileName: logo.svg

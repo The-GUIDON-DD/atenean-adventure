@@ -4,6 +4,7 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   title: assets/backgrounds/intro.png
   sky: assets/backgrounds/skybg.png
+  coveredcourts: assets/backgrounds/coveredcourts.webp
 characters:
   deuzi:
     displayName: Deuzilene
@@ -17,6 +18,13 @@ characters:
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
+  bag: assets/objects/bag.png
+  introLetter: assets/objects/letter.png
+  introLetterOpen: assets/objects/letteropen.png
+  letterLayerFront: assets/objects/letterlayers/front.png
+  letterLayerBack: assets/objects/letterlayers/back.png
+  letterLayerMiddle: assets/objects/letterlayers/letter.png
+  textBoxBg: assets/objects/inputfield.svg
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
