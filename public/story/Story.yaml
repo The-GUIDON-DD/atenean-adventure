@@ -64,14 +64,84 @@ intro:
       - "Yes!":
           - if ({route} == 1):
               - scene: SecA
-          - if ({route}  == 2):
+          - if ({route} == 2):
               - scene: Berchmans
           - if ({route} == 3):
               - scene: IRH
 SecA:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to SEC-A!
-  - scene: endGame
+  - hide deuzi:
+  - show SecA: WITH FADE CONTINUE
+  - show MainCharacter: neutral AT 1199,1080 WITH FADE CONTINUE
+  - show Students: AT 300,1140 WITH FADE
+  - text: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
+  - choice:
+      - "Join and talk to them! You have plenty of time.":
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
+          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - show MainCharacter: sparkles AT 825,1080 WITH CUT
+          - show Students: normal AT 239,1080 WITH FADE
+          - hide Students: WITH FADE CONTINUE
+          - hide MainCharacter: WITH FADE CONTINUE
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: endGame
+      - "Sit down to rest a bit and check up on your to-do list.":
+          - hide SecA: WITH CUT
+          - hide MainCharacter: WITH CUT
+          - hide Students: WITH CUT
+          - show SecA_Blurred: WITH CUT
+          - call fadetime: 650
+          - show todo: AT 720,1350 WITH FADE CONTINUE
+          - animate todo:
+            position: {x: 720, y: 630}
+            zoom: 1.15
+            angle: 15
+            time: 450
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: endGame
+      - "Greet them but keep walking because you want to make it to class early.":
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
+          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - show MainCharacter: sparkles AT 825,1080 WITH CUT
+          - wait: 600
+          - hide MainCharacter: WITH CUT
+          - show MainCharacterWalk: normal AT 825,630 WITH CUT
+          - show MainCharacterWalk: AT -239,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - show Students: normal AT 239,1080
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+          - hide ALL:
+          - scene: endGame
+      - "Sit down for a couple of minutes to listen to music and breathe in the fresh air.":
+          - hide SecA: WITH CUT
+          - hide MainCharacter: WITH CUT
+          - hide Students: WITH CUT
+          - show SecA_Blurred: WITH CUT
+          - call fadetime: 650
+          - show music: AT 720,1350 WITH FADE CONTINUE
+          - animate music:
+            position: {x: 720, y: 630}
+            zoom: 1.15
+            angle: 15
+            time: 450
+          - call fadetime: reset
+          - var innovator_score: "{innovator_score} + 3"
+          - var thinker_score: "{thinker_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - hide ALL:
+          - scene: endGame
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
@@ -107,3 +177,4 @@ endGame:
       - null
       - music by
       - Evan Schaeffer
+
