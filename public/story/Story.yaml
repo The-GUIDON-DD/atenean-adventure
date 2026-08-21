@@ -55,7 +55,7 @@ Gesu:
       - "You fix your posture to hopefully grab their attention as you pass by them.":
           - call fadetime: 350
           - show character: happy WITH FUSION
-          - call fadetime: 500
+          - call fadetime: 700
           - show character: happy WITH CUT CONTINUE
           - show character: happy AT OUTRIGHT WITH MOVE
           - call fadetime: reset
@@ -76,13 +76,13 @@ Gesu:
           - var thinker_score: "{thinker_score} + 3"
       - "You look at them and realize that the spark isn’t there anymore.":
           - wait: 500
-          - show character: happy WITH FUSION
+          - show character: normal WITH FUSION
           - wait: 1000
-          - fadetime: 500
-          - show character: happy WITH CUT FLIP CONTINUE
+          - call fadetime: 500
+          - show character: normal WITH CUT FLIP
           - wait: 500
           - show character: happy AT OUTLEFT WITH MOVE
-          - fadetime: reset
+          - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 2"
