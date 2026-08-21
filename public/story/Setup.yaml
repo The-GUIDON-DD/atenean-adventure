@@ -18,7 +18,9 @@ characters:
     displayName: Character
     looks:
       normal: assets/characters/C1_Neutral.png
+      happy: assets/characters/C1_Smile.png
       sparkle: assets/characters/C1_Sparkles.png
+      talking: assets/characters/C1_Talking.png
   blockmate:
     displayName: Blockmate
     looks:
