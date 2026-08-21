@@ -2,22 +2,24 @@ positions:
   OUTLEFT: #Outside of the screen, left side
     x: -239
     y: 1080 #The y should be at the bottom of the screen
-  LEFT: 
+  LEFT:
     x: 239
     y: 1080
   DEFAULT:
     x: 720
     y: 1080
-  CENTER: 
+  CENTER:
     x: 720
     y: 1080
-  RIGHT: 
+  CENTERXY:
+    x: 720
+    y: 540
+  RIGHT:
     x: 1199
     y: 1080
   OUTRIGHT: #Outside of the screen, right side
     x: 1679
     y: 1080
-
 transitions:
   defaults: # Default transition when showing/hiding
     characters: FADE
@@ -31,9 +33,8 @@ transitions:
   menus: FADE
   # transitions can be skipped by the player by tapping
   skippable: false
-
 # Fade transition time, in miliseconds
-fadetime : 150
+fadetime: 150
 # Time in each action that waits (e.g. text and say) when skipping
 skiptime: 50
 # Time in each action that waits (e.g. text and say) when auto playing
@@ -43,7 +44,7 @@ logChoices: false # Breaks choice color
 # Default waiting time for timeouts if not specified
 timeout: 5000
 # punctuation can add extra time when showing text in the message box, per special character
-punctuationMarks: [".",",","!","?",":","-"]
+punctuationMarks: [".", ",", "!", "?", ":", "-"]
 # when a punctuation mark is shown, X extra puntuation wait times will be spent after adding the next character
 # the total amount of wait will be this value multiplied the text speed
 punctuationWait: 5
@@ -52,13 +53,11 @@ moveWithBounceSettings:
   movetime: 550
   bounceCount: 4
   bounceHeight: 25
-
-
 precomputeBreakLines: false # This adds an extra \n to multiline which vertically misaligns message text
-
 userPreferences:
   textSpeed: 60
   autoSpeed: 150
   bgmv: 0.8
   sfxv: 0.5
   muted: false
+
