@@ -34,11 +34,11 @@ IRH:
   - show IRHBG: WITH FADE CONTINUE
   - hide deuzi:
   - text: Welcome to IRH!
-  - text: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
   - show character: normal AT LEFT WITH CUT CONTINUE
   - show athlete: normal AT 1260,1080  WITH CUT CONTINUE
   - show blockmate: normal AT 990,1080 WITH CUT FLIP
-  - choice:
+  - choice IN grid:
+      - text IN choice: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
       - "You both make eye contact and immediately do your secret handshake in front of everyone!":
           - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
           - show blockmate: normal AT 900,1080 WITH MOVE
