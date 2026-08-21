@@ -22,9 +22,7 @@ start:
               - scene: Berchmans
           - if ({route} == 3):
               - scene: IRH
-
-
-SecA:
+RBR:
   - hide deuzi:
   - show RBR: WITH FADE CONTINUE
   - text: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
@@ -48,7 +46,6 @@ SecA:
           - var socialeagle_score: "{socialeagle_score} + 2"
           - hide ALL:
           - scene: SecA_3
-
       - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
           - hide MainCharacter: WITH CUT
           - show RBRAnimated: WITH CUT
@@ -67,7 +64,6 @@ SecA:
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
           - scene: SecA_3
-
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
@@ -78,7 +74,6 @@ SecA:
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
           - scene: SecA_3
-
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
@@ -89,18 +84,14 @@ SecA:
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
           - scene: SecA_3
-
-
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!
   - scene: endGame
-
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
   - scene: endGame
-
 endGame:
   - deuzi says normal: Quickstart over!
   - hide ALL:
@@ -128,3 +119,4 @@ endGame:
       - null
       - music by
       - Evan Schaeffer
+
