@@ -4,7 +4,7 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
   IRHBG: assets/backgrounds/IRH.png
-  IRHBGAwkward: assets/backgrounds/IRHAwkward.jpg
+  IRHBGAwkward: assets/backgrounds/IRHAwkward.png
 
 characters:
   deuzi:

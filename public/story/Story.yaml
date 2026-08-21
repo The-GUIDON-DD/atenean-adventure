@@ -48,7 +48,7 @@ IRH:
           - var thinker_score: "{thinker_score} + 1"
       - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
           - show character: normal AT 540,1080 WITH MOVE CONTINUE
-          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show athlete: talking AT 1170,1080 WITH MOVE CONTINUE
           - show blockmate: normal AT 900,1080 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -56,14 +56,15 @@ IRH:
           - var thinker_score: "{thinker_score} + 0"
       - "You are surprised to find out that they are an athlete.":
           - show character: normal AT 540,1080 WITH MOVE CONTINUE
-          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show athlete: talking AT 1170,1080 WITH MOVE CONTINUE
           - show blockmate: normal AT 900,1080 WITH MOVE 
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
       - "Wave at them and remind them of the group project’s deadline this week.":
-          - show IRHBGAwkward: WITH FUSION
+          - show IRHBGAwkward: WITH FUSION CONTINUE
+          - show blockmate: talking WITH FUSION
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
