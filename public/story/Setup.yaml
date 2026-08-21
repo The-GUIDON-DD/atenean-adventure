@@ -5,6 +5,7 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   IRHBG: assets/backgrounds/IRH.png
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
+  GesuBG: assets/backgrounds/Gesu.png
 
 characters:
   deuzi:
@@ -14,13 +15,6 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
-  character:
-    displayName: Character
-    looks:
-      normal: assets/characters/C1_Neutral.png
-      happy: assets/characters/C1_Smile.png
-      sparkle: assets/characters/C1_Sparkles.png
-      talking: assets/characters/C1_Talking.png
   blockmate:
     displayName: Blockmate
     looks:
@@ -31,6 +25,18 @@ characters:
     looks:
       normal: assets/characters/Athlete_neutral.png
       talking: assets/characters/Athlete_talking.png
+  crush:
+    displayName: Crush
+    looks:
+      normal: assets/characters/Crush.png
+  character:
+    displayName: Character
+    looks:
+      normal: assets/characters/C1_Neutral.png
+      happy: assets/characters/C1_Smile.png
+      sparkle: assets/characters/C1_Sparkles.png
+      nervous: assets/characters/C1_Nervous.png
+      talking: assets/characters/C1_Talking.png
 
 cgs:
   phone1: assets/objects/phone1.png

@@ -93,6 +93,60 @@ IRH:
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
+  - hide deuzi: WITH CUT
+  - scene: Gesu
+Gesu:
+  - show GesuBG: WITH FADE CONTINUE
+  - show crush: WITH FADE AT RIGHT FLIP CONTINUE
+  - show character: nervous WITH FADE AT LEFT
+  - choice IN grid:
+      - text IN choice: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
+      - "You fix your hair and clothes, then you approach them to start a conversation.":
+          - show character: sparkle WITH FUSION
+          - show crush: normal WITH FUSION FLIP
+          - call fadetime: 500
+          - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - show crush: normal AT 900,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You fix your posture to hopefully grab their attention as you pass by them.":
+          - call fadetime: 350
+          - show character: happy WITH FUSION
+          - call fadetime: 500
+          - show character: happy WITH CUT CONTINUE
+          - show character: happy AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
+          - call fadetime: 350
+          - show character: talking WITH FUSION
+          - wait: 1000
+          - show character: nervous WITH FUSION
+          - show character: nervous AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You look at them and realize that the spark isn’t there anymore.":
+          - wait: 500
+          - show character: happy WITH FUSION
+          - wait: 1000
+          - fadetime: 500
+          - show character: happy WITH CUT FLIP CONTINUE
+          - wait: 500
+          - show character: happy AT OUTLEFT WITH MOVE
+          - fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
   - scene: endGame
 endGame:
   - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
