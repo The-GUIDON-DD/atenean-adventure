@@ -24,6 +24,7 @@ characters:
       happy: assets/characters/C1_Smile.png
       sparkle: assets/characters/C1_Sparkles.png
       nervous: assets/characters/C1_Nervous.png
+      talking: assets/characters/C1_Talking.png
 
 cgs:
   phone1: assets/objects/phone1.png
