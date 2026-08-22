@@ -1,18 +1,64 @@
 start:
-  - show room: WITH FADE CONTINUE
-  - show deuzi: happy AT CENTER WITH FADE
-  - deuzi says: What path are you following?
+  - show sky: WITH FADE CONTINUE
+  - player says: Who... am I?
+  - show textBoxBg: WITH FADE AT 730,548
+  - call TextInput:
+    propertyType: name
+    propertyName: player
+  - hide textBoxBg: WITH FADE
+  - scene: prologue
+prologue:
+  - show coveredcourts: WITH FADE CONTINUE
+  - text: You just got out of your PE class and have 30 minutes to spare until your next one in Areté.
+  - text: As you rummage through your bag, you come across a letter directing you to choose a different, longer path to class to determine your fate at Ateneo...
+  - show introLetter: AT 720,1200
+    zoom: 0
+  - show bag: AT 720,1200
+  - animate bag:
+    time: 750
+    position:
+      x: 720
+      y: 900
+  - animate introLetter:
+    time: 750
+    zoom: 1
+    angle: -5
+    position:
+      x: 720
+      y: 500
+  - animate introLetter:
+    time: 750
+    zoom: 1.75
+  - hide bag: WITH FADEOUT
+  - hide introLetter:
+  - scene: letterOpenScene
+letterOpenScene:
+  - show letterLayerBack: AT CENTERXY WITH FUSION CONTINUE
+  - show letterLayerMiddle: AT 720,650 WITH FUSION CONTINUE
+  - show letterLayerFront: AT CENTERXY WITH FUSION CONTINUE
+  - show letterLayerBack: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerFront: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerMiddle: AT 720,500 WITH MOVE
+  - wait: 500
+  - show letterLayerMiddleOpened: AT 720,500 WITH FUSION
+  - hide letterLayerBack: WITH FADE CONTINUE
+  - hide letterLayerMiddle: WITH FADE CONTINUE
+  - hide letterLayerFront: WITH FADE CONTINUE
+  - hide letterLayerMiddleOpened: WITH FADE CONTINUE
+  - scene: intro
+intro:
   - var latinhonors_score: 0
   - var innovator_score: 0
   - var socialeagle_score: 0
   - var thinker_score: 0
-  - choice:
-      - "SEC-A":
+  - visualchoice:
+      - routeChoice1 AT 240,540:
           - var route: 1
-      - "Berchmans":
+      - routeChoice2 AT 732,540:
           - var route: 2
-      - "IRH":
+      - routeChoice3 AT 1200,540:
           - var route: 3
+  - show deuzi: happy
   - deuzi says normal: Your future is at stake. Are you ready to take on this journey?
   - choice:
       - "Yes!":

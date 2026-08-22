@@ -1,9 +1,10 @@
-
 backgrounds:
   room: assets/backgrounds/room_day.jpg
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
-  IRHBG: assets/backgrounds/IRH.png
+  title: assets/backgrounds/intro.png
+  sky: assets/backgrounds/skybg.png
+  coveredcourts: assets/backgrounds/coveredcourts.webp  IRHBG: assets/backgrounds/IRH.png
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
   GesuBG: assets/backgrounds/Gesu.png
   BellarmineHallBG: assets/backgrounds/BellarmineHall.png
@@ -16,13 +17,15 @@ characters:
       normal: assets/characters/Char3NormalSchool.png
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
+  player:
+    color: "#FFFFFF"  
   athlete:
-    displayName: Blockmate
+    displayName: Athlete
     looks:
       normal: assets/characters/Athlete_neutral.png
       talking: assets/characters/Athlete_talking.png
   blockmate:
-    displayName: Athlete
+    displayName: Blockmate
     looks:
       normal: assets/characters/Blockmate_neutral.png
       talking: assets/characters/Blockmate_talking.png
@@ -46,14 +49,23 @@ characters:
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
-
+  bag: assets/objects/bag.png
+  introLetter: assets/objects/letter.png
+  introLetterOpen: assets/objects/letteropen.png
+  letterLayerFront: assets/objects/letterlayers/front.png
+  letterLayerBack: assets/objects/letterlayers/back.png
+  letterLayerMiddle: assets/objects/letterlayers/letter.png
+  letterLayerMiddleOpened: assets/objects/letterlayers/letterOpened.png
+  textBoxBg: assets/objects/inputfield.svg
+  routeChoice1: assets/objects/routes/route1.png
+  routeChoice2: assets/objects/routes/route2.png
+  routeChoice3: assets/objects/routes/route3.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
 sfx:
   ringtoneSFX: assets/audio/nokia6210-24-elise.mp3
   ringtoneSFX2: assets/audio/alcatel-top_secret.mp3
-
 extra:
   spritesheets:
     rain: assets/ambient/rain.png 17 17
