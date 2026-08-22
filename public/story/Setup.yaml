@@ -17,10 +17,15 @@ characters:
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
   athlete:
-    displayName: Athlete
+    displayName: Blockmate
     looks:
       normal: assets/characters/Athlete_neutral.png
       talking: assets/characters/Athlete_talking.png
+  blockmate:
+    displayName: Athlete
+    looks:
+      normal: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
   crush:
     displayName: Crush
     looks:
