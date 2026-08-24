@@ -73,6 +73,7 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
+  - hide ALL:
   - show BerchmansBG: WITH FADE CONTINUE
   - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
   - show Blockmate: neutral WITH CUT AT RIGHT
@@ -87,7 +88,6 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
-
     - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
       - MainCharacter says: "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study"
       - call fadetime: 500
@@ -97,7 +97,6 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
-
     - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
       - MainCharacter says: "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!"
       - call fadetime: 500
@@ -107,7 +106,6 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
-
     - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
       - MainCharacter says: "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time."
       - call fadetime: 500
@@ -117,8 +115,8 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
-      
-  - show ZenBG: WITH FADE CONTINUE
+  - hide ALL:
+  - show ZenBG: WITH FUSION CONTINUE
   - show MainCharacter: smile WITH CUT AT LEFT CONTINUE 
   - choice IN grid:
     - text IN choice: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do?
@@ -126,7 +124,6 @@ Berchmans:
       - hide MainCharacter:
       - show snack_large: AT 714,433 CONTINE
       - text: "Buy one bigger-sized snack because you need the energy for class later."
-      - wait: 3000
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
@@ -137,7 +134,6 @@ Berchmans:
       - show snack_large: AT 449,418
       - show snack_unique: AT 1009,584
       - text: "Buy snacks from different stalls because you want to support local businesses."
-      - wait: 3000
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 2"
       - var socialeagle_score: "{socialeagle_score} + 3"
@@ -155,7 +151,8 @@ Berchmans:
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
-  - show XavierHallBG: WITH FADE CONTINUE
+  - hide ALL:
+  - show XavierHallBG: WITH FUSION CONTINUE
   - show MainCharacter: smile AT LEFT WITH FADE
   - choice IN grid:
     - text IN choice: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
