@@ -6,11 +6,11 @@ backgrounds:
   sky: assets/backgrounds/skybg.png
   coveredcourts: assets/backgrounds/coveredcourts.webp
   BerchmansBG: assets/backgrounds/BerchmansBG.png
-
   ZenBG: assets/backgrounds/ZenBG.png
   ZenBlurBG: assets/backgrounds/ZenBlurBG.png
+  XavierHallBG: assets/backgrounds/XavierBG.png
+  XavierEJeepBG: assets/backgrounds/XavierEJeepBG.png
 
-  
 characters:
   deuzi:
     displayName: Deuzilene
@@ -24,13 +24,11 @@ characters:
   MainCharacter:
     displayName: MainCharacter
     looks:
-      normal: assets/characters/C1_smile.png
       smile: assets/characters/C1_smile.png
       talking: assets/characters/C1_talking.png
   Blockmate:
     displayName: Blockmate
     looks:
-      normal: assets/characters/Blockmate.png
       neutral: assets/characters/Blockmate_neutral.png
       talking: assets/characters/Blockmate_talking.png
 cgs:
