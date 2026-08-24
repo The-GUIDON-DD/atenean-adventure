@@ -33,11 +33,6 @@ characters:
       normal: assets/characters/Blockmate.png
       neutral: assets/characters/Blockmate_neutral.png
       talking: assets/characters/Blockmate_talking.png
-
-  MainCharacter: 
-      displayName: MainCharacter
-      looks:
-        normal: assets/characters/C1_Smile.png
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
