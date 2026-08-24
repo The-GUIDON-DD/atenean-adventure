@@ -182,6 +182,7 @@ Berchmans:
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
   - hide ALL:
+  - scene: endGame
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
