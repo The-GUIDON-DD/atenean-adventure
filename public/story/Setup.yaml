@@ -4,7 +4,8 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   title: assets/backgrounds/intro.png
   sky: assets/backgrounds/skybg.png
-  coveredcourts: assets/backgrounds/coveredcourts.webp  IRHBG: assets/backgrounds/IRH.png
+  coveredcourts: assets/backgrounds/coveredcourts.webp  
+  IRHBG: assets/backgrounds/IRH.png
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
   GesuBG: assets/backgrounds/Gesu.png
   BellarmineHallBG: assets/backgrounds/BellarmineHall.png
