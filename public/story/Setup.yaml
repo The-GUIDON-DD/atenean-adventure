@@ -4,7 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
-  ZenGarden: assets/backgrounds/ZenGarden.jpg
+  ZenBG: assets/backgrounds/ZenBG.png
+  ZenBlurBG: assets/backgrounds/ZenBlurBG.png
 
   
 characters:
