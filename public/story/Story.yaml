@@ -73,8 +73,50 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to Berchmans!
+  - show BerchmansBG: WITH FADE CONTINUE
+  - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
+  - show Blockmate: neutral WITH CUT AT RIGHT
+  - choice IN grid:
+    - text IN choice: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
+    - "Let's go to UPTC for a little adventure!":
+      - MainCharacter says: "Let's go to UPTC for a little adventure!"
+      - call fadetime: 500
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+
+    - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
+      - MainCharacter says: "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study"
+      - call fadetime: 500
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral 
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
+
+    - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
+      - MainCharacter says: "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!"
+      - call fadetime: 500
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
+
+    - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
+      - MainCharacter says: "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time."
+      - call fadetime: 500
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 3"
   - scene: endGame
 IRH:
   - show room_night: WITH FADE CONTINUE
