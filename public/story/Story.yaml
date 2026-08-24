@@ -123,7 +123,7 @@ RBR_Scene:
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - hide ALL:
-          - scene: SecA_3
+          - scene: LeongHall
       - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
           - hide MainCharacter: WITH CUT
           - show RBRAnimated: WITH CUT
@@ -141,6 +141,7 @@ RBR_Scene:
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
+          - scene: LeongHall
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
@@ -150,6 +151,7 @@ RBR_Scene:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
           - hide ALL:
+          - scene: LeongHall
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
@@ -159,6 +161,68 @@ RBR_Scene:
           - var innovator_score: "{innovator_score} + 3"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
+          - scene: LeongHall
+LeongHall:
+  - hide deuzi:
+  - show LeongHall: WITH FADE CONTINUE
+  - show MainCharacter: normal AT 350,1080 WITH FADE CONTINUE
+  - show Blockmate: talking AT 1050,1080 WITH FADE
+  - text: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
+  - choice:
+      - "Let's go to UPTC for a little adventure!":
+          - hide MainCharacter: WITH CUT
+          - hide Blockmate: WITH CUT
+          - show MainCharacterTalking: normal AT 350,630 WITH CUT
+          - show BlockmateWalk: normal AT 1050,630 WITH CUT
+          - show BlockmateWalk: AT 750,630 WITH MoveWithBounce
+          - show MainCharacterTalking: AT -239,630 WITH MoveWithBounce CONTINUE
+          - show BlockmateWalk: AT -239,630 WITH MoveWithBounce
+          - hide MainCharacterTalking: WITH CUT
+          - hide BlockmateWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: endGame
+      - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
+          - hide Blockmate: WITH CUT
+          - hide MainCharacter: WITH CUT
+          - show Blockmate: normal AT 1050,1080 WITH CUT
+          - show MainCharacterWalk: normal AT 350,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: endGame
+      - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
+          - hide MainCharacter: WITH CUT
+          - hide Blockmate: WITH CUT
+          - show MainCharacterTalking: normal AT 350,630 WITH CUT
+          - show BlockmateWalk: normal AT 1050,630 WITH CUT
+          - show BlockmateWalk: AT 750,630 WITH MoveWithBounce
+          - show MainCharacterTalking: AT -239,630 WITH MoveWithBounce CONTINUE
+          - show BlockmateWalk: AT -239,630 WITH MoveWithBounce
+          - hide MainCharacterTalking: WITH CUT
+          - hide BlockmateWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: endGame
+      - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
+          - hide Blockmate: WITH CUT
+          - hide MainCharacter: WITH CUT
+          - show Blockmate: normal AT 1050,1080 WITH CUT
+          - show MainCharacterWalk: normal AT 350,630 WITH CUT
+          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - hide MainCharacterWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - hide ALL:
+          - scene: endGame
 Berchmans:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to Berchmans!

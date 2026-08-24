@@ -8,7 +8,7 @@ backgrounds:
   SecA: assets/backgrounds/SecA.png
   SecA_Blurred: assets/backgrounds/SecA_blurred.png
   RBR: assets/backgrounds/rbr_booths.png
-  LeongHall: assets/backgrounds/leongHall_placeholder.png
+  LeongHall: assets/backgrounds/LeongHall.png
 characters:
   deuzi:
     displayName: Deuzilene
@@ -25,6 +25,12 @@ characters:
       normal: assets/characters/C1_Smile.png
       sparkles: assets/characters/C1_Sparkles.png
       neutral: assets/characters/C1_Neutral.png
+      talking: assets/characters/C1_Talking.png
+  Blockmate:
+    displayName: Blockmate
+    looks:
+      normal: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
   Students:
     displayName: Students
     looks:
@@ -49,6 +55,8 @@ cgs:
   qr: assets/objects/route1/phone_with_qr.png
   MainCharacterWalk: assets/characters/C1_Smile.png
   RBRAnimated: assets/backgrounds/rbr_booths.png
+  MainCharacterTalking: assets/characters/C1_Talking.png
+  BlockmateWalk: assets/characters/Blockmate_neutral.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
