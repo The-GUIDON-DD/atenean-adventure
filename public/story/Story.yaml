@@ -27,7 +27,7 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-  - show Berchmans: WITH CUT CONTINUE
+  - show Berchmans: WITH FADE CONTINUE
   - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
   - show Blockmate: neutral WITH CUT AT RIGHT
   - choice IN grid:
