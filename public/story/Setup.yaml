@@ -6,6 +6,11 @@ backgrounds:
   sky: assets/backgrounds/skybg.png
   coveredcourts: assets/backgrounds/coveredcourts.webp
   BerchmansBG: assets/backgrounds/BerchmansBG.png
+
+  ZenBG: assets/backgrounds/ZenBG.png
+  ZenBlurBG: assets/backgrounds/ZenBlurBG.png
+
+  
 characters:
   deuzi:
     displayName: Deuzilene
@@ -29,6 +34,10 @@ characters:
       neutral: assets/characters/Blockmate_neutral.png
       talking: assets/characters/Blockmate_talking.png
 
+  MainCharacter: 
+      displayName: MainCharacter
+      looks:
+        normal: assets/characters/C1_Smile.png
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
@@ -43,6 +52,10 @@ cgs:
   routeChoice1: assets/objects/routes/route1.png
   routeChoice2: assets/objects/routes/route2.png
   routeChoice3: assets/objects/routes/route3.png
+  snack_large: assets/objects/snack_large.png
+  snack_unique: assets/objects/snack_unique.png
+  snack_simple: assets/objects/snack_simple.png
+
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
