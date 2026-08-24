@@ -27,12 +27,10 @@ SecA:
   - deuzi says: Welcome to SEC-A!
   - scene: endGame
 Berchmans:
-  - hide deuzi:
-
-  - show ZenGarden: WITH FADE CONTINUE
-  - show MainCharacter: normal AT LEFT WITH FADE
-  - text: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do? 
-  - choice:
+  - show ZenGarden: WITH CUT CONTINUE
+  - show MainCharacter: normal WITH CUT AT LEFT CONTINUE 
+  - choice IN grid:
+    - text IN choice: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do?
     - "Buy one bigger-sized snack because you need the energy for class later.":
       - hide MainCharacter:
       - show snack_large: AT 720,540
@@ -54,14 +52,11 @@ Berchmans:
       - var innovator_score: "{innovator_score} + 3"
       - var socialeagle_score: "{socialeagle_score} + 2"
       - var thinker_score: "{thinker_score} + 1"
-
     - "Buy a simple, small snack that cooks fast so you don’t end up late.":
       - show snack_simple: AT 1296,450
       - var latinhonors_score: "{latinhonors_score} + 2"
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
-
-  - hide ALL:
 IRH:
   - show room_night: WITH FADE CONTINUE
   - deuzi says: Welcome to IRH!
