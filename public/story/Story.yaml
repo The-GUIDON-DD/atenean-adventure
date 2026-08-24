@@ -163,7 +163,6 @@ RBR_Scene:
           - hide ALL:
           - scene: LeongHall
 LeongHall:
-  - hide deuzi:
   - show LeongHall: WITH FADE CONTINUE
   - show MainCharacter: normal AT 350,1080 WITH FADE CONTINUE
   - show Blockmate: talking AT 1050,1080 WITH FADE
