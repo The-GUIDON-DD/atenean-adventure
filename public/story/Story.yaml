@@ -31,7 +31,9 @@ Berchmans:
   - choice IN grid:
     - text IN choice: You finally make it to Arete, and you must scan your ID, but it won’t work. What do you do?
     - "Keep trying to scan it as quickly as possible until it works.":
+      - show AreteTurnstile: WITH FUSION CONTINUE
       - show ID: AT 180,630
+      - text: Keep trying to scan it as quickly as possible until it works.
       - animate ID:
         position: {x: 1170, y: 630}
         time: 400
@@ -54,7 +56,9 @@ Berchmans:
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 3"
     - "Slowly take it off and scan again, chit-chatting with the person behind you about the machine not working.":
+      - show AreteTurnstile: WITH FUSION CONTINUE
       - show ID: AT 180,630
+      - text: Slowly take it off and scan again, chit-chatting with the person behind you about the machine not working.
       - animate ID:
         position: {x: 1170, y: 630}
         time: 400
@@ -78,10 +82,12 @@ Berchmans:
       - var socialeagle_score: "{socialeagle_score} + 3"
     - "Find a different way and ask the guard to just write down your name on the logsheet.":
       - show MainCharacter: normal WITH FADE AT RIGHT
+      - text: Find a different way and ask the guard to just write down your name on the logsheet.
       - var latinhonors_score: "{latinhonors_score} + 1"
       - var innovator_score: "{innovator_score} + 3"
       - var thinker_score: "{thinker_score} + 2"
     - "Just stay outside and sit on the bench until it is fixed, so you can study beforehand.":
+      - text: Just stay outside and sit on the bench until it is fixed, so you can study beforehand.
       - show MainCharacter: normal WITH FADE AT LEFT
       - var latinhonors_score: "{latinhonors_score} + 3"
       - var innovator_score: "{innovator_score} + 1"

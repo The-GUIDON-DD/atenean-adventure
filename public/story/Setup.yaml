@@ -4,7 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
-  Arete: assets/backgrounds/Arete.jpg
+  Arete: assets/backgrounds/AreteBG.png
+  AreteTurnstile: assets/backgrounds/AreteTurnstile.png
 
 characters:
   deuzi:
