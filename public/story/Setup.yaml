@@ -4,7 +4,8 @@ backgrounds:
   room_night: assets/backgrounds/room_night.jpg
   room_night_light: assets/backgrounds/room_night_light.jpg
 
-  XavierHall: assets/backgrounds/XavierHall.jpg
+  XavierHallBG: assets/backgrounds/XavierBG.png
+  XavierEJeepBG: assets/backgrounds/XavierEJeepBG.png
 
 characters:
   deuzi:
