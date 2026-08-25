@@ -39,7 +39,8 @@ config:
       chosenColor: "#535050"
       label:
         x: 68
-        "y": 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
+        'y': 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
+        lineSpacing: -10
         style:
           font: ysabeau-infant
           fontWeight: normal
