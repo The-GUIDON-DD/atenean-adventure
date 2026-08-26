@@ -10,7 +10,6 @@ backgrounds:
   ZenBlurBG: assets/backgrounds/ZenBlurBG.png
   XavierHallBG: assets/backgrounds/XavierBG.png
   XavierEJeepBG: assets/backgrounds/XavierEJeepBG.png
-
 characters:
   deuzi:
     displayName: Deuzilene
@@ -24,8 +23,8 @@ characters:
   MainCharacter:
     displayName: MainCharacter
     looks:
-      smile: assets/characters/C1_smile.png
-      talking: assets/characters/C1_talking.png
+      smile: assets/characters/C1_Smile.png
+      talking: assets/characters/C1_Talking.png
   Blockmate:
     displayName: Blockmate
     looks:
@@ -48,7 +47,6 @@ cgs:
   snack_large: assets/objects/snack_large.png
   snack_unique: assets/objects/snack_unique.png
   snack_simple: assets/objects/snack_simple.png
-
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
