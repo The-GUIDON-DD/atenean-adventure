@@ -10,6 +10,10 @@ backgrounds:
   ZenBlurBG: assets/backgrounds/ZenBlurBG.png
   XavierHallBG: assets/backgrounds/XavierBG.png
   XavierEJeepBG: assets/backgrounds/XavierEJeepBG.png
+  SecA: assets/backgrounds/SecA.png
+  SecA_Blurred: assets/backgrounds/SecA_blurred.png
+  RBR: assets/backgrounds/rbr_booths.png
+  LeongHall: assets/backgrounds/LeongHall.png
   IRHBG: assets/backgrounds/IRH.png
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
   GesuBG: assets/backgrounds/Gesu.png
@@ -29,6 +33,9 @@ characters:
     looks:
       smile: assets/characters/C1_Smile.png
       talking: assets/characters/C1_Talking.png
+      neutral: assets/characters/C1_Neutral.png
+      normal: assets/characters/C1_Smile.png
+      sparkles: assets/characters/C1_Sparkles.png
   Blockmate:
     displayName: Blockmate
     looks:
@@ -39,11 +46,10 @@ characters:
     looks:
       normal: assets/characters/Athlete_neutral.png
       talking: assets/characters/Athlete_talking.png
-  blockmate:
-    displayName: Blockmate
+  Students:
+    displayName: Students
     looks:
-      normal: assets/characters/Blockmate_neutral.png
-      talking: assets/characters/Blockmate_talking.png
+      normal: assets/characters/SecA_students_neutral.png
   crush:
     displayName: Crush
     looks:
@@ -66,8 +72,8 @@ cgs:
   bag: assets/objects/bag.png
   introLetter: assets/objects/letter.png
   introLetterOpen: assets/objects/letteropen.png
-  letterLayerFront: assets/objects/letterlayers/front.png
   letterLayerBack: assets/objects/letterlayers/back.png
+  letterLayerFront: assets/objects/letterlayers/front.png
   letterLayerMiddle: assets/objects/letterlayers/letter.png
   letterLayerMiddleOpened: assets/objects/letterlayers/letterOpened.png
   textBoxBg: assets/objects/inputfield.svg
@@ -77,6 +83,14 @@ cgs:
   snack_large: assets/objects/snack_large.png
   snack_unique: assets/objects/snack_unique.png
   snack_simple: assets/objects/snack_simple.png
+  music: assets/objects/route1/phone_with_music.png
+  todo: assets/objects/route1/phone_with_todo.png
+  org_booth: assets/objects/route1/org_booths.png
+  qr: assets/objects/route1/phone_with_qr.png
+  MainCharacterWalk: assets/characters/C1_Smile.png
+  RBRAnimated: assets/backgrounds/rbr_booths.png
+  MainCharacterTalking: assets/characters/C1_Talking.png
+  BlockmateWalk: assets/characters/Blockmate_neutral.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
