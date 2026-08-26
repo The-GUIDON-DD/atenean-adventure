@@ -44,7 +44,7 @@ letterOpenScene:
   - show letterLayerMiddle: AT 720,500 WITH MOVE
   - wait: 1000
   - hide letterLayerMiddle: WITH FADE CONTINUE
-  - letter says: "Dear {TextInputName_player},\n\nIf you are reading this, that means you have just started your freshman year at the Ateneo. You may be worried about what kind of Atenean you would grow to be in the future, but don’t worry—just trust me and follow my lead.\nThis time, for your next class at Areté, why don’t you choose another route? A small quest awaits, and from there, you’ll see how great of an Atenean you will become.\n\nBest of luck!\nSincerely, future {TextInputName_player}. "
+  - letter says: "Dear {TextInputName_player},\nIf you are reading this, that means you have just started your freshman year at the Ateneo. You may be worried about what kind of Atenean you would grow to be in the future, but don’t worry—just trust me and follow my lead.\nThis time, for your next class at Areté, why don’t you choose another route? A small quest awaits, and from there, you’ll see how great of an Atenean you will become.\n\nBest of luck!\nSincerely, future {TextInputName_player}. "
   - hide letterLayerBack: WITH FADE CONTINUE
   - hide letterLayerFront: WITH FADE CONTINUE
   - scene: intro
