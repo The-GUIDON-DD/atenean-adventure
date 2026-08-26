@@ -184,11 +184,175 @@ Berchmans:
   - hide ALL:
   - scene: endGame
 IRH:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to IRH!
+  - hide deuzi: WITH CUT
+  - show IRHBG: WITH FADE CONTINUE
+  - text: Welcome to IRH!
+  - show character: happy AT OUTLEFT WITH CUT CONTINUE
+  - show athlete: normal AT 1738,1080 WITH CUT CONTINUE
+  - show blockmate: normal AT 1468,1080 WITH CUT FLIP
+  - call fadetime: 500
+  - show character: happy AT LEFT WITH MOVE CONTINUE
+  - show athlete: normal AT 1260,1080 WITH MOVE CONTINUE
+  - show blockmate: normal AT 990,1080 WITH MOVE
+  - call fadetime: reset
+  - choice IN grid:
+      - text IN choice: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group. 
+      - "You both make eye contact and immediately do your secret handshake in front of everyone!":
+          - show character: sparkle WITH FUSION
+          - call fadetime: 500
+          - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 1"
+      - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
+          - call fadetime: 350
+          - show character: talking WITH FUSION
+          - show character: talking AT 540,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE 
+          - show athlete: talking WITH FUSION CONTINUE
+          - show blockmate: normal WITH CUT
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You are surprised to find out that they are an athlete.":
+          - call fadetime: 350
+          - show character: normal AT 540,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show blockmate: normal AT 900,1080 WITH MOVE
+          - show character: talking WITH FUSION CONTINUE
+          - show athlete: talking WITH FUSION CONTINUE
+          - show blockmate: normal WITH CUT
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+      - "Wave at them and remind them of the group project’s deadline this week.":
+          - call fadetime: 250
+          - show character: talking WITH FUSION
+          - wait: 500
+          - show character: happy WITH FUSION
+          - wait: 500
+          - show IRHBGAwkward: WITH FUSION CONTINUE
+          - show blockmate: talking WITH FUSION
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+  - wait: 1000
+  - hide CHARS:
+  - scene: Gesu
+Gesu:
+  - show GesuBG: WITH FADE CONTINUE
+  - show crush: WITH FADE AT RIGHT FLIP CONTINUE
+  - show character: nervous WITH FADE AT LEFT
+  - choice IN grid:
+      - text IN choice: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
+      - "You fix your hair and clothes, then you approach them to start a conversation.":
+          - show character: sparkle WITH FUSION
+          - show crush: normal WITH FUSION FLIP
+          - call fadetime: 500
+          - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - show crush: normal AT 900,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You fix your posture to hopefully grab their attention as you pass by them.":
+          - call fadetime: 350
+          - show character: happy WITH FUSION
+          - call fadetime: 500
+          - show character: happy WITH CUT CONTINUE
+          - show character: happy AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
+          - call fadetime: 350
+          - show character: talking WITH FUSION
+          - wait: 1000
+          - show character: nervous WITH FUSION
+          - show character: nervous AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You look at them and realize that the spark isn’t there anymore.":
+          - wait: 500
+          - show character: happy WITH FUSION
+          - wait: 1000
+          - fadetime: 500
+          - show character: happy WITH CUT FLIP CONTINUE
+          - wait: 500
+          - show character: happy AT OUTLEFT WITH MOVE
+          - fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+  - wait: 1000
+  - hide CHARS:
+  - scene: BellarmineHall
+BellarmineHall:
+  - show BellarmineHallBG: WITH CUT CONTINUE
+  - show prof: normal WITH CUT AT OUTRIGHT CONTINUE
+  - show character: normal WITH CUT AT OUTLEFT
+  - call fadetime: 500
+  - show prof: normal WITH MOVE AT RIGHT CONTINUE
+  - show character: normal WITH MOVE AT LEFT
+  - show character: nervous WITH FUSION
+  - call fadetime: reset 
+  - choice IN grid:
+      - text IN choice: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms. 
+      - "You go back and take a detour to avoid them.":
+          - call fadetime: 350
+          - show character: normal AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You endure their intimidating gaze and quickly walk past them.":
+          - call fadetime: 500
+          - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
+          - show character: normal AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
+          - call fadetime: 500
+          - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
+          - show character: normal AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+      - "You greet the professor respectfully to maintain a good work relationship.":
+          - show character: happy WITH FUSION
+          - call fadetime: 500
+          - show prof: normal AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
   - scene: endGame
 endGame:
-  - deuzi says normal: Quickstart over!
+  - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
   - hide ALL:
   - effect ROLLINGCREDITS:
     endGame: true
