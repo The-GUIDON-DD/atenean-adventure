@@ -5,6 +5,11 @@ backgrounds:
   title: assets/backgrounds/intro.png
   sky: assets/backgrounds/skybg.png
   coveredcourts: assets/backgrounds/coveredcourts.webp
+  BerchmansBG: assets/backgrounds/BerchmansBG.png
+  ZenBG: assets/backgrounds/ZenBG.png
+  ZenBlurBG: assets/backgrounds/ZenBlurBG.png
+  XavierHallBG: assets/backgrounds/XavierBG.png
+  XavierEJeepBG: assets/backgrounds/XavierEJeepBG.png
   SecA: assets/backgrounds/SecA.png
   SecA_Blurred: assets/backgrounds/SecA_blurred.png
   RBR: assets/backgrounds/rbr_booths.png
@@ -26,20 +31,21 @@ characters:
   MainCharacter:
     displayName: MainCharacter
     looks:
+      smile: assets/characters/C1_Smile.png
+      talking: assets/characters/C1_Talking.png
+      neutral: assets/characters/C1_Neutral.png
       normal: assets/characters/C1_Smile.png
       sparkles: assets/characters/C1_Sparkles.png
-      neutral: assets/characters/C1_Neutral.png
-      talking: assets/characters/C1_Talking.png
+  Blockmate:
+    displayName: Blockmate
+    looks:
+      neutral: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
   athlete:
     displayName: Athlete
     looks:
       normal: assets/characters/Athlete_neutral.png
       talking: assets/characters/Athlete_talking.png
-  Blockmate:
-    displayName: Blockmate
-    looks:
-      normal: assets/characters/Blockmate_neutral.png
-      talking: assets/characters/Blockmate_talking.png
   Students:
     displayName: Students
     looks:
@@ -74,6 +80,9 @@ cgs:
   routeChoice1: assets/objects/routes/route1.png
   routeChoice2: assets/objects/routes/route2.png
   routeChoice3: assets/objects/routes/route3.png
+  snack_large: assets/objects/snack_large.png
+  snack_unique: assets/objects/snack_unique.png
+  snack_simple: assets/objects/snack_simple.png
   music: assets/objects/route1/phone_with_music.png
   todo: assets/objects/route1/phone_with_todo.png
   org_booth: assets/objects/route1/org_booths.png

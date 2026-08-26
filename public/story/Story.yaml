@@ -223,8 +223,115 @@ LeongHall:
           - hide ALL:
           - scene: endGame
 Berchmans:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to Berchmans!
+  - hide ALL:
+  - show BerchmansBG: WITH FADE CONTINUE
+  - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
+  - show Blockmate: neutral WITH CUT AT RIGHT
+  - choice IN grid:
+    - text IN choice: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
+    - "Let's go to UPTC for a little adventure!":
+      - MainCharacter says: "Let's go to UPTC for a little adventure!"
+      - call fadetime: 500
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+    - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
+      - MainCharacter says: "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study"
+      - call fadetime: 500
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral 
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
+    - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
+      - MainCharacter says: "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!"
+      - call fadetime: 500
+      - show MainCharacter: talking AT OUTLEFT WITH MOVE
+      - show Blockmate: neutral AT OUTLEFT WITH MOVE
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
+    - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
+      - MainCharacter says: "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time."
+      - call fadetime: 500
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - show Blockmate: neutral
+      - call fadetime: reset
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 3"
+  - hide ALL:
+  - show ZenBG: WITH FUSION CONTINUE
+  - show MainCharacter: smile WITH CUT AT LEFT CONTINUE 
+  - choice IN grid:
+    - text IN choice: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do?
+    - "Buy one bigger-sized snack because you need the energy for class later.":
+      - hide MainCharacter:
+      - show snack_large: AT 714,433 CONTINE
+      - text: "Buy one bigger-sized snack because you need the energy for class later."
+      - var latinhonors_score: "{latinhonors_score} + 3"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
+    - "Buy snacks from different stalls because you want to support local businesses.":
+      - show ZenBlurBG: WITH FUSION CONTINUE
+      - hide MainCharacter:
+      - show snack_simple: AT 927,341
+      - show snack_large: AT 449,418
+      - show snack_unique: AT 1009,584
+      - text: "Buy snacks from different stalls because you want to support local businesses."
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+    - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
+      - show ZenBlurBG: WITH FUSION CONTINUE
+      - show snack_unique: AT 685,373
+      - text: "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!"
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
+      - var thinker_score: "{thinker_score} + 1"
+    - "Buy a simple, small snack that cooks fast so you don’t end up late.":
+      - show ZenBlurBG: WITH FUSION CONTINUE
+      - show snack_simple: AT 720,396
+      - text: "Buy a simple, small snack that cooks fast so you don’t end up late."
+      - var latinhonors_score: "{latinhonors_score} + 2"
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 3"
+  - hide ALL:
+  - show XavierHallBG: WITH FUSION CONTINUE
+  - show MainCharacter: smile AT LEFT WITH FADE
+  - choice IN grid:
+    - text IN choice: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
+    - "Line up for the E-Jeep because you want to see campus nature even if it takes longer.":
+      - show XavierEJeepBG: WITH FUSION CONTINUE
+      - show MainCharacter: smile AT RIGHT WITH MOVE
+      - text: Line up for the E-Jeep because you want to see campus nature even if it takes longer.
+      - var innovator_score: "{innovator_score} + 3"
+      - var socialeagle_score: "{socialeagle_score} + 2"
+      - var thinker_score: "{thinker_score} + 1"
+    - "Squish through the people and just walk towards Arete.":
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - text: Squish through the people and just walk towards Arete.
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var thinker_score: "{thinker_score} + 3"
+    - "Pass the time lining up for the E-Jeep by talking to people there.":
+      - show MainCharacter: talking AT RIGHT WITH FUSION
+      - text: Pass the time lining up for the E-Jeep by talking to people there.
+      - var latinhonors_score: "{latinhonors_score} + 1"
+      - var innovator_score: "{innovator_score} + 2"
+      - var socialeagle_score: "{socialeagle_score} + 3"
+    - "Turn around and go a different route.":
+      - show MainCharacter: smile WITH CUT FLIP CONTINUE
+      - show MainCharacter: smile AT OUTLEFT WITH MOVE
+      - text: Turn around and go a different route.
+      - var innovator_score: "{innovator_score} + 1"
+      - var thinker_score: "{thinker_score} + 2"
+  - hide ALL:
   - scene: endGame
 IRH:
   - hide deuzi: WITH CUT
