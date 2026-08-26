@@ -139,13 +139,18 @@ IRH:
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
-  - wait: 1000
+  - wait: 2000
   - hide CHARS:
   - scene: Gesu
 Gesu:
   - show GesuBG: WITH FADE CONTINUE
-  - show crush: WITH FADE AT RIGHT FLIP CONTINUE
-  - show character: nervous WITH FADE AT LEFT
+  - show crush: normal WITH CUT AT OUTRIGHT FLIP CONTINUE
+  - show character: normal WITH CUT AT OUTLEFT
+  - call fadetime: 500
+  - show crush: WITH MOVE AT RIGHT CONTINUE
+  - show character: normal WITH MOVE AT LEFT 
+  - show character: nervous WITH FUSION
+  - call fadetime: reset
   - choice IN grid:
       - text IN choice: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
       - "You fix your hair and clothes, then you approach them to start a conversation.":
@@ -200,6 +205,7 @@ Gesu:
 BellarmineHall:
   - show BellarmineHallBG: WITH CUT CONTINUE
   - show prof: normal WITH CUT AT OUTRIGHT CONTINUE
+  - show blockmate: normal WITH CUT AT OUTLEFT CONTINUE
   - show character: normal WITH CUT AT OUTLEFT
   - call fadetime: 500
   - show prof: normal WITH MOVE AT RIGHT CONTINUE
@@ -227,7 +233,11 @@ BellarmineHall:
           - var thinker_score: "{thinker_score} + 2"
       - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
           - call fadetime: 500
+          - show blockmate: normal WITH MOVE AT LEFT
+          - show character: normal WITH CUT
+          - call fadetime: 800
           - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
+          - show blockmate: normal AT OUTRIGHT WITH MOVE CONTINUE
           - show character: normal AT OUTRIGHT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 0"
