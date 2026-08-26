@@ -1,5 +1,7 @@
 start:
-  - show sky: WITH FADE CONTINUE
+  - show sky: WITH FADE
+  - wait: 500
+  - show introClouds: WITH FADE AT 720,700
   - show enterName: WITH FADE AT 725,430 CONTINUE
   - show textBoxBg: WITH FADE AT 730,548
   - call TextInput:
@@ -7,6 +9,7 @@ start:
     propertyName: player
   - hide textBoxBg: WITH FADE CONTINUE
   - hide enterName: WITH FADE
+  - hide introClouds: WITH FADE
   - scene: prologue
 prologue:
   - show coveredcourts: WITH FADE CONTINUE
@@ -86,9 +89,11 @@ SecA:
       - "Join and talk to them! You have plenty of time.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 1199,630 WITH CUT
-          - show MainCharacterWalk: AT 825,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show MainCharacterWalk: AT 825,630 WITH MOVE
           - hide MainCharacterWalk: WITH CUT
           - show MainCharacter: sparkles AT 825,1080 WITH CUT
+          - call fadetime: reset
           - show Students: normal AT 239,1080 WITH FADE
           - hide Students: WITH FADE CONTINUE
           - hide MainCharacter: WITH FADE CONTINUE
@@ -153,7 +158,9 @@ RBR_Scene:
       - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
-          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show MainCharacterWalk: AT 1679,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
@@ -161,9 +168,11 @@ RBR_Scene:
           - hide ALL:
           - scene: LeongHall
       - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
+          - call fadetime: 500
           - hide MainCharacter: WITH CUT
           - show MainCharacterWalk: normal AT 200,630 WITH CUT
-          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - show MainCharacterWalk: AT 1679,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
@@ -181,9 +190,11 @@ LeongHall:
           - hide Blockmate: WITH CUT
           - show MainCharacterTalking: normal AT 350,630 WITH CUT
           - show BlockmateWalk: normal AT 1050,630 WITH CUT
-          - show BlockmateWalk: AT 750,630 WITH MoveWithBounce
-          - show MainCharacterTalking: AT -239,630 WITH MoveWithBounce CONTINUE
-          - show BlockmateWalk: AT -239,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show BlockmateWalk: AT 750,630 WITH MOVE
+          - show MainCharacterTalking: AT -239,630 WITH MOVE CONTINUE
+          - show BlockmateWalk: AT -239,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterTalking: WITH CUT
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
@@ -196,7 +207,9 @@ LeongHall:
           - hide MainCharacter: WITH CUT
           - show Blockmate: normal AT 1050,1080 WITH CUT
           - show MainCharacterWalk: normal AT 350,630 WITH CUT
-          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show MainCharacterWalk: AT 1679,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
@@ -208,9 +221,11 @@ LeongHall:
           - hide Blockmate: WITH CUT
           - show MainCharacterTalking: normal AT 350,630 WITH CUT
           - show BlockmateWalk: normal AT 1050,630 WITH CUT
-          - show BlockmateWalk: AT 750,630 WITH MoveWithBounce
-          - show MainCharacterTalking: AT -239,630 WITH MoveWithBounce CONTINUE
-          - show BlockmateWalk: AT -239,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show BlockmateWalk: AT 750,630 WITH MOVE
+          - show MainCharacterTalking: AT -239,630 WITH MOVE CONTINUE
+          - show BlockmateWalk: AT -239,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterTalking: WITH CUT
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
@@ -223,7 +238,9 @@ LeongHall:
           - hide MainCharacter: WITH CUT
           - show Blockmate: normal AT 1050,1080 WITH CUT
           - show MainCharacterWalk: normal AT 350,630 WITH CUT
-          - show MainCharacterWalk: AT 1679,630 WITH MoveWithBounce
+          - call fadetime: 500
+          - show MainCharacterWalk: AT 1679,630 WITH MOVE
+          - call fadetime: reset
           - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
