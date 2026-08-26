@@ -4,12 +4,11 @@ backgrounds:
   room_night_light: assets/backgrounds/room_night_light.jpg
   title: assets/backgrounds/intro.png
   sky: assets/backgrounds/skybg.png
-  coveredcourts: assets/backgrounds/coveredcourts.webp  
+  coveredcourts: assets/backgrounds/coveredcourts.webp
   IRHBG: assets/backgrounds/IRH.png
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
   GesuBG: assets/backgrounds/Gesu.png
   BellarmineHallBG: assets/backgrounds/BellarmineHall.png
-
 characters:
   deuzi:
     displayName: Deuzilene
@@ -19,7 +18,7 @@ characters:
       happy: assets/characters/Char3HappySchool.png
       angry: assets/characters/Char3AngrySchool.png
   player:
-    color: "#FFFFFF"  
+    color: "#FFFFFF"
   athlete:
     displayName: Athlete
     looks:
@@ -46,7 +45,6 @@ characters:
     displayName: Prof
     looks:
       normal: assets/characters/Prof_neutral.png
-
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
