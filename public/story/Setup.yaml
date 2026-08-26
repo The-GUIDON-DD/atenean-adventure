@@ -5,6 +5,10 @@ backgrounds:
   title: assets/backgrounds/intro.png
   sky: assets/backgrounds/skybg.png
   coveredcourts: assets/backgrounds/coveredcourts.webp
+  IRHBG: assets/backgrounds/IRH.png
+  IRHBGAwkward: assets/backgrounds/IRHAwkward.png
+  GesuBG: assets/backgrounds/Gesu.png
+  BellarmineHallBG: assets/backgrounds/BellarmineHall.png
 characters:
   deuzi:
     displayName: Deuzilene
@@ -15,6 +19,32 @@ characters:
       angry: assets/characters/Char3AngrySchool.png
   player:
     color: "#FFFFFF"
+  athlete:
+    displayName: Athlete
+    looks:
+      normal: assets/characters/Athlete_neutral.png
+      talking: assets/characters/Athlete_talking.png
+  blockmate:
+    displayName: Blockmate
+    looks:
+      normal: assets/characters/Blockmate_neutral.png
+      talking: assets/characters/Blockmate_talking.png
+  crush:
+    displayName: Crush
+    looks:
+      normal: assets/characters/Crush.png
+  character:
+    displayName: Character
+    looks:
+      normal: assets/characters/C1_Neutral.png
+      happy: assets/characters/C1_Smile.png
+      sparkle: assets/characters/C1_Sparkles.png
+      nervous: assets/characters/C1_Nervous.png
+      talking: assets/characters/C1_Talking.png
+  prof:
+    displayName: Prof
+    looks:
+      normal: assets/characters/Prof_neutral.png
 cgs:
   phone1: assets/objects/phone1.png
   phone2: assets/objects/phone2.png
