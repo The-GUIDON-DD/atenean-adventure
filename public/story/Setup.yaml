@@ -19,6 +19,14 @@ backgrounds:
   GesuBG: assets/backgrounds/Gesu.png
   BellarmineHallBG: assets/backgrounds/BellarmineHall.png
 characters:
+  narrator:
+    displayName: ""
+    messageBox: readyBox
+    nameBox: noBox
+  letter:
+    displayName: ""
+    messageBox: letterModal
+    nameBox: noBox
   deuzi:
     displayName: Deuzilene
     speechColour: "#ca90cf"
@@ -91,6 +99,10 @@ cgs:
   RBRAnimated: assets/backgrounds/rbr_booths.png
   MainCharacterTalking: assets/characters/C1_Talking.png
   BlockmateWalk: assets/characters/Blockmate_neutral.png
+  notYetBtn: assets/gui/notyetBtn.png
+  readyBtn: assets/gui/readyBtn.png
+  enterName: assets/gui/entername.png
+  whichPath: assets/gui/whichpath.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3

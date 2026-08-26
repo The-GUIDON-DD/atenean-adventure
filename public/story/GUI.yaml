@@ -39,7 +39,7 @@ config:
       chosenColor: "#535050"
       label:
         x: 68
-        'y': 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
+        "y": 2 # 0 Doesn't look visually centered, so I added 2 pixels to the y
         lineSpacing: -10
         style:
           font: ysabeau-infant
@@ -90,6 +90,38 @@ config:
           boundsAlignV: middle
           wordWrap: true
           wordWrapWidth: "1010"
+    - id: readyBox
+      type: messageBox
+      asset: areYouReadyBG
+      x: 371
+      "y": 300
+      text:
+        x: 99
+        y: 100
+        style:
+          font: ysabeau-infant
+          fontSize: 36px
+          fill: "#6B4F42"
+          align: center
+          boundsAlignV: middle
+          wordWrap: true
+          wordWrapWidth: "500"
+    - id: letterModal
+      type: messageBox
+      asset: letterBG
+      x: 370
+      "y": 300
+      text:
+        x: 45
+        y: 30
+        style:
+          font: ysabeau-infant
+          fontSize: 20px
+          fill: "#6B4F42"
+          align: left
+          boundsAlignV: middle
+          wordWrap: true
+          wordWrapWidth: "605"
     - id: default
       type: nameBox
       asset: asset20
@@ -346,6 +378,12 @@ assets:
     returnLogo:
       name: returnLogo
       fileName: logo.svg
+    areYouReadyBG:
+      name: areYouReadyBG
+      fileName: modal.png
+    letterBG:
+      name: letterBG
+      fileName: lettermodal.png
   spritesheets:
     loading-bar:
       name: loading-bar
