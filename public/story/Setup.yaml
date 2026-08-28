@@ -101,6 +101,7 @@ cgs:
   BlockmateWalk: assets/characters/Blockmate_neutral.png
   notYetBtn: assets/gui/notyetBtn.png
   readyBtn: assets/gui/readyBtn.png
+  letsStartBtn: assets/gui/letsstart.png
   enterName: assets/gui/entername.png
   whichPath: assets/gui/whichpath.png
   introClouds: assets/backgrounds/introclouds.png
@@ -116,3 +117,7 @@ extra:
     sakura: assets/ambient/sakura-petals.png 17 26
     snowflakes: assets/ambient/snowflakes.png 17 17
     snowflakes_large: assets/ambient/snowflakes_large.png 64 64
+    c1_select: assets/characters/select/c1_sprites.webp 252 233
+    c2_select: assets/characters/select/c2_sprites.webp 252 233
+    c3_select: assets/characters/select/c3_sprites.webp 252 233
+    c4_select: assets/characters/select/c4_sprites.webp 252 233

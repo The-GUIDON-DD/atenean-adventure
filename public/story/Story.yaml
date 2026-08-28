@@ -9,6 +9,27 @@ start:
     propertyName: player
   - hide textBoxBg: WITH FADE CONTINUE
   - hide enterName: WITH FADE
+  - call characterSelect:
+      characters:
+        - id: c1
+          x: 250
+          y: 400
+          spriteKey: c1_select
+        - id: c2
+          x: 550
+          y: 600
+          spriteKey: c2_select
+        - id: c3
+          x: 850
+          y: 400
+          spriteKey: c3_select
+        - id: c4
+          x: 1150
+          y: 600
+          spriteKey: c4_select
+      confirmX: 600
+      confirmY: 850
+      confirmSprite: letsStartBtn
   - hide introClouds: WITH FADE
   - scene: prologue
 prologue:
