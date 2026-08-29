@@ -283,10 +283,14 @@ LeongHall:
               - show c4: talking AT -239,1080 WITH MOVE
           - show BlockmateWalk: AT -239,630 WITH MOVE
           - call fadetime: reset
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -342,10 +346,14 @@ LeongHall:
               - show c4: talking AT -239,1080 WITH MOVE CONTINUE
           - show BlockmateWalk: AT -239,630 WITH MOVE
           - call fadetime: reset
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -354,10 +362,14 @@ LeongHall:
           - scene: endGame
       - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
           - hide Blockmate: WITH CUT
-          - hide c1: WITH CUT
-          - hide c2: WITH CUT
-          - hide c3: WITH CUT
-          - hide c4: WITH CUT
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - show Blockmate: neutral AT 1050,1080 WITH CUT
           - if ({selected_char} == "c1"):
               - show c1: happy AT 350,1080 WITH CUT
@@ -477,10 +489,14 @@ Gonzaga:
   - choice IN grid:
       - text IN choice: You feel a bit of hunger at Gonzaga and notice a lot of food stalls. What do you do?
       - "Buy one bigger-sized snack because you need the energy for class later.":
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - show snack_large: AT 714,433 CONTINE
           - text: "Buy one bigger-sized snack because you need the energy for class later."
           - var latinhonors_score: "{latinhonors_score} + 3"
@@ -488,10 +504,14 @@ Gonzaga:
           - var thinker_score: "{thinker_score} + 2"
       - "Buy snacks from different stalls because you want to support local businesses.":
           - show ZenBlurBG: WITH FUSION CONTINUE
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - show snack_simple: AT 927,341
           - show snack_large: AT 449,418
           - show snack_unique: AT 1009,584
@@ -501,10 +521,14 @@ Gonzaga:
           - var socialeagle_score: "{socialeagle_score} + 3"
       - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
           - show ZenBlurBG: WITH FUSION CONTINUE
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - show snack_unique: AT 685,373
           - text: "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!"
           - var innovator_score: "{innovator_score} + 3"
@@ -512,10 +536,14 @@ Gonzaga:
           - var thinker_score: "{thinker_score} + 1"
       - "Buy a simple, small snack that cooks fast so you don’t end up late.":
           - show ZenBlurBG: WITH FUSION CONTINUE
-          - hide c1:
-          - hide c2:
-          - hide c3:
-          - hide c4:
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
           - show snack_simple: AT 720,396
           - text: "Buy a simple, small snack that cooks fast so you don’t end up late."
           - var latinhonors_score: "{latinhonors_score} + 2"
@@ -525,31 +553,69 @@ Gonzaga:
   - scene: XavierHall
 XavierHall:
   - show XavierHallBG: WITH FUSION CONTINUE
-  - show MainCharacter: smile AT LEFT WITH FADE
+  - if ({selected_char} == "c1"):
+      - show c1: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c2"):
+      - show c2: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c3"):
+      - show c3: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c4"):
+      - show c4: happy AT LEFT WITH FADE
   - choice IN grid:
       - text IN choice: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
       - "Line up for the E-Jeep because you want to see campus nature even if it takes longer.":
           - show XavierEJeepBG: WITH FUSION CONTINUE
-          - show MainCharacter: smile AT RIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT RIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT RIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT RIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT RIGHT WITH MOVE
           - text: Line up for the E-Jeep because you want to see campus nature even if it takes longer.
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 1"
       - "Squish through the people and just walk towards Arete.":
-          - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT OUTRIGHT WITH MOVE
           - text: Squish through the people and just walk towards Arete.
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
       - "Pass the time lining up for the E-Jeep by talking to people there.":
-          - show MainCharacter: talking AT RIGHT WITH FUSION
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT RIGHT WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT RIGHT WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT RIGHT WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT RIGHT WITH FUSION
           - text: Pass the time lining up for the E-Jeep by talking to people there.
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
       - "Turn around and go a different route.":
-          - show MainCharacter: smile WITH CUT FLIP CONTINUE
-          - show MainCharacter: smile AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH CUT FLIP CONTINUE
+              - show c1: happy WITH AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH CUT FLIP CONTINUE
+              - show c2: happy WITH AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH CUT FLIP CONTINUE
+              - show c3: happy WITH AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH CUT FLIP CONTINUE
+              - show c4: happy WITH AT OUTLEFT WITH MOVE
           - text: Turn around and go a different route.
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
