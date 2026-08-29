@@ -463,14 +463,24 @@ Berchmans:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
   - hide ALL:
-  - scene: ZenGarden
-ZenGarden:
+  - scene: Gonzaga
+Gonzaga:
   - show ZenBG: WITH FUSION CONTINUE
-  - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy with CUT AT LEFT CONTINUE
   - choice IN grid:
-      - text IN choice: You feel a bit of hunger at Zen Garden and notice a lot of food stalls. What do you do?
+      - text IN choice: You feel a bit of hunger at Gonzaga and notice a lot of food stalls. What do you do?
       - "Buy one bigger-sized snack because you need the energy for class later.":
-          - hide MainCharacter:
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - show snack_large: AT 714,433 CONTINE
           - text: "Buy one bigger-sized snack because you need the energy for class later."
           - var latinhonors_score: "{latinhonors_score} + 3"
@@ -478,7 +488,10 @@ ZenGarden:
           - var thinker_score: "{thinker_score} + 2"
       - "Buy snacks from different stalls because you want to support local businesses.":
           - show ZenBlurBG: WITH FUSION CONTINUE
-          - hide MainCharacter:
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - show snack_simple: AT 927,341
           - show snack_large: AT 449,418
           - show snack_unique: AT 1009,584
@@ -488,6 +501,10 @@ ZenGarden:
           - var socialeagle_score: "{socialeagle_score} + 3"
       - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
           - show ZenBlurBG: WITH FUSION CONTINUE
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - show snack_unique: AT 685,373
           - text: "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!"
           - var innovator_score: "{innovator_score} + 3"
@@ -495,12 +512,18 @@ ZenGarden:
           - var thinker_score: "{thinker_score} + 1"
       - "Buy a simple, small snack that cooks fast so you don’t end up late.":
           - show ZenBlurBG: WITH FUSION CONTINUE
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - show snack_simple: AT 720,396
           - text: "Buy a simple, small snack that cooks fast so you don’t end up late."
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
   - hide ALL:
+  - scene: XavierHall
+XavierHall:
   - show XavierHallBG: WITH FUSION CONTINUE
   - show MainCharacter: smile AT LEFT WITH FADE
   - choice IN grid:
