@@ -70,6 +70,38 @@ characters:
       sparkle: assets/characters/C1_Sparkles.png
       nervous: assets/characters/C1_Nervous.png
       talking: assets/characters/C1_Talking.png
+  c1:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C1/C1_Neutral.png
+      happy: assets/characters/player_chars/C1/C1_Smile.png
+      sparkle: assets/characters/player_chars/C1/C1_Sparkles.png
+      nervous: assets/characters/player_chars/C1/C1_Nervous.png
+      talking: assets/characters/player_chars/C1/C1_Talking.png
+  c2:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C2/C2_Neutral.png
+      happy: assets/characters/player_chars/C2/C2_Smile.png
+      sparkle: assets/characters/player_chars/C2/C2_Sparkles.png
+      nervous: assets/characters/player_chars/C2/C2_Nervous.png
+      talking: assets/characters/player_chars/C2/C2_Talking.png
+  c3:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C3/C3_Neutral.png
+      happy: assets/characters/player_chars/C3/C3_Smile.png
+      sparkle: assets/characters/player_chars/C3/C3_Sparkles.png
+      nervous: assets/characters/player_chars/C3/C3_Nervous.png
+      talking: assets/characters/player_chars/C3/C3_Talking.png
+  c4:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C4/C4_Neutral.png
+      happy: assets/characters/player_chars/C4/C4_Smile.png
+      sparkle: assets/characters/player_chars/C4/C4_Sparkles.png
+      nervous: assets/characters/player_chars/C4/C4_Nervous.png
+      talking: assets/characters/player_chars/C4/C4_Talking.png
   prof:
     displayName: Prof
     looks:

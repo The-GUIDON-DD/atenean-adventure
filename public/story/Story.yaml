@@ -30,6 +30,7 @@ start:
       confirmX: 600
       confirmY: 850
       confirmSprite: letsStartBtn
+      varName: selected_char
   - hide introClouds: WITH FADE
   - scene: prologue
 prologue:
@@ -103,36 +104,60 @@ goToRoute:
   - scene: IRH
 SecA:
   - show SecA: WITH FADE CONTINUE
-  - show MainCharacter: neutral AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: normal AT 1199,1080 WITH FADE CONTINUE
   - show Students: AT 300,1140 WITH FADE
   - choice IN grid:
       - text IN choice: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
       - "Join and talk to them! You have plenty of time.":
-          - hide MainCharacter: WITH CUT
-          - show MainCharacterWalk: normal AT 1199,630 WITH CUT
           - call fadetime: 500
-          - show MainCharacterWalk: AT 825,630 WITH MOVE
-          - hide MainCharacterWalk: WITH CUT
-          - show MainCharacter: sparkles AT 825,1080 WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT 680,1080 WITH MOVE
+          - wait: 1900
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle AT 680,1080 WITH FADE
           - call fadetime: reset
-          - show Students: normal AT 239,1080 WITH FADE
-          - hide Students: WITH FADE CONTINUE
-          - hide MainCharacter: WITH FADE CONTINUE
+          - wait: 1000
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
-          - hide ALL:
+          - hide ALL: WITH FADE
           - scene: RBR_Scene
       - "Sit down to rest a bit and check up on your to-do list.":
           - hide SecA: WITH CUT
-          - hide MainCharacter: WITH CUT
+          - hide c1: WITH CUT
+          - hide c2: WITH CUT
+          - hide c3: WITH CUT
+          - hide c4: WITH CUT
           - hide Students: WITH CUT
           - show SecA_Blurred: WITH CUT
           - call fadetime: 650
           - show todo: AT 720,1350 WITH FADE CONTINUE
           - animate todo:
-              position: {x: 720, y: 630}
-              zoom: 1.15
+            time: 650
+            zoom: 1.15
+            position:
+              x: 720
+              y: 630
+          - wait: 650
           - hide ALL:
           - scene: RBR_Scene
 RBR_Scene:
