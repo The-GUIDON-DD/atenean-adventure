@@ -385,11 +385,6 @@ assets:
       name: letterBG
       fileName: lettermodal.png
   spritesheets:
-    loading-bar:
-      name: loading-bar
-      fileName: loaderloading-bar.png
-      w: 578
-      h: 82
     asset3:
       name: asset3
       fileName: mainasset3.png

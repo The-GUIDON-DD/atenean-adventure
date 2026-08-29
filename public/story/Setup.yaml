@@ -70,6 +70,38 @@ characters:
       sparkle: assets/characters/C1_Sparkles.png
       nervous: assets/characters/C1_Nervous.png
       talking: assets/characters/C1_Talking.png
+  c1:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C1/C1_Neutral.png
+      happy: assets/characters/player_chars/C1/C1_Smile.png
+      sparkle: assets/characters/player_chars/C1/C1_Sparkles.png
+      nervous: assets/characters/player_chars/C1/C1_Nervous.png
+      talking: assets/characters/player_chars/C1/C1_Talking.png
+  c2:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C2/C2_Neutral.png
+      happy: assets/characters/player_chars/C2/C2_Smile.png
+      sparkle: assets/characters/player_chars/C2/C2_Sparkles.png
+      nervous: assets/characters/player_chars/C2/C2_Nervous.png
+      talking: assets/characters/player_chars/C2/C2_Talking.png
+  c3:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C3/C3_Neutral.png
+      happy: assets/characters/player_chars/C3/C3_Smile.png
+      sparkle: assets/characters/player_chars/C3/C3_Sparkles.png
+      nervous: assets/characters/player_chars/C3/C3_Nervous.png
+      talking: assets/characters/player_chars/C3/C3_Talking.png
+  c4:
+    displayName: Character
+    looks:
+      normal: assets/characters/player_chars/C4/C4_Neutral.png
+      happy: assets/characters/player_chars/C4/C4_Smile.png
+      sparkle: assets/characters/player_chars/C4/C4_Sparkles.png
+      nervous: assets/characters/player_chars/C4/C4_Nervous.png
+      talking: assets/characters/player_chars/C4/C4_Talking.png
   prof:
     displayName: Prof
     looks:
@@ -101,9 +133,38 @@ cgs:
   BlockmateWalk: assets/characters/Blockmate_neutral.png
   notYetBtn: assets/gui/notyetBtn.png
   readyBtn: assets/gui/readyBtn.png
+  letsStartBtn: assets/gui/letsstart.png
   enterName: assets/gui/entername.png
   whichPath: assets/gui/whichpath.png
   introClouds: assets/backgrounds/introclouds.png
+  resultClouds: assets/backgrounds/resultclouds.png
+  platform: assets/objects/platform.png
+  platform2: assets/objects/platform.png
+  c1_obj: assets/characters/player_chars/C1/C1_Neutral.png
+  c2_obj: assets/characters/player_chars/C2/C2_Neutral.png
+  c3_obj: assets/characters/player_chars/C3/C3_Neutral.png
+  c4_obj: assets/characters/player_chars/C4/C4_Neutral.png
+  c1_creative: assets/characters/results/creative/C1_Creative.png
+  c2_creative: assets/characters/results/creative/C2_Creative.png
+  c3_creative: assets/characters/results/creative/C3_Creative.png
+  c4_creative: assets/characters/results/creative/C4_Creative.png
+  c1_thinker: assets/characters/results/thinker/C1_Independent.png
+  c2_thinker: assets/characters/results/thinker/C2_Independent.png
+  c3_thinker: assets/characters/results/thinker/C3_Independent.png
+  c4_thinker: assets/characters/results/thinker/C4_Independent.png
+  c1_socialeagle: assets/characters/results/socialeagle/C1_Social.png
+  c2_socialeagle: assets/characters/results/socialeagle/C2_Social.png
+  c3_socialeagle: assets/characters/results/socialeagle/C3_Social.png
+  c4_socialeagle: assets/characters/results/socialeagle/C4_Social.png
+  c1_latinhonors: assets/characters/results/latinhonors/C1_Honors.png
+  c2_latinhonors: assets/characters/results/latinhonors/C2_Honors.png
+  c3_latinhonors: assets/characters/results/latinhonors/C3_Honors.png
+  c4_latinhonors: assets/characters/results/latinhonors/C4_Honors.png
+  darkoverlay: assets/objects/darkoverlay.png
+  resultsmodal: assets/objects/results/conclusion.png
+  endmessage: assets/objects/results/endMsg.png
+  tryagain: assets/objects/results/tryagain.png
+  credits: assets/objects/results/credits.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
@@ -116,3 +177,7 @@ extra:
     sakura: assets/ambient/sakura-petals.png 17 26
     snowflakes: assets/ambient/snowflakes.png 17 17
     snowflakes_large: assets/ambient/snowflakes_large.png 64 64
+    c1_select: assets/characters/select/c1_sprites.webp 252 233
+    c2_select: assets/characters/select/c2_sprites.webp 252 233
+    c3_select: assets/characters/select/c3_sprites.webp 252 233
+    c4_select: assets/characters/select/c4_sprites.webp 252 233
