@@ -249,21 +249,44 @@ RBR_Scene:
           - scene: LeongHall
 LeongHall:
   - show LeongHall: WITH FADE CONTINUE
-  - show MainCharacter: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: normal AT 350,1080 WITH FADE CONTINUE
   - show Blockmate: talking AT 1050,1080 WITH FADE
   - choice IN grid:
       - text IN choice: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
       - "Let's go to UPTC for a little adventure!":
-          - hide MainCharacter: WITH CUT
           - hide Blockmate: WITH CUT
-          - show MainCharacterTalking: normal AT 350,630 WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT 350,1080 WITH CUT
           - show BlockmateWalk: normal AT 1050,630 WITH CUT
           - call fadetime: 500
           - show BlockmateWalk: AT 750,630 WITH MOVE
-          - show MainCharacterTalking: AT -239,630 WITH MOVE CONTINUE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT -239,1080 WITH MOVE
           - show BlockmateWalk: AT -239,630 WITH MOVE
           - call fadetime: reset
-          - hide MainCharacterTalking: WITH CUT
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -272,29 +295,57 @@ LeongHall:
           - scene: endGame
       - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
           - hide Blockmate: WITH CUT
-          - hide MainCharacter: WITH CUT
-          - show Blockmate: normal AT 1050,1080 WITH CUT
-          - show MainCharacterWalk: normal AT 350,630 WITH CUT
+          - show Blockmate: neutral AT 1050,1080 WITH CUT
           - call fadetime: 500
-          - show MainCharacterWalk: AT 1679,630 WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT 350,1080 WITH CUT
+              - show c1: happy AT 1679,1080 WITH MOVE
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT 350,1080 WITH CUT
+              - show c2: happy AT 1679,1080 WITH MOVE
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT 350,1080 WITH CUT
+              - show c3: happy AT 1679,1080 WITH MOVE
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT 350,1080 WITH CUT
+              - show c4: happy AT 1679,1080 WITH MOVE
+              - hide c4:
           - call fadetime: reset
-          - hide MainCharacterWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
           - scene: endGame
       - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
-          - hide MainCharacter: WITH CUT
           - hide Blockmate: WITH CUT
-          - show MainCharacterTalking: normal AT 350,630 WITH CUT
-          - show BlockmateWalk: normal AT 1050,630 WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT 350,1080 WITH CUT
+          - show BlockmateWalk: AT 1050,630 WITH CUT
           - call fadetime: 500
           - show BlockmateWalk: AT 750,630 WITH MOVE
-          - show MainCharacterTalking: AT -239,630 WITH MOVE CONTINUE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT -239,1080 WITH MOVE CONTINUE
           - show BlockmateWalk: AT -239,630 WITH MOVE
           - call fadetime: reset
-          - hide MainCharacterTalking: WITH CUT
+          - hide c1:
+          - hide c2:
+          - hide c3:
+          - hide c4:
           - hide BlockmateWalk: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -303,13 +354,35 @@ LeongHall:
           - scene: endGame
       - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
           - hide Blockmate: WITH CUT
-          - hide MainCharacter: WITH CUT
-          - show Blockmate: normal AT 1050,1080 WITH CUT
-          - show MainCharacterWalk: normal AT 350,630 WITH CUT
-          - call fadetime: 500
-          - show MainCharacterWalk: AT 1679,630 WITH MOVE
-          - call fadetime: reset
-          - hide MainCharacterWalk: WITH CUT
+          - hide c1: WITH CUT
+          - hide c2: WITH CUT
+          - hide c3: WITH CUT
+          - hide c4: WITH CUT
+          - show Blockmate: neutral AT 1050,1080 WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c1: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c1: WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c2: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c2: WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c3: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c3: WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c4: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c4: WITH CUT
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var thinker_score: "{thinker_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
