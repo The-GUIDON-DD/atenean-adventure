@@ -632,7 +632,7 @@ IRH:
   - if ({selected_char} == "c4"):
       - show c4: happy AT OUTLEFT WITH CUT CONTINUE
   - show athlete: normal AT 1738,1080 WITH CUT CONTINUE
-  - show Blockmate: normal AT 1468,1080 WITH CUT FLIP
+  - show Blockmate: neutral AT 1468,1080 WITH CUT FLIP
   - call fadetime: 500
   - if ({selected_char} == "c1"):
       - show c1: happy AT LEFT WITH MOVE CONTINUE
@@ -643,7 +643,7 @@ IRH:
   - if ({selected_char} == "c4"):
       - show c4: happy AT LEFT WITH MOVE CONTINUE
   - show athlete: normal AT 1260,1080 WITH MOVE CONTINUE
-  - show Blockmate: normal AT 990,1080 WITH MOVE
+  - show Blockmate: neutral AT 990,1080 WITH MOVE
   - call fadetime: reset
   - choice IN grid:
       - text IN choice: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group.
@@ -682,9 +682,9 @@ IRH:
               - show c4: talking WITH FUSION
               - show c4: talking AT 540,1080 WITH MOVE CONTINUE
           - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
-          - show Blockmate: normal AT 900,1080 WITH MOVE
+          - show Blockmate: neutral AT 900,1080 WITH MOVE
           - show athlete: talking WITH FUSION CONTINUE
-          - show Blockmate: normal WITH CUT
+          - show Blockmate: neutral WITH CUT
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -701,7 +701,7 @@ IRH:
           - if ({selected_char} == "c4"):
               - show c4: normal AT 540,1080 WITH MOVE CONTINUE
           - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
-          - show Blockmate: normal AT 900,1080 WITH MOVE
+          - show Blockmate: neutral AT 900,1080 WITH MOVE
           - if ({selected_char} == "c1"):
               - show c1: talking WITH FUSION CONTINUE
           - if ({selected_char} == "c2"):
@@ -711,7 +711,7 @@ IRH:
           - if ({selected_char} == "c4"):
               - show c4: talking WITH FUSION CONTINUE
           - show athlete: talking WITH FUSION CONTINUE
-          - show Blockmate: normal WITH CUT
+          - show Blockmate: neutral WITH CUT
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 1"
@@ -749,14 +749,35 @@ IRH:
 Gesu:
   - show GesuBG: WITH FADE CONTINUE
   - show crush: WITH FADE AT RIGHT FLIP CONTINUE
-  - show character: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c1"):
+      - show c1: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c2"):
+      - show c2: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c3"):
+      - show c3: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c4"):
+      - show c4: nervous WITH FADE AT LEFT
   - choice IN grid:
       - text IN choice: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
       - "You fix your hair and clothes, then you approach them to start a conversation.":
-          - show character: sparkle WITH FUSION
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle WITH FUSION
           - show crush: normal WITH FUSION FLIP
           - call fadetime: 500
-          - show character: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle AT 540,1080 WITH MOVE CONTINUE
           - show crush: normal AT 900,1080 WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 2"
@@ -766,9 +787,27 @@ Gesu:
       - "You fix your posture to hopefully grab their attention as you pass by them.":
           - call fadetime: 350
           - show character: happy WITH FUSION
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH FUSION
           - call fadetime: 500
-          - show character: happy WITH CUT CONTINUE
-          - show character: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH CUT CONTINUE
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH CUT CONTINUE
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH CUT CONTINUE
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH CUT CONTINUE
+              - show c4: happy AT OUTRIGHT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
@@ -776,24 +815,69 @@ Gesu:
           - var thinker_score: "{thinker_score} + 2"
       - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
           - call fadetime: 350
-          - show character: talking WITH FUSION
+          - if ({selected_char} == "c1"):
+              - show c1: talking WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: talking WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: talking WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: talking WITH FUSION
           - wait: 1000
-          - show character: nervous WITH FUSION
-          - show character: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: nervous WITH FUSION
+              - show c1: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: nervous WITH FUSION
+              - show c2: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: nervous WITH FUSION
+              - show c3: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: nervous WITH FUSION
+              - show c4: nervous AT OUTLEFT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
       - "You look at them and realize that the spark isn’t there anymore.":
-          - wait: 500
-          - show character: happy WITH FUSION
-          - wait: 1000
-          - fadetime: 500
-          - show character: happy WITH CUT FLIP CONTINUE
-          - wait: 500
-          - show character: happy AT OUTLEFT WITH MOVE
-          - fadetime: reset
+          - if ({selected_char} == "c1"):
+              - wait: 500
+              - show c1: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c1: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c1: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c2"):
+              - wait: 500
+              - show c2: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c2: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c2: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c3"):
+              - wait: 500
+              - show c3: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c3: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c3: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c4"):
+              - wait: 500
+              - show c4: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c4: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c4: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
           - var socialeagle_score: "{socialeagle_score} + 2"
