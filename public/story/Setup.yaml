@@ -137,6 +137,34 @@ cgs:
   enterName: assets/gui/entername.png
   whichPath: assets/gui/whichpath.png
   introClouds: assets/backgrounds/introclouds.png
+  resultClouds: assets/backgrounds/resultclouds.png
+  platform: assets/objects/platform.png
+  platform2: assets/objects/platform.png
+  c1_obj: assets/characters/player_chars/C1/C1_Neutral.png
+  c2_obj: assets/characters/player_chars/C2/C2_Neutral.png
+  c3_obj: assets/characters/player_chars/C3/C3_Neutral.png
+  c4_obj: assets/characters/player_chars/C4/C4_Neutral.png
+  c1_creative: assets/characters/results/creative/C1_Creative.png
+  c2_creative: assets/characters/results/creative/C2_Creative.png
+  c3_creative: assets/characters/results/creative/C3_Creative.png
+  c4_creative: assets/characters/results/creative/C4_Creative.png
+  c1_thinker: assets/characters/results/thinker/C1_Independent.png
+  c2_thinker: assets/characters/results/thinker/C2_Independent.png
+  c3_thinker: assets/characters/results/thinker/C3_Independent.png
+  c4_thinker: assets/characters/results/thinker/C4_Independent.png
+  c1_socialeagle: assets/characters/results/socialeagle/C1_Social.png
+  c2_socialeagle: assets/characters/results/socialeagle/C2_Social.png
+  c3_socialeagle: assets/characters/results/socialeagle/C3_Social.png
+  c4_socialeagle: assets/characters/results/socialeagle/C4_Social.png
+  c1_latinhonors: assets/characters/results/latinhonors/C1_Honors.png
+  c2_latinhonors: assets/characters/results/latinhonors/C2_Honors.png
+  c3_latinhonors: assets/characters/results/latinhonors/C3_Honors.png
+  c4_latinhonors: assets/characters/results/latinhonors/C4_Honors.png
+  darkoverlay: assets/objects/darkoverlay.png
+  resultsmodal: assets/objects/results/conclusion.png
+  endmessage: assets/objects/results/endMsg.png
+  tryagain: assets/objects/results/tryagain.png
+  credits: assets/objects/results/credits.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3

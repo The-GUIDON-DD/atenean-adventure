@@ -72,12 +72,12 @@ letterOpenScene:
   - letter says: "Dear {TextInputName_player},\nIf you are reading this, that means you have just started your freshman year at the Ateneo. You may be worried about what kind of Atenean you would grow to be in the future, but don’t worry—just trust me and follow my lead.\nThis time, for your next class at Areté, why don’t you choose another route? A small quest awaits, and from there, you’ll see how great of an Atenean you will become.\n\nBest of luck!\nSincerely, future {TextInputName_player}. "
   - hide letterLayerBack: WITH FADE CONTINUE
   - hide letterLayerFront: WITH FADE CONTINUE
-  - scene: intro
-intro:
   - var latinhonors_score: 0
   - var innovator_score: 0
   - var socialeagle_score: 0
   - var thinker_score: 0
+  - scene: intro
+intro:
   - show whichPath: WITH FADE AT 725,330
   - visualchoice:
       - routeChoice1 AT 240,540:
@@ -296,7 +296,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: endGame
+          - scene: computeResults
       - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
           - hide Blockmate: WITH CUT
           - show Blockmate: neutral AT 1050,1080 WITH CUT
@@ -322,7 +322,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
-          - scene: endGame
+          - scene: computeResults
       - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
           - hide Blockmate: WITH CUT
           - if ({selected_char} == "c1"):
@@ -359,7 +359,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: endGame
+          - scene: computeResults
       - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
           - hide Blockmate: WITH CUT
           - if ({selected_char} == "c1"):
@@ -399,7 +399,7 @@ LeongHall:
           - var thinker_score: "{thinker_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - hide ALL:
-          - scene: endGame
+          - scene: computeResults
 Berchmans:
   - hide ALL:
   - show BerchmansBG: WITH FADE CONTINUE
@@ -620,7 +620,7 @@ XavierHall:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
   - hide ALL:
-  - scene: endGame
+  - scene: computeResults
 IRH:
   - show IRHBG: WITH FADE CONTINUE
   - if ({selected_char} == "c1"):
@@ -888,17 +888,41 @@ Gesu:
 BellarmineHall:
   - show BellarmineHallBG: WITH CUT CONTINUE
   - show prof: normal WITH CUT AT OUTRIGHT CONTINUE
-  - show character: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c1"):
+      - show c1: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c2"):
+      - show c2: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c3"):
+      - show c3: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c4"):
+      - show c4: normal WITH CUT AT OUTLEFT
   - call fadetime: 500
   - show prof: normal WITH MOVE AT RIGHT CONTINUE
-  - show character: normal WITH MOVE AT LEFT
-  - show character: nervous WITH FUSION
+  - if ({selected_char} == "c1"):
+      - show c1: normal WITH MOVE AT LEFT
+      - show c1: nervous WITH FUSION
+  - if ({selected_char} == "c2"):
+      - show c2: normal WITH MOVE AT LEFT
+      - show c2: nervous WITH FUSION
+  - if ({selected_char} == "c3"):
+      - show c3: normal WITH MOVE AT LEFT
+      - show c3: nervous WITH FUSION
+  - if ({selected_char} == "c4"):
+      - show c4: normal WITH MOVE AT LEFT
+      - show c4: nervous WITH FUSION
   - call fadetime: reset
   - choice IN grid:
       - text IN choice: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms.
       - "You go back and take a detour to avoid them.":
           - call fadetime: 350
-          - show character: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTLEFT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
@@ -907,7 +931,14 @@ BellarmineHall:
       - "You endure their intimidating gaze and quickly walk past them.":
           - call fadetime: 500
           - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
-          - show character: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTRIGHT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 0"
@@ -916,46 +947,201 @@ BellarmineHall:
       - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
           - call fadetime: 500
           - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
-          - show character: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTRIGHT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 2"
           - var thinker_score: "{thinker_score} + 1"
       - "You greet the professor respectfully to maintain a good work relationship.":
-          - show character: happy WITH FUSION
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH FUSION
           - call fadetime: 500
-          - show prof: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTLEFT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - var thinker_score: "{thinker_score} + 0"
+  - hide CHARS:
+  - scene: computeResults
+computeResults:
+  - call computeResults:
+  - scene: results
+results:
+  - show sky: WITH FADE
+  - wait: 500
+  - show resultClouds: AT 720,700 WITH FADE
+  - show platform: AT 500,580
+  - show platform2: AT 1000,850
+  - if ({selected_char} == "c1"):
+      - show c1_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c1_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c1_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c1_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c1_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c2"):
+      - show c2_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c2_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c2_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c2_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c2_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c3"):
+      - show c3_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c3_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c3_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c3_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c3_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c4"):
+      - show c4_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c4_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c4_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c4_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c4_latinhonors: AT 1000,620
+            zoom: 0.5
+  - else:
+  - call fadetime: 1000
+  - show endmessage: AT 720,900 WITH FADE
+  - call fadetime: reset
+  - wait: 2000
   - scene: endGame
 endGame:
-  - deuzi says normal: Quickstart over! l {latinhonors_score} i {innovator_score} s {socialeagle_score} t {thinker_score} # TODO: Remove in merge
+  - wait: 500
+  - hide CGS: WITH FADE
+  - call fadetime: 750
+  - show resultsmodal: AT 720,540
+  - if ({selected_char} == "c1"):
+      - if ({future_self} == "thinker"):
+          - show c1_thinker: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show c1_creative: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show c1_socialeagle: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show c1_latinhonors: AT 720,540
+            zoom: 0.4
+  - if ({selected_char} == "c2"):
+      - if ({future_self} == "thinker"):
+          - show c2_thinker: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show c2_creative: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show c2_socialeagle: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show c2_latinhonors: AT 720,540
+            zoom: 0.4
+  - if ({selected_char} == "c3"):
+      - if ({future_self} == "thinker"):
+          - show c3_thinker: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show c3_creative: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show c3_socialeagle: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show c3_latinhonors: AT 720,540
+            zoom: 0.4
+  - if ({selected_char} == "c4"):
+      - if ({future_self} == "thinker"):
+          - show c4_thinker: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show c4_creative: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show c4_socialeagle: AT 720,540
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show c4_latinhonors: AT 720,540
+            zoom: 0.4
+  - else:
+  - call fadetime: reset
+  - visualchoice:
+      - tryagain AT 570,800:
+          - hide ALL:
+          - scene: start
+      - credits AT 870,800:
+          - hide ALL:
+          - scene: credits
+credits:
   - hide ALL:
   - effect ROLLINGCREDITS:
     endGame: true
     text:
-      - RenJS.V2 created by
-      - lunafromthemoon
+      - "Letter from Tomorrow: An Atenean's Quest"
       - null
-      - In collaboration with
-      - RockDaFox
+      - Designed by
+      - Bel Baylon
+      - Gabrielle Bulatao
+      - Sara Sabando
       - null
-      - Inspired by Ren'Py
-      - Powered by PhaserJS
+      - Developed by
+      - Aldrin Nellas
+      - Cheska Huang
+      - Ice Pascual
+      - Princess Giron
       - null
-      - null
-      - Thanks for playing
-      - The Quickstart Game
-      - null
-      - background art and cgs by
-      - konett
-      - null
-      - characters by
-      - Shida
-      - null
-      - music by
-      - Evan Schaeffer
+      - Thank you for playing!

@@ -1,32 +1,30 @@
-const RenJSConfig =  {
-  'name': 'Quickstart',
-  'w': 1440,
-  'h': 1080,
-  'renderer': Phaser.AUTO, // become renderer
-  'scaleMode': Phaser.ScaleManager.SHOW_ALL,
-  'loadingScreen': {
-    'background': 'assets/gui/loaderloaderbackground.png',
-    'loadingBar': {
-      'asset': 'assets/gui/loaderloading-bar.png',
-      'position': {
-        'x': 109,
-        'y': 458
+const RenJSConfig = {
+  name: "Letter from Tomorrow: An Atenean's Quest",
+  w: 1440,
+  h: 1080,
+  renderer: Phaser.AUTO, // become renderer
+  scaleMode: Phaser.ScaleManager.SHOW_ALL,
+  loadingScreen: {
+    background: "assets/gui/loaderloaderbackground.png",
+    loadingBar: {
+      asset: "assets/gui/loaderloading-bar.png",
+      position: {
+        x: 10000,
+        y: 10000,
       },
-      'size': {
-        'w': 578,
-        'h': 82
-      }
-    }
+      size: {
+        w: 578,
+        h: 82,
+      },
+    },
   },
-  'fonts': 'assets/gui/fonts.css',
-  'guiConfig': 'story/GUI.yaml',
-  storyConfig: 'story/Config.yaml',
-  storySetup: 'story/Setup.yaml',
-  'storyText': [
-    'story/Story.yaml'
-  ],
-  'logChoices': false, // Breaks choice color
-}
+  fonts: "assets/gui/fonts.css",
+  guiConfig: "story/GUI.yaml",
+  storyConfig: "story/Config.yaml",
+  storySetup: "story/Setup.yaml",
+  storyText: ["story/Story.yaml"],
+  logChoices: false, // Breaks choice color
+};
 
-const RenJSGame = new RenJS.game(RenJSConfig)
-RenJSGame.launch()
+const RenJSGame = new RenJS.game(RenJSConfig);
+RenJSGame.launch();
