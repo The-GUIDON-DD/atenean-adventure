@@ -96,12 +96,12 @@ confirmStart:
       - notYetBtn AT 550,580:
           - scene: intro
 goToRoute:
-  - if ({route} == 1):
-  - scene: SecA
-  - if ({route} == 2):
-  - scene: Berchmans
-  - if ({route} == 3):
-  - scene: IRH
+  - if ({route} == "1"):
+      - scene: SecA
+  - if ({route} == "2"):
+      - scene: Berchmans
+  - if ({route} == "3"):
+      - scene: IRH
 SecA:
   - show SecA: WITH FADE CONTINUE
   - if ({selected_char} == "c1"):
@@ -391,47 +391,80 @@ LeongHall:
 Berchmans:
   - hide ALL:
   - show BerchmansBG: WITH FADE CONTINUE
-  - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy WITH CUT AT LEFT CONTINUE
   - show Blockmate: neutral WITH CUT AT RIGHT
   - choice IN grid:
       - text IN choice: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
       - "Let's go to UPTC for a little adventure!":
-          - MainCharacter says: "Let's go to UPTC for a little adventure!"
           - call fadetime: 500
-          - show MainCharacter: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT OUTLEFT WITH MOVE
           - show Blockmate: neutral AT OUTLEFT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
       - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
-          - MainCharacter says: "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study"
           - call fadetime: 500
-          - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT OUTRIGHT WITH MOVE
           - show Blockmate: neutral
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
       - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
-          - MainCharacter says: "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!"
           - call fadetime: 500
-          - show MainCharacter: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT OUTLEFT WITH MOVE
           - show Blockmate: neutral AT OUTLEFT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 1"
           - var innovator_score: "{innovator_score} + 3"
           - var socialeagle_score: "{socialeagle_score} + 2"
       - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
-          - MainCharacter says: "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time."
           - call fadetime: 500
-          - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT OUTRIGHT WITH MOVE
           - show Blockmate: neutral
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 2"
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 3"
   - hide ALL:
+  - scene: ZenGarden
+ZenGarden:
   - show ZenBG: WITH FUSION CONTINUE
   - show MainCharacter: smile WITH CUT AT LEFT CONTINUE
   - choice IN grid:
