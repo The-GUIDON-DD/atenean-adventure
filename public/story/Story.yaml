@@ -675,16 +675,16 @@ IRH:
           - call fadetime: 350
           - if ({selected_char} == "c1"):
               - show c1: talking WITH FUSION
-              - show c1: talking AT 540,1080 WITH MOVE CONTINUE
+              - show c1: talking AT 440,1080 WITH MOVE CONTINUE
           - if ({selected_char} == "c2"):
               - show c2: talking WITH FUSION
-              - show c2: talking AT 540,1080 WITH MOVE CONTINUE
+              - show c2: talking AT 440,1080 WITH MOVE CONTINUE
           - if ({selected_char} == "c3"):
               - show c3: talking WITH FUSION
-              - show c3: talking AT 540,1080 WITH MOVE CONTINUE
+              - show c3: talking AT 440,1080 WITH MOVE CONTINUE
           - if ({selected_char} == "c4"):
               - show c4: talking WITH FUSION
-              - show c4: talking AT 540,1080 WITH MOVE CONTINUE
+              - show c4: talking AT 440,1080 WITH MOVE CONTINUE
           - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
           - show Blockmate: neutral AT 900,1080 WITH MOVE
           - show athlete: talking WITH FUSION CONTINUE
