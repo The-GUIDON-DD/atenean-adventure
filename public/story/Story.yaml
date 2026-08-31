@@ -786,7 +786,6 @@ Gesu:
           - var thinker_score: "{thinker_score} + 0"
       - "You fix your posture to hopefully grab their attention as you pass by them.":
           - call fadetime: 350
-          - show character: happy WITH FUSION
           - if ({selected_char} == "c1"):
               - show c1: happy WITH FUSION
           - if ({selected_char} == "c2"):
