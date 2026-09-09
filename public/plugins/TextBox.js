@@ -102,6 +102,7 @@ class TextInput extends RenJS.Plugin {
   createInputElement(defaultValue) {
     const input = document.createElement("input");
     input.type = "text";
+    input.style.fontFamily = "ysabeau-infant";
     input.value = defaultValue ? defaultValue : "";
     // add a css class to the input
     // input.className = "canvas-input";
