@@ -344,7 +344,7 @@ assets:
   images:
     title:
       name: title
-      fileName: intro.webp
+      fileName: intro.png
     begin:
       name: beginBtn
       fileName: begin.png
