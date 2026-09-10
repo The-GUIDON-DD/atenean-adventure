@@ -998,15 +998,19 @@ results:
       - show c1_obj: AT 500,350
         zoom: 0.5
       - if ({future_self} == "thinker"):
+          - show label_thinker: AT 1000,300
           - show c1_thinker: AT 1000,620
             zoom: 0.5
       - if ({future_self} == "creative"):
+          - show label_creative: AT 1000,300
           - show c1_creative: AT 1000,620
             zoom: 0.5
       - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 1000,300
           - show c1_socialeagle: AT 1000,620
             zoom: 0.5
       - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 1000,300
           - show c1_latinhonors: AT 1000,620
             zoom: 0.5
   - if ({selected_char} == "c2"):
@@ -1067,55 +1071,71 @@ endGame:
   - show resultsmodal: AT 720,540
   - if ({selected_char} == "c1"):
       - if ({future_self} == "thinker"):
-          - show c1_thinker: AT 720,540
+          - show label_thinker: AT 720,340
+          - show c1_thinker: AT 720,560
             zoom: 0.4
       - if ({future_self} == "creative"):
-          - show c1_creative: AT 720,540
+          - show label_creative: AT 720,340
+          - show c1_creative: AT 720,560
             zoom: 0.4
       - if ({future_self} == "socialeagle"):
-          - show c1_socialeagle: AT 720,540
+          - show label_socialeagle: AT 720,340
+          - show c1_socialeagle: AT 720,560
             zoom: 0.4
       - if ({future_self} == "latinhonors"):
-          - show c1_latinhonors: AT 720,540
+          - show label_latinhonors: AT 720,340
+          - show c1_latinhonors: AT 720,560
             zoom: 0.4
   - if ({selected_char} == "c2"):
       - if ({future_self} == "thinker"):
-          - show c2_thinker: AT 720,540
+          - show label_thinker: AT 720,340
+          - show c2_thinker: AT 720,560
             zoom: 0.4
       - if ({future_self} == "creative"):
-          - show c2_creative: AT 720,540
+          - show label_creative: AT 720,340
+          - show c2_creative: AT 720,560
             zoom: 0.4
       - if ({future_self} == "socialeagle"):
-          - show c2_socialeagle: AT 720,540
+          - show label_socialeagle: AT 720,340
+          - show c2_socialeagle: AT 720,560
             zoom: 0.4
       - if ({future_self} == "latinhonors"):
-          - show c2_latinhonors: AT 720,540
+          - show label_latinhonors: AT 720,340
+          - show c2_latinhonors: AT 720,560
             zoom: 0.4
   - if ({selected_char} == "c3"):
       - if ({future_self} == "thinker"):
-          - show c3_thinker: AT 720,540
+          - show label_thinker: AT 720,340
+          - show c3_thinker: AT 720,560
             zoom: 0.4
       - if ({future_self} == "creative"):
-          - show c3_creative: AT 720,540
+          - show label_creative: AT 720,340
+          - show c3_creative: AT 720,560
             zoom: 0.4
       - if ({future_self} == "socialeagle"):
-          - show c3_socialeagle: AT 720,540
+          - show label_socialeagle: AT 720,340
+          - show c3_socialeagle: AT 720,560
             zoom: 0.4
       - if ({future_self} == "latinhonors"):
-          - show c3_latinhonors: AT 720,540
+          - show label_latinhonors: AT 720,340
+          - show c3_latinhonors: AT 720,560
             zoom: 0.4
   - if ({selected_char} == "c4"):
       - if ({future_self} == "thinker"):
-          - show c4_thinker: AT 720,540
+          - show label_thinker: AT 720,340
+          - show c4_thinker: AT 720,560
             zoom: 0.4
       - if ({future_self} == "creative"):
-          - show c4_creative: AT 720,540
+          - show label_creative: AT 720,340
+          - show c4_creative: AT 720,560
             zoom: 0.4
       - if ({future_self} == "socialeagle"):
-          - show c4_socialeagle: AT 720,540
+          - show label_socialeagle: AT 720,340
+          - show c4_socialeagle: AT 720,560
             zoom: 0.4
       - if ({future_self} == "latinhonors"):
-          - show c4_latinhonors: AT 720,540
+          - show label_latinhonors: AT 720,340
+          - show c4_latinhonors: AT 720,560
             zoom: 0.4
   - else:
   - call fadetime: reset

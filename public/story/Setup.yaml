@@ -160,6 +160,10 @@ cgs:
   c2_latinhonors: assets/characters/results/latinhonors/C2_Honors.png
   c3_latinhonors: assets/characters/results/latinhonors/C3_Honors.png
   c4_latinhonors: assets/characters/results/latinhonors/C4_Honors.png
+  label_creative: assets/objects/results/labels/future-creative-innovator.png
+  label_thinker: assets/objects/results/labels/future-independent-thinker.png
+  label_latinhonors: assets/objects/results/labels/future-latin-honors.png
+  label_socialeagle: assets/objects/results/labels/future-social-eagle.png
   darkoverlay: assets/objects/darkoverlay.png
   resultsmodal: assets/objects/results/conclusion.png
   endmessage: assets/objects/results/endMsg.png
