@@ -52,7 +52,9 @@ Berchmans:
       - var socialeagle_score: "{socialeagle_score} + 3"
     - "Turn around and go a different route.":
       - show MainCharacter: normal WITH CUT FLIP CONTINUE
-      - show MainCharacter: normal AT OUTLEFT WITH MOVE
+      - call fadetime: 700
+      - show MainCharacter: smile AT OUTRIGHT WITH MOVE
+      - call fadetime: reset
       - text: Turn around and go a different route.
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
