@@ -657,6 +657,8 @@ IRH:
               - show c3: sparkle WITH FUSION
           - if ({selected_char} == "c4"):
               - show c4: sparkle WITH FUSION
+          - show Blockmate: talking WITH FUSION
+          - show Blockmate: talking AT 890,1080 WITH MOVE CONTINUE
           - if ({selected_char} == "c1"):
               - show c1: sparkle AT 540,1080 WITH MOVE
           - if ({selected_char} == "c2"):
