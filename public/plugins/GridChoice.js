@@ -47,8 +47,8 @@ function patchChoicesToGrid(game, config, id) {
     const gapH = this.config.separationH || this.config.separation || 0;
     const gapV = this.config.separationV || this.config.separation || 0;
 
-    const col = Math.floor(index / 2);
-    const row = index % 2;
+    const row = Math.floor(index / 2);
+    const col = index % 2;
 
     // Calculate total grid dimensions using the specific gaps
     const gridWidth = chBox.width * 2 + gapH;
@@ -77,4 +77,3 @@ class GridChoice extends RenJS.Plugin {
 }
 
 RenJSGame.addPlugin("gridChoice", GridChoice);
-
