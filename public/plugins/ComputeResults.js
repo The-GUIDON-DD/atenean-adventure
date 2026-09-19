@@ -3,7 +3,7 @@ class ComputeResults extends RenJS.Plugin {
     const scores = {
       thinker: this.game.managers.logic.vars["thinker_score"],
       socialeagle: this.game.managers.logic.vars["socialeagle_score"],
-      innovator: this.game.managers.logic.vars["innovator_score"],
+      creative: this.game.managers.logic.vars["innovator_score"],
       latinhonors: this.game.managers.logic.vars["latinhonors_score"],
     };
 
