@@ -3,10 +3,6 @@
  * Used for inputting the player's name
  */
 class TextInput extends RenJS.Plugin {
-  onInit() {
-    console.log("Text Input init");
-  }
-
   async onCall(params) {
     await this.showTextInput(params.propertyType, params.propertyName, "You");
     this.game.resolveAction();
@@ -106,6 +102,7 @@ class TextInput extends RenJS.Plugin {
   createInputElement(defaultValue) {
     const input = document.createElement("input");
     input.type = "text";
+    input.style.fontFamily = "ysabeau-infant";
     input.value = defaultValue ? defaultValue : "";
     // add a css class to the input
     // input.className = "canvas-input";
