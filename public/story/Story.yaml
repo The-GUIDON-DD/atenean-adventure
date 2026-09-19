@@ -1,34 +1,566 @@
 start:
-  - show room: WITH FADE CONTINUE
-  - show deuzi: happy AT CENTER WITH FADE
-  - deuzi says: What path are you following?
+  - show sky: WITH FADE
+  - wait: 500
+  - show introClouds: WITH FADE AT 720,700
+  - show enterName: WITH FADE AT 725,430 CONTINUE
+  - show textBoxBg: WITH FADE AT 730,548
+  - call TextInput:
+    propertyType: name
+    propertyName: player
+  - hide textBoxBg: WITH FADE CONTINUE
+  - hide enterName: WITH FADE
+  - call characterSelect:
+      characters:
+        - id: c1
+          x: 250
+          y: 400
+          spriteKey: c1_select
+        - id: c2
+          x: 550
+          y: 600
+          spriteKey: c2_select
+        - id: c3
+          x: 850
+          y: 400
+          spriteKey: c3_select
+        - id: c4
+          x: 1150
+          y: 600
+          spriteKey: c4_select
+      confirmX: 600
+      confirmY: 850
+      confirmSprite: letsStartBtn
+      varName: selected_char
+  - hide introClouds: WITH FADE
+  - scene: prologue
+prologue:
+  - show coveredcourts: WITH FADE CONTINUE
+  - text: You just got out of your PE class and have 30 minutes to spare until your next one in Areté.
+  - text: As you rummage through your bag, you come across a letter directing you to choose a different, longer path to class to determine your fate at Ateneo...
+  - show introLetter: AT 720,1200
+    zoom: 0
+  - show bag: AT 720,1200
+  - animate bag:
+    time: 750
+    position:
+      x: 720
+      y: 900
+  - animate introLetter:
+    time: 750
+    zoom: 1
+    angle: -5
+    position:
+      x: 720
+      y: 500
+  - wait: 500
+  - animate introLetter:
+    time: 750
+    zoom: 1.75
+  - wait: 500
+  - hide bag: WITH FADEOUT
+  - hide introLetter:
+  - scene: letterOpenScene
+letterOpenScene:
+  - show letterLayerBack: AT CENTERXY WITH FUSION CONTINUE
+  - show letterLayerMiddle: AT 720,650 WITH FUSION CONTINUE
+  - show letterLayerFront: AT CENTERXY WITH FUSION CONTINUE
+  - show letterLayerBack: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerFront: AT 720,900 WITH MOVE CONTINUE
+  - show letterLayerMiddle: AT 720,500 WITH MOVE
+  - wait: 1000
+  - hide letterLayerMiddle: WITH FADE CONTINUE
+  - letter says: "Dear {TextInputName_player},\nIf you are reading this, that means you have just started your freshman year at the Ateneo. You may be worried about what kind of Atenean you would grow to be in the future, but don’t worry—just trust me and follow my lead.\nThis time, for your next class at Areté, why don’t you choose another route? A small quest awaits, and from there, you’ll see how great of an Atenean you will become.\n\nBest of luck!\nSincerely, future {TextInputName_player}. "
+  - hide letterLayerBack: WITH FADE CONTINUE
+  - hide letterLayerFront: WITH FADE CONTINUE
   - var latinhonors_score: 0
   - var innovator_score: 0
   - var socialeagle_score: 0
   - var thinker_score: 0
-  - choice:
-      - "SEC-A":
+  - scene: intro
+intro:
+  - show whichPath: WITH FADE AT 725,330
+  - visualchoice:
+      - routeChoice1 AT 240,540:
           - var route: 1
-      - "Berchmans":
+      - routeChoice2 AT 732,540:
           - var route: 2
-      - "IRH":
+      - routeChoice3 AT 1200,540:
           - var route: 3
-  - deuzi says normal: Your future is at stake. Are you ready to take on this journey?
-  - choice:
-      - "Yes!":
-          - if ({route} == 1):
-              - scene: SecA
-          - if ({route}  == 2):
-              - scene: Berchmans
-          - if ({route} == 3):
-              - scene: IRH
+  - hide whichPath: WITH FADE
+  - scene: confirmStart
+confirmStart:
+  - visualchoice:
+      - narrator says: Your future is at stake. Are you ready to take on this journey?
+      - readyBtn AT 900,580:
+          - scene: goToRoute
+      - notYetBtn AT 550,580:
+          - scene: intro
+goToRoute:
+  - if ({route} == "1"):
+      - scene: SecA
+  - if ({route} == "2"):
+      - scene: Berchmans
+  - if ({route} == "3"):
+      - scene: IRH
 SecA:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to SEC-A!
-  - scene: endGame
+  - show SecA: WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: normal AT 1199,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: normal AT 1199,1080 WITH FADE CONTINUE
+  - show Students: AT 300,1140 WITH FADE
+  - choice IN grid:
+      - text IN choice: You start walking to SEC-A, and you see students hanging out at the back entrance. What do you do?
+      - "Join and talk to them! You have plenty of time.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT 680,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT 680,1080 WITH MOVE
+          - wait: 1900
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle AT 680,1080 WITH FADE
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle AT 680,1080 WITH FADE
+          - call fadetime: reset
+          - wait: 1000
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL: WITH FADE
+          - scene: RBR_Scene
+      - "Sit down to rest a bit and check up on your to-do list.":
+          - hide SecA: WITH CUT
+          - hide c1: WITH CUT
+          - hide c2: WITH CUT
+          - hide c3: WITH CUT
+          - hide c4: WITH CUT
+          - hide Students: WITH CUT
+          - show SecA_Blurred: WITH CUT
+          - call fadetime: 650
+          - show todo: AT 720,1350 WITH FADE CONTINUE
+          - animate todo:
+            time: 650
+            zoom: 1.15
+            position:
+              x: 720
+              y: 630
+          - wait: 650
+          - hide ALL:
+          - scene: RBR_Scene
+RBR_Scene:
+  - show RBR: WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal AT 200,1080 WITH FADE
+  - if ({selected_char} == "c2"):
+      - show c2: normal AT 200,1080 WITH FADE
+  - if ({selected_char} == "c3"):
+      - show c3: normal AT 200,1080 WITH FADE
+  - if ({selected_char} == "c4"):
+      - show c4: normal AT 200,1080 WITH FADE
+  - choice IN grid:
+      - text IN choice: The organization booths on Red Brick Road keep drawing you in with their initiatives, and you want to sign up.
+      - "Signing up for at least one org that suits my course won't hurt. I need it for academic and professional experience!":
+          - hide c1: WITH CUT
+          - hide c2: WITH CUT
+          - hide c3: WITH CUT
+          - hide c4: WITH CUT
+          - show RBRAnimated: WITH CUT
+          - animate RBRAnimated:
+            zoom: 1.25
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 239,1080 WITH FADE CONTINUE
+          - animate qr:
+            position: {x: 239, y: 630}
+            angle: 15
+            time: 450
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - hide ALL:
+          - scene: LeongHall
+      - "I'll sign up for five different orgs and talk to the people manning the booths as well!":
+          - hide c1: WITH CUT
+          - hide c2: WITH CUT
+          - hide c3: WITH CUT
+          - hide c4: WITH CUT
+          - show RBRAnimated: WITH CUT
+          - animate RBRAnimated:
+            zoom: 1.25
+            time: 500
+          - call fadetime: 650
+          - show qr: AT 239,1080 WITH FADE CONTINUE
+          - animate qr:
+            position: {x: 239, y: 630}
+            angle: 15
+            time: 450
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: LeongHall
+      - "I will just keep walking straight because I want to get to Areté early and prepare my notes for class.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT 1679,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+          - wait: 500
+          - hide ALL:
+          - scene: LeongHall
+      - "I'll sign up some other time. I want to save a table in Areté to brainstorm for an assigned project.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT 1679,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT 1679,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: LeongHall
+LeongHall:
+  - show LeongHall: WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: normal AT 350,1080 WITH FADE CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: normal AT 350,1080 WITH FADE CONTINUE
+  - show Blockmate: talking AT 1050,1080 WITH FADE
+  - choice IN grid:
+      - text IN choice: You see your blockmate at Leong Hall, and they ask where you want to go after class. How will you respond?
+      - "Let's go to UPTC for a little adventure!":
+          - hide Blockmate: WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT 350,1080 WITH CUT
+          - show BlockmateWalk: normal AT 1050,630 WITH CUT
+          - call fadetime: 500
+          - show BlockmateWalk: AT 750,630 WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT -239,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT -239,1080 WITH MOVE
+          - show BlockmateWalk: AT -239,630 WITH MOVE
+          - call fadetime: reset
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - hide BlockmateWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: computeResults
+      - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
+          - hide Blockmate: WITH CUT
+          - show Blockmate: neutral AT 1050,1080 WITH CUT
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT 350,1080 WITH CUT
+              - show c1: happy AT 1679,1080 WITH MOVE
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT 350,1080 WITH CUT
+              - show c2: happy AT 1679,1080 WITH MOVE
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT 350,1080 WITH CUT
+              - show c3: happy AT 1679,1080 WITH MOVE
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT 350,1080 WITH CUT
+              - show c4: happy AT 1679,1080 WITH MOVE
+              - hide c4:
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+          - hide ALL:
+          - scene: computeResults
+      - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
+          - hide Blockmate: WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT 350,1080 WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT 350,1080 WITH CUT
+          - show BlockmateWalk: AT 1050,630 WITH CUT
+          - call fadetime: 500
+          - show BlockmateWalk: AT 750,630 WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT -239,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT -239,1080 WITH MOVE CONTINUE
+          - show BlockmateWalk: AT -239,630 WITH MOVE
+          - call fadetime: reset
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - hide BlockmateWalk: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - hide ALL:
+          - scene: computeResults
+      - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
+          - hide Blockmate: WITH CUT
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - show Blockmate: neutral AT 1050,1080 WITH CUT
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c1: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c1: WITH CUT
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c2: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c2: WITH CUT
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c3: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c3: WITH CUT
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT 350,1080 WITH CUT
+              - call fadetime: 500
+              - show c4: happy AT 1679,1080 WITH MOVE
+              - call fadetime: reset
+              - hide c4: WITH CUT
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - hide ALL:
+          - scene: computeResults
 Berchmans:
-  - show XavierHallBG: WITH FADE CONTINUE
-  - show MainCharacter: normal AT LEFT WITH FADE
+  - hide ALL:
+  - show BerchmansBG: WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy WITH CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy WITH CUT AT LEFT CONTINUE
+  - show Blockmate: neutral WITH CUT AT RIGHT
+  - choice IN grid:
+      - text IN choice: You see your blockmate bestie as you walk through the Berchman corridor, and they are asking where you want to go after class.
+      - "Let's go to UPTC for a little adventure!":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT OUTLEFT WITH MOVE
+          - show Blockmate: neutral AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+      - "Can’t talk right now; I have to go, but I will text you after my class. We can eat on campus so we can also study":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT OUTRIGHT WITH MOVE
+          - show Blockmate: neutral
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+      - "Wherever! As long as the place looks aesthetic and has specialty lattes so we can take photos and taste test new drinks!":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: talking AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: talking AT OUTLEFT WITH MOVE
+          - show Blockmate: neutral AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+      - "Not really feeling it because I’m so busy with studies and I have class in a bit. Let’s go out other time.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy AT OUTRIGHT WITH MOVE
+          - show Blockmate: neutral
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+  - hide ALL:
+  - scene: Gonzaga
+Gonzaga:
+  - show ZenBG: WITH FUSION CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy with CUT AT LEFT CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy with CUT AT LEFT CONTINUE
+  - choice IN grid:
+      - text IN choice: You feel a bit of hunger at Gonzaga and notice a lot of food stalls. What do you do?
+      - "Buy one bigger-sized snack because you need the energy for class later.":
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - show snack_large: AT 714,433 CONTINE
+          - text: "Buy one bigger-sized snack because you need the energy for class later."
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+      - "Buy snacks from different stalls because you want to support local businesses.":
+          - show ZenBlurBG: WITH FUSION CONTINUE
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - show snack_simple: AT 927,341
+          - show snack_large: AT 449,418
+          - show snack_unique: AT 1009,584
+          - text: "Buy snacks from different stalls because you want to support local businesses."
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+      - "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!":
+          - show ZenBlurBG: WITH FUSION CONTINUE
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - show snack_unique: AT 685,373
+          - text: "Buy the prettiest-looking snack to take a photo of because you enjoy anything that looks good!"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+      - "Buy a simple, small snack that cooks fast so you don’t end up late.":
+          - show ZenBlurBG: WITH FUSION CONTINUE
+          - if ({selected_char} == "c1"):
+              - hide c1:
+          - if ({selected_char} == "c2"):
+              - hide c2:
+          - if ({selected_char} == "c3"):
+              - hide c3:
+          - if ({selected_char} == "c4"):
+              - hide c4:
+          - show snack_simple: AT 720,396
+          - text: "Buy a simple, small snack that cooks fast so you don’t end up late."
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+  - hide ALL:
+  - scene: XavierHall
+XavierHall:
+  - show XavierHallBG: WITH FUSION CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c2"):
+      - show c2: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c3"):
+      - show c3: happy AT LEFT WITH FADE
+  - if ({selected_char} == "c4"):
+      - show c4: happy AT LEFT WITH FADE
   - choice IN grid:
     - text IN choice: You see so many people crowded at Xavier Hall trying to ride the E-Jeep.
     - "Line up for the E-Jeep because you want to see campus nature even if it takes longer.":
@@ -60,34 +592,580 @@ Berchmans:
       - var innovator_score: "{innovator_score} + 1"
       - var thinker_score: "{thinker_score} + 2"
   - hide ALL:
+  - scene: computeResults
 IRH:
-  - show room_night: WITH FADE CONTINUE
-  - deuzi says: Welcome to IRH!
+  - show IRHBG: WITH FADE CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: happy AT OUTLEFT WITH CUT CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy AT OUTLEFT WITH CUT CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy AT OUTLEFT WITH CUT CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy AT OUTLEFT WITH CUT CONTINUE
+  - show athlete: normal AT 1738,1080 WITH CUT CONTINUE
+  - show Blockmate: neutral AT 1468,1080 WITH CUT FLIP
+  - call fadetime: 500
+  - if ({selected_char} == "c1"):
+      - show c1: happy AT LEFT WITH MOVE CONTINUE
+  - if ({selected_char} == "c2"):
+      - show c2: happy AT LEFT WITH MOVE CONTINUE
+  - if ({selected_char} == "c3"):
+      - show c3: happy AT LEFT WITH MOVE CONTINUE
+  - if ({selected_char} == "c4"):
+      - show c4: happy AT LEFT WITH MOVE CONTINUE
+  - show athlete: normal AT 1260,1080 WITH MOVE CONTINUE
+  - show Blockmate: neutral AT 990,1080 WITH MOVE
+  - call fadetime: reset
+  - choice IN grid:
+      - text IN choice: You pass by a group of student-athletes, and you make eye contact with your blockmate who was walking along with the group.
+      - "You both make eye contact and immediately do your secret handshake in front of everyone!":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle WITH FUSION
+          - show Blockmate: talking WITH FUSION
+          - show Blockmate: talking AT 890,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle AT 540,1080 WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle AT 540,1080 WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle AT 540,1080 WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle AT 540,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 1"
+      - "Call out their name and say hi! Perhaps you’ll also ask them if they’re free for lunch tomorrow…":
+          - call fadetime: 350
+          - if ({selected_char} == "c1"):
+              - show c1: talking WITH FUSION
+              - show c1: talking AT 440,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: talking WITH FUSION
+              - show c2: talking AT 440,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: talking WITH FUSION
+              - show c3: talking AT 440,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: talking WITH FUSION
+              - show c4: talking AT 440,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show Blockmate: neutral AT 900,1080 WITH MOVE
+          - show athlete: talking WITH FUSION CONTINUE
+          - show Blockmate: neutral WITH CUT
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You are surprised to find out that they are an athlete.":
+          - call fadetime: 350
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT 540,1080 WITH MOVE CONTINUE
+          - show athlete: normal AT 1170,1080 WITH MOVE CONTINUE
+          - show Blockmate: neutral AT 900,1080 WITH MOVE
+          - if ({selected_char} == "c1"):
+              - show c1: talking WITH FUSION CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: talking WITH FUSION CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: talking WITH FUSION CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: talking WITH FUSION CONTINUE
+          - show athlete: talking WITH FUSION CONTINUE
+          - show Blockmate: neutral WITH CUT
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 3"
+      - "Wave at them and remind them of the group project’s deadline this week.":
+          - call fadetime: 250
+          - if ({selected_char} == "c1"):
+              - show c1: talking WITH FUSION
+              - wait: 500
+              - show c1: happy WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: talking WITH FUSION
+              - wait: 500
+              - show c2: happy WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: talking WITH FUSION
+              - wait: 500
+              - show c3: happy WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: talking WITH FUSION
+              - wait: 500
+              - show c4: happy WITH FUSION
+          - wait: 500
+          - show IRHBGAwkward: WITH FUSION CONTINUE
+          - show Blockmate: talking WITH FUSION
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+  - wait: 1000
+  - hide CHARS:
+  - scene: Gesu
+Gesu:
+  - show GesuBG: WITH FADE CONTINUE
+  - show crush: WITH FADE AT RIGHT FLIP CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c2"):
+      - show c2: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c3"):
+      - show c3: nervous WITH FADE AT LEFT
+  - if ({selected_char} == "c4"):
+      - show c4: nervous WITH FADE AT LEFT
+  - choice IN grid:
+      - text IN choice: You see your crush walking towards Gesù, and you’ve been meaning to catch their attention for a while now.
+      - "You fix your hair and clothes, then you approach them to start a conversation.":
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle WITH FUSION
+          - show crush: normal WITH FUSION FLIP
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c2"):
+              - show c2: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c3"):
+              - show c3: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - if ({selected_char} == "c4"):
+              - show c4: sparkle AT 540,1080 WITH MOVE CONTINUE
+          - show crush: normal AT 900,1080 WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+      - "You fix your posture to hopefully grab their attention as you pass by them.":
+          - call fadetime: 350
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH FUSION
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH CUT CONTINUE
+              - show c1: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH CUT CONTINUE
+              - show c2: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH CUT CONTINUE
+              - show c3: happy AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH CUT CONTINUE
+              - show c4: happy AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You try to say hi, but they didn’t hear you, so you end up finding a way to avoid getting noticed.":
+          - call fadetime: 350
+          - if ({selected_char} == "c1"):
+              - show c1: talking WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: talking WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: talking WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: talking WITH FUSION
+          - wait: 1000
+          - if ({selected_char} == "c1"):
+              - show c1: nervous WITH FUSION
+              - show c1: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: nervous WITH FUSION
+              - show c2: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: nervous WITH FUSION
+              - show c3: nervous AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: nervous WITH FUSION
+              - show c4: nervous AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You look at them and realize that the spark isn’t there anymore.":
+          - if ({selected_char} == "c1"):
+              - wait: 500
+              - show c1: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c1: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c1: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c2"):
+              - wait: 500
+              - show c2: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c2: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c2: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c3"):
+              - wait: 500
+              - show c3: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c3: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c3: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - if ({selected_char} == "c4"):
+              - wait: 500
+              - show c4: happy WITH FUSION
+              - wait: 1000
+              - fadetime: 500
+              - show c4: happy WITH CUT FLIP CONTINUE
+              - wait: 500
+              - show c4: happy AT OUTLEFT WITH MOVE
+              - fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+  - wait: 1000
+  - hide CHARS:
+  - scene: BellarmineHall
+BellarmineHall:
+  - show BellarmineHallBG: WITH CUT CONTINUE
+  - show prof: normal WITH CUT AT OUTRIGHT CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c2"):
+      - show c2: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c3"):
+      - show c3: normal WITH CUT AT OUTLEFT
+  - if ({selected_char} == "c4"):
+      - show c4: normal WITH CUT AT OUTLEFT
+  - call fadetime: 500
+  - show prof: normal WITH MOVE AT RIGHT CONTINUE
+  - if ({selected_char} == "c1"):
+      - show c1: normal WITH MOVE AT LEFT
+      - show c1: nervous WITH FUSION
+  - if ({selected_char} == "c2"):
+      - show c2: normal WITH MOVE AT LEFT
+      - show c2: nervous WITH FUSION
+  - if ({selected_char} == "c3"):
+      - show c3: normal WITH MOVE AT LEFT
+      - show c3: nervous WITH FUSION
+  - if ({selected_char} == "c4"):
+      - show c4: normal WITH MOVE AT LEFT
+      - show c4: nervous WITH FUSION
+  - call fadetime: reset
+  - choice IN grid:
+      - text IN choice: As you pass through Bellarmine Hall, you notice your terror prof leaving one of the classrooms.
+      - "You go back and take a detour to avoid them.":
+          - call fadetime: 350
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 0"
+          - var thinker_score: "{thinker_score} + 3"
+      - "You endure their intimidating gaze and quickly walk past them.":
+          - call fadetime: 500
+          - show prof: normal AT OUTLEFT WITH MOVE CONTINUE
+          - if ({selected_char} == "c1"):
+              - show c1: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: normal AT OUTRIGHT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: normal AT OUTRIGHT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 0"
+          - var socialeagle_score: "{socialeagle_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
+      - "You walk behind the nearest student you can find and pretend to be their friend as camouflage.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show Blockmate: neutral AT OUTLEFT WITH CUT
+              - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
+              - show c1: normal AT LEFT WITH FUSION 
+              - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
+              - show c1: normal AT OUTRIGHT WITH MOVE 
+          - if ({selected_char} == "c2"):
+              - show Blockmate: neutral AT OUTLEFT WITH CUT
+              - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
+              - show c2: normal AT LEFT WITH FUSION 
+              - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
+              - show c2: normal AT OUTRIGHT WITH MOVE 
+          - if ({selected_char} == "c3"):
+              - show Blockmate: neutral AT OUTLEFT WITH CUT
+              - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
+              - show c3: normal AT LEFT WITH FUSION 
+              - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
+              - show c3: normal AT OUTRIGHT WITH MOVE 
+          - if ({selected_char} == "c4"):
+              - show Blockmate: neutral AT OUTLEFT WITH CUT
+              - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
+              - show c4: normal AT LEFT WITH FUSION 
+              - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
+              - show c4: normal AT OUTRIGHT WITH MOVE 
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 0"
+          - var innovator_score: "{innovator_score} + 3"
+          - var socialeagle_score: "{socialeagle_score} + 2"
+          - var thinker_score: "{thinker_score} + 1"
+      - "You greet the professor respectfully to maintain a good work relationship.":
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH FUSION
+              - show c1: talking AT CENTER WITH MOVE
+              - show c1: talking WITH FUSION
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH FUSION
+              - show c2: happy AT CENTER WITH MOVE
+              - show c2: talking WITH FUSION
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH FUSION
+              - show c3: happy AT CENTER WITH MOVE
+              - show c3: talking WITH FUSION
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH FUSION
+              - show c4: happy AT CENTER WITH MOVE
+              - show c4: talking WITH FUSION
+          - call fadetime: 500
+          - if ({selected_char} == "c1"):
+              - show c1: happy WITH CUT FLIP
+              - show c1: happy AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c2"):
+              - show c2: happy WITH CUT FLIP
+              - show c2: happy AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c3"):
+              - show c3: happy WITH CUT FLIP
+              - show c3: happy AT OUTLEFT WITH MOVE
+          - if ({selected_char} == "c4"):
+              - show c4: happy WITH CUT FLIP
+              - show c4: happy AT OUTLEFT WITH MOVE
+          - call fadetime: reset
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+          - var thinker_score: "{thinker_score} + 0"
+  - hide CHARS:
+  - scene: computeResults
+computeResults:
+  - call computeResults:
+  - scene: results
+results:
+  - show sky: WITH FADE
+  - wait: 500
+  - show resultClouds: AT 720,700 WITH FADE
+  - show platform: AT 500,580
+  - show platform2: AT 1000,850
+  - if ({selected_char} == "c1"):
+      - show c1_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show label_thinker: AT 1000,300
+          - show c1_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show label_creative: AT 1000,300
+          - show c1_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 1000,300
+          - show c1_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 1000,300
+          - show c1_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c2"):
+      - show c2_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c2_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c2_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c2_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c2_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c3"):
+      - show c3_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c3_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c3_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c3_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c3_latinhonors: AT 1000,620
+            zoom: 0.5
+  - if ({selected_char} == "c4"):
+      - show c4_obj: AT 500,350
+        zoom: 0.5
+      - if ({future_self} == "thinker"):
+          - show c4_thinker: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "creative"):
+          - show c4_creative: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "socialeagle"):
+          - show c4_socialeagle: AT 1000,620
+            zoom: 0.5
+      - if ({future_self} == "latinhonors"):
+          - show c4_latinhonors: AT 1000,620
+            zoom: 0.5
+  - else:
+  - call fadetime: 1000
+  - show endmessage: AT 720,900 WITH FADE
+  - call fadetime: reset
+  - wait: 2000
   - scene: endGame
 endGame:
-  - deuzi says normal: Quickstart over!
+  - wait: 500
+  - hide CGS: WITH FADE
+  - call fadetime: 750
+  - show resultsmodal: AT 720,540
+  - if ({selected_char} == "c1"):
+      - if ({future_self} == "thinker"):
+          - show label_thinker: AT 720,340
+          - show c1_thinker: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show label_creative: AT 720,340
+          - show c1_creative: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 720,340
+          - show c1_socialeagle: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 720,340
+          - show c1_latinhonors: AT 720,560
+            zoom: 0.4
+  - if ({selected_char} == "c2"):
+      - if ({future_self} == "thinker"):
+          - show label_thinker: AT 720,340
+          - show c2_thinker: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show label_creative: AT 720,340
+          - show c2_creative: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 720,340
+          - show c2_socialeagle: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 720,340
+          - show c2_latinhonors: AT 720,560
+            zoom: 0.4
+  - if ({selected_char} == "c3"):
+      - if ({future_self} == "thinker"):
+          - show label_thinker: AT 720,340
+          - show c3_thinker: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show label_creative: AT 720,340
+          - show c3_creative: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 720,340
+          - show c3_socialeagle: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 720,340
+          - show c3_latinhonors: AT 720,560
+            zoom: 0.4
+  - if ({selected_char} == "c4"):
+      - if ({future_self} == "thinker"):
+          - show label_thinker: AT 720,340
+          - show c4_thinker: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "creative"):
+          - show label_creative: AT 720,340
+          - show c4_creative: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "socialeagle"):
+          - show label_socialeagle: AT 720,340
+          - show c4_socialeagle: AT 720,560
+            zoom: 0.4
+      - if ({future_self} == "latinhonors"):
+          - show label_latinhonors: AT 720,340
+          - show c4_latinhonors: AT 720,560
+            zoom: 0.4
+  - else:
+  - call fadetime: reset
+  - visualchoice:
+      - tryagain AT 570,800:
+          - hide ALL:
+          - scene: start
+      - credits AT 870,800:
+          - hide ALL:
+          - scene: credits
+credits:
   - hide ALL:
   - effect ROLLINGCREDITS:
     endGame: true
     text:
-      - RenJS.V2 created by
-      - lunafromthemoon
+      - "Letter from Tomorrow: An Atenean's Quest"
       - null
-      - In collaboration with
-      - RockDaFox
+      - Designed by
+      - Bel Baylon
+      - Gabrielle Bulatao
+      - Sara Sabando
       - null
-      - Inspired by Ren'Py
-      - Powered by PhaserJS
+      - Developed by
+      - Aldrin Nellas
+      - Cheska Huang
+      - Ice Pascual
+      - Princess Giron
       - null
-      - null
-      - Thanks for playing
-      - The Quickstart Game
-      - null
-      - background art and cgs by
-      - konett
-      - null
-      - characters by
-      - Shida
-      - null
-      - music by
-      - Evan Schaeffer
+      - Thank you for playing!
