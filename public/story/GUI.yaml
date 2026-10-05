@@ -138,13 +138,14 @@ config:
           align: left
           boundsAlignH: center
           boundsAlignV: middle
-    - type: button
+    - id: toggleAudioBtn
+      type: button
       x: 1340
       y: 25
       asset: muteBtn
-      binding: "mute"
       pushButton: true
       pushed: false
+      binding: "mute"
     - type: button
       x: 50
       "y": 25
@@ -388,7 +389,7 @@ assets:
       name: muteBtn
       fileName: music.svg
       w: 52
-      h: 51
+      h: 58
     asset3:
       name: asset3
       fileName: mainasset3.png
