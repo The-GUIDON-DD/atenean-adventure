@@ -140,9 +140,11 @@ config:
           boundsAlignV: middle
     - type: button
       x: 1340
-      "y": 25
+      y: 25
       asset: muteBtn
-      binding: mute
+      binding: "mute"
+      pushButton: true
+      pushed: false
     - type: button
       x: 50
       "y": 25
@@ -366,9 +368,6 @@ assets:
     asset22:
       name: asset22
       fileName: hudasset22.png
-    muteBtn:
-      name: muteBtn
-      fileName: music.svg
     confirmBtn:
       name: confirmBtn
       fileName: nextBtn.svg
@@ -385,6 +384,11 @@ assets:
       name: letterBG
       fileName: lettermodal.png
   spritesheets:
+    muteBtn:
+      name: muteBtn
+      fileName: music.svg
+      w: 52
+      h: 51
     asset3:
       name: asset3
       fileName: mainasset3.png

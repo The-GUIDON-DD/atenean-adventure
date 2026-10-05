@@ -18,6 +18,8 @@ backgrounds:
   IRHBGAwkward: assets/backgrounds/IRHAwkward.png
   GesuBG: assets/backgrounds/Gesu.png
   BellarmineHallBG: assets/backgrounds/BellarmineHall.png
+  Arete: assets/backgrounds/AreteBG.png
+  AreteTurnstile: assets/backgrounds/AreteTurnstile.png
 characters:
   narrator:
     displayName: ""
@@ -169,9 +171,11 @@ cgs:
   endmessage: assets/objects/results/endMsg.png
   tryagain: assets/objects/results/tryagain.png
   credits: assets/objects/results/credits.png
+  ID: assets/objects/holding_id.png
 music:
   rollingCredits: assets/audio/Evan_Schaeffer_-_01_-_Aqueduct.mp3
   morningBGM: assets/audio/Evan_Schaeffer_-_03_-_Glow.mp3
+  chillBGM: assets/audio/chillbg.mp3
 sfx:
   ringtoneSFX: assets/audio/nokia6210-24-elise.mp3
   ringtoneSFX2: assets/audio/alcatel-top_secret.mp3

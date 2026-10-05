@@ -1,4 +1,5 @@
 start:
+  - play chillBGM: WITH FADE LOOPED
   - show sky: WITH FADE
   - wait: 500
   - show introClouds: WITH FADE AT 720,700
@@ -187,6 +188,7 @@ RBR_Scene:
             position: {x: 239, y: 630}
             angle: 15
             time: 450
+          - wait: 500
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
@@ -296,7 +298,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: computeResults
+          - scene: Arete
       - "Can't talk right now! I have to go, but I will text you after my class. We can eat on campus, so we can also study.":
           - hide Blockmate: WITH CUT
           - show Blockmate: neutral AT 1050,1080 WITH CUT
@@ -322,7 +324,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
           - hide ALL:
-          - scene: computeResults
+          - scene: Arete
       - "Anywhere will do! As long as the place has a good ambiance with specialty drinks to taste-test, I'll be satisfied.":
           - hide Blockmate: WITH CUT
           - if ({selected_char} == "c1"):
@@ -359,7 +361,7 @@ LeongHall:
           - var innovator_score: "{innovator_score} + 2"
           - var socialeagle_score: "{socialeagle_score} + 3"
           - hide ALL:
-          - scene: computeResults
+          - scene: Arete
       - "I'm not really feeling it because I'm so busy with studies. Let's go out some other time.":
           - hide Blockmate: WITH CUT
           - if ({selected_char} == "c1"):
@@ -399,7 +401,7 @@ LeongHall:
           - var thinker_score: "{thinker_score} + 3"
           - var innovator_score: "{innovator_score} + 1"
           - hide ALL:
-          - scene: computeResults
+          - scene: Arete
 Berchmans:
   - hide ALL:
   - show BerchmansBG: WITH FADE CONTINUE
@@ -620,7 +622,7 @@ XavierHall:
           - var innovator_score: "{innovator_score} + 1"
           - var thinker_score: "{thinker_score} + 2"
   - hide ALL:
-  - scene: computeResults
+  - scene: Arete
 IRH:
   - show IRHBG: WITH FADE CONTINUE
   - if ({selected_char} == "c1"):
@@ -953,27 +955,27 @@ BellarmineHall:
           - if ({selected_char} == "c1"):
               - show Blockmate: neutral AT OUTLEFT WITH CUT
               - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
-              - show c1: normal AT LEFT WITH FUSION 
+              - show c1: normal AT LEFT WITH FUSION
               - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
-              - show c1: normal AT OUTRIGHT WITH MOVE 
+              - show c1: normal AT OUTRIGHT WITH MOVE
           - if ({selected_char} == "c2"):
               - show Blockmate: neutral AT OUTLEFT WITH CUT
               - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
-              - show c2: normal AT LEFT WITH FUSION 
+              - show c2: normal AT LEFT WITH FUSION
               - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
-              - show c2: normal AT OUTRIGHT WITH MOVE 
+              - show c2: normal AT OUTRIGHT WITH MOVE
           - if ({selected_char} == "c3"):
               - show Blockmate: neutral AT OUTLEFT WITH CUT
               - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
-              - show c3: normal AT LEFT WITH FUSION 
+              - show c3: normal AT LEFT WITH FUSION
               - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
-              - show c3: normal AT OUTRIGHT WITH MOVE 
+              - show c3: normal AT OUTRIGHT WITH MOVE
           - if ({selected_char} == "c4"):
               - show Blockmate: neutral AT OUTLEFT WITH CUT
               - show Blockmate: neutral AT 339,1080 WITH MOVE CONTINUE
-              - show c4: normal AT LEFT WITH FUSION 
+              - show c4: normal AT LEFT WITH FUSION
               - show Blockmate: neutral AT 1779,1080 WITH MOVE CONTINUE
-              - show c4: normal AT OUTRIGHT WITH MOVE 
+              - show c4: normal AT OUTRIGHT WITH MOVE
           - call fadetime: reset
           - var latinhonors_score: "{latinhonors_score} + 0"
           - var innovator_score: "{innovator_score} + 3"
@@ -1016,11 +1018,92 @@ BellarmineHall:
           - var socialeagle_score: "{socialeagle_score} + 3"
           - var thinker_score: "{thinker_score} + 0"
   - hide CHARS:
+  - scene: Arete
+Arete:
+  - show Arete: WITH FADE CONTINUE
+  - choice IN grid:
+      - text IN choice: You finally make it to Arete, and you must scan your ID, but it won’t work. What do you do?
+      - "Keep trying to scan it as quickly as possible until it works.":
+          - show AreteTurnstile: WITH FUSION CONTINUE
+          - show ID: AT 180,630
+          - text: Keep trying to scan it as quickly as possible until it works.
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - var latinhonors_score: "{latinhonors_score} + 2"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 3"
+      - "Slowly take it off and scan again, chit-chatting with the person behind you about the machine not working.":
+          - show AreteTurnstile: WITH FUSION CONTINUE
+          - show ID: AT 180,630
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - animate ID:
+            position: {x: 1170, y: 630}
+            time: 400
+          - animate ID:
+            position: {x: 180, y: 630}
+            time: 1000
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 2"
+          - var socialeagle_score: "{socialeagle_score} + 3"
+      - "Find a different way and ask the guard to just write down your name on the logsheet.":
+          - if ({selected_char == "c1"}):
+              - show c1: normal WITH FADE AT RIGHT
+          - if ({selected_char == "c2"}):
+              - show c2: normal WITH FADE AT RIGHT
+          - if ({selected_char == "c3"}):
+              - show c3: normal WITH FADE AT RIGHT
+          - if ({selected_char == "c4"}):
+              - show c4: normal WITH FADE AT RIGHT
+          - var latinhonors_score: "{latinhonors_score} + 1"
+          - var innovator_score: "{innovator_score} + 3"
+          - var thinker_score: "{thinker_score} + 2"
+      - "Just stay outside and sit on the bench until it is fixed, so you can study beforehand.":
+          - if ({selected_char == "c1"}):
+              - show c1: normal WITH FADE AT LEFT
+          - if ({selected_char == "c2"}):
+              - show c2: normal WITH FADE AT LEFT
+          - if ({selected_char == "c3"}):
+              - show c3: normal WITH FADE AT LEFT
+          - if ({selected_char == "c4"}):
+              - show c4: normal WITH FADE AT LEFT
+          - var latinhonors_score: "{latinhonors_score} + 3"
+          - var innovator_score: "{innovator_score} + 1"
+          - var thinker_score: "{thinker_score} + 2"
   - scene: computeResults
 computeResults:
   - call computeResults:
   - scene: results
 results:
+  - pause chillBGM: WITH FADE
+  - play rollingCredits: WITH FADE LOOPED
+  - hide CGS: WITH FADE
   - show sky: WITH FADE
   - wait: 500
   - show resultClouds: AT 720,700 WITH FADE
