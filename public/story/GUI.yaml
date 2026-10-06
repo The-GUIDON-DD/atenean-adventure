@@ -144,8 +144,8 @@ config:
       y: 25
       asset: muteBtn
       pushButton: true
-      pushed: false
-      binding: "mute"
+      pushed: true
+      binding: toggleAudio
     - type: button
       x: 50
       "y": 25
